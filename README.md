@@ -1,4 +1,4 @@
-# **Winner Legends
+# **Winner Legends**
 
 
 ## **Historias de usuario.**
@@ -12,7 +12,9 @@ _Criterios de aceptación._
     o	Roles ordenados por orden alfabético.
 3.  Un lugar donde se detalle la información del campeón.
 
-Como primer paso de este proceso realizamos un prototipo de baja fidelidad con el cual se llevaron a cabo entrevistas a diferentes ususarios.
+Como primer paso de este proceso realizamos un prototipo de baja fidelidad con el cual se llevaron a cabo entrevistas a diferentes usuarios.
+
+Identificamos que el usuario novato o principiante de LOL requiere conocer ciertas características de los campeones para poder escoger con mayor precisión cual es el que se adecua a la partida que quiere jugar. Es por esta razón que nuestra primera historia de usuario se enfoca en poder satisfacer esta necesidad.
 
 En las siguientes imágenes se puede observar nuestro _PBF_ (prototipo de baja fidelidad)
 
@@ -26,15 +28,8 @@ Y luego obtenían la página final donde se encuentra la información que necesi
 ![PBF](img/PBF1.3.png)
 
 
-videos de las entrevistas:
+Y ahora podemos observar las entrevistas realizadas al [usuario 1](https://www.youtube.com/watch?v=RjAXF70T8EM&feature=youtu.be), luego al [usuario 2](https://www.youtube.com/watch?v=-JPRpwIC0D8&feature=youtu.be) y al [usuario 3](https://www.youtube.com/watch?v=soch-PYCv4k&feature=youtu.be).
 
-1. [usuario 1](https://www.youtube.com/watch?v=RjAXF70T8EM&feature=youtu.be)
-1. [usuario 2](https://www.youtube.com/watch?v=-JPRpwIC0D8&feature=youtu.be)
-1. [usuario 3](https://www.youtube.com/watch?v=soch-PYCv4k&feature=youtu.be)
-
-
-
-Identificamos que el usuario novato o principiante de LOL requiere conocer ciertas características de los campeones para poder escoger con mayor precisión cual es el que se adecua a la partida que quiere jugar. Es por esta razón que nuestra primera historia de usuario se enfoca en poder satisfacer esta necesidad.
 
 Durante los test de prototipo de baja fidelidad que realizamos a los usuarios  pudimos verificar que la interfaz propuesta cumple con los criterios de aceptación de nuestra primera historia de usuario. Existen sugerencias de parte de los entrevistados que podemos agregar en nuestro diseño, como por ejemplo las características de los campeones que ellos necesitan que estén descritas en las fichas de cada uno, entre ello mencionaron:
 
@@ -44,7 +39,7 @@ Durante los test de prototipo de baja fidelidad que realizamos a los usuarios  p
 
 3.      Cuáles son los campeones más utilizados
 
-Todas estas sugerencias serán evaluadas y se intentarán implementar de acuerdo a los datos que nos entrega la data.
+Todas estas sugerencias han sido evaluadas y se intentarán implementar, pero principalmente nos guiaremos por los datos que nos entrega la data.
 
 **Caso n°2.**
 Yo COMO jugador novato/intermedio de LoL, server LAS, QUIERO comparar las características de dos Campeones de un mismo rol, PARA escoger el más adecuado en la partida. 
