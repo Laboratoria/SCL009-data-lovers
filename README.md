@@ -1,4 +1,4 @@
-# **Winner Legends**
+![Logo](img/logo.png)
 
 
 ## **Historias de usuario.**
