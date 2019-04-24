@@ -8,18 +8,24 @@ const selectChange = document.getElementById("userSelectedTag");
 selectChange.addEventListener('change', () =>{ 
      
   let selectedTag = document.getElementById("userSelectedTag").value
-  
+ 
    
   const resultFilterTag = dataKeys.filter( (element)=>{
     if(selectedTag==="Todos"){
       return data[element];
     }else{
-    return data[element].tags.includes(selectedTag)}
+    return data[element].tags.includes(selectedTag);}
+   
     })
-    console.log(resultFilterTag)
+    
+    
+    
+    
     championImg.innerHTML = "";
     for(let i=0;i<resultFilterTag.length;i++){
-      championImg.innerHTML += `<div> ${resultFilterTag[i]} </div>`}
+      let champName = resultFilterTag[i]
+      let champImg = data[champName].img
+      championImg.innerHTML += `<div class="estilo"> ${ resultFilterTag[i]} <img src="${champImg}">  </div>`}
     
 
 })

@@ -1,4 +1,6 @@
 .estilo{
-    background: black;
+    background: blue;
+    display: inline;
+    padding: 2px;
 }
 
