@@ -13,7 +13,7 @@ console.log(POKEMON.pokemon[i].id);
 
 
 }
-
+ 
 
 
 
