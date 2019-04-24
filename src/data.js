@@ -7,4 +7,14 @@ const example = () => {
   return 'example';
 };
 
+for (let i=0;i<POKEMON.pokemon.length;i++){
+console.log(POKEMON.pokemon[i].name);
+console.log(POKEMON.pokemon[i].id);
+
+
+}
+
+
+
+
 window.example = example;
