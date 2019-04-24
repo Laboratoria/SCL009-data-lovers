@@ -1,11 +1,11 @@
 .estilo{
-<<<<<<< HEAD
-    background: gold;
-    display: inline;
-=======
-    background: blue;
+
+    background: aqua;
     display: inline;
     padding: 2px;
->>>>>>> ca5a13acd09e9dbee79cd088d43ee4e109324458
-}
 
+}
+#tamaño{
+	width: 50px;
+
+}

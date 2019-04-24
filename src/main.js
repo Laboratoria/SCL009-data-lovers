@@ -17,44 +17,27 @@ selectChange.addEventListener('change', () =>{
     return data[element].tags.includes(selectedTag);}
    
     })
-<<<<<<< HEAD
 
-    console.log(resultFilterTag);
-
-=======
-    
-    
-    
-    
->>>>>>> ca5a13acd09e9dbee79cd088d43ee4e109324458
     championImg.innerHTML = "";
     //resultFilterTag.forEach(element=>{})
     for(let i=0;i<resultFilterTag.length;i++){
-<<<<<<< HEAD
-      //championImg.innerHTML += `<div class="estilo"> ${resultFilterTag[i]} </div>`}
-      championImg.innerHTML += `<div class="card" id="cards" style="width: 18rem;">
-  <img src="${element.img}" class="card-img-top" alt="...">
+
+      let champName = resultFilterTag[i];
+      let champImg = data[champName].img;
+      let champTitle= data[champName].title;
+      let champText= data[champName].blurb;
+
+      //championImg.innerHTML += `<div class="estilo"> ${champName} <img src="${champImg}"> 
+      //<p>${champTitle}</p> </div>`
+      championImg.innerHTML+=`<div class="card" style="width: 12rem;">
+  <img id="tamaño" src="${champImg}" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">${resultFilterTag[i]}</h5>
-    <p class="card-text">${element.blurb}</p>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Cras justo odio</li>
-    <li class="list-group-item">Dapibus ac facilisis in</li>
-    <li class="list-group-item">Vestibulum at eros</li>
-  </ul>
-  <div class="card-body">
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
+    <p class="card-text">${champText}</p>
   </div>
 </div>`
-  }
-=======
-      let champName = resultFilterTag[i]
-      let champImg = data[champName].img
-      championImg.innerHTML += `<div class="estilo"> ${ resultFilterTag[i]} <img src="${champImg}">  </div>`}
+    }
     
->>>>>>> ca5a13acd09e9dbee79cd088d43ee4e109324458
+
 
 })
         
