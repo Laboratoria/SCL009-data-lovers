@@ -8,20 +8,29 @@ const selectChange = document.getElementById("userSelectedTag");
 selectChange.addEventListener('change', () =>{ 
      
   let selectedTag = document.getElementById("userSelectedTag").value
-  
+ 
    
   const resultFilterTag = dataKeys.filter( (element)=>{
     if(selectedTag==="Todos"){
       return data[element];
     }else{
-    return data[element].tags.includes(selectedTag)}
+    return data[element].tags.includes(selectedTag);}
+   
     })
+<<<<<<< HEAD
 
     console.log(resultFilterTag);
 
+=======
+    
+    
+    
+    
+>>>>>>> ca5a13acd09e9dbee79cd088d43ee4e109324458
     championImg.innerHTML = "";
     //resultFilterTag.forEach(element=>{})
     for(let i=0;i<resultFilterTag.length;i++){
+<<<<<<< HEAD
       //championImg.innerHTML += `<div class="estilo"> ${resultFilterTag[i]} </div>`}
       championImg.innerHTML += `<div class="card" id="cards" style="width: 18rem;">
   <img src="${element.img}" class="card-img-top" alt="...">
@@ -40,6 +49,12 @@ selectChange.addEventListener('change', () =>{
   </div>
 </div>`
   }
+=======
+      let champName = resultFilterTag[i]
+      let champImg = data[champName].img
+      championImg.innerHTML += `<div class="estilo"> ${ resultFilterTag[i]} <img src="${champImg}">  </div>`}
+    
+>>>>>>> ca5a13acd09e9dbee79cd088d43ee4e109324458
 
 })
         
