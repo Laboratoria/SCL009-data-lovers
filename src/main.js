@@ -17,16 +17,27 @@ selectChange.addEventListener('change', () =>{
     return data[element].tags.includes(selectedTag);}
    
     })
-    
-    
-    
-    
+
     championImg.innerHTML = "";
+    //resultFilterTag.forEach(element=>{})
     for(let i=0;i<resultFilterTag.length;i++){
-      let champName = resultFilterTag[i]
-      let champImg = data[champName].img
-      championImg.innerHTML += `<div class="estilo"> ${ resultFilterTag[i]} <img src="${champImg}">  </div>`}
+
+      let champName = resultFilterTag[i];
+      let champImg = data[champName].img;
+      let champTitle= data[champName].title;
+      let champText= data[champName].blurb;
+
+      //championImg.innerHTML += `<div class="estilo"> ${champName} <img src="${champImg}"> 
+      //<p>${champTitle}</p> </div>`
+      championImg.innerHTML+=`<div class="card" style="width: 12rem;">
+  <img id="tamaño" src="${champImg}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">${champText}</p>
+  </div>
+</div>`
+    }
     
+
 
 })
         

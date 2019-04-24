@@ -1,6 +1,11 @@
 .estilo{
-    background: blue;
+
+    background: aqua;
     display: inline;
     padding: 2px;
-}
 
+}
+#tamaño{
+	width: 50px;
+
+}
