@@ -1,5 +1,6 @@
 /* Manejo del DOM */
 
+<<<<<<< Updated upstream
 const containerMostrar = document.getElementById("cards");
 
 let i=0, cardPokemon = '';
@@ -32,3 +33,5 @@ cardPokemon += `<div class="pokemonCards  col-xs-12 col-md-3">
 }
 
 containerMostrar.innerHTML = cardPokemon;
+=======
+>>>>>>> Stashed changes
