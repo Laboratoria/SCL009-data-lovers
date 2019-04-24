@@ -11,17 +11,21 @@ selectChange.addEventListener('change', () =>{
   
    
   const resultFilterTag = dataKeys.filter( (element)=>{
-    return data[element].tags.includes(selectedTag)})
+    if(selectedTag==="Todos"){
+      return data[element];
+    }else{
+    return data[element].tags.includes(selectedTag)}
+    })
+    console.log(resultFilterTag)
+    championImg.innerHTML = "";
+    for(let i=0;i<resultFilterTag.length;i++){
+      championImg.innerHTML += `<div> ${resultFilterTag[i]} </div>`}
+    
 
-
-   }
-   
 })
-   
         
       
    
-;
 
 
   
