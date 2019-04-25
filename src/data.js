@@ -7,3 +7,18 @@ const example = () => {
 };
 
 window.example = example;
+
+  const filteringResult = (selectedTag,data)=>{
+  let filterChampTag = dataKeys.filter( (element)=>{ 
+  if(selectedTag==="Todos"){ //true para todos
+    return data[element]
+  }else{
+    return data[element].tags.includes(selectedTag);} //true si incluye tag
+  });
+    return filterChampTag;} // champs seleccionados
+  
+
+
+ 
+     
+  

@@ -1,3 +1,11 @@
+
+*{
+    font-family: 'Scada', sans-serif;
+}
+
+.card-body{
+    background: blue;}
+
 .estilo{
 
     background: aqua;
@@ -6,6 +14,13 @@
 
 }
 #tamaño{
+	width: 50px;}
+
+#textNameCard{
+    font-size: 2rem;
+}
+#tamaño{
 	width: 50px;
 
 }
+
