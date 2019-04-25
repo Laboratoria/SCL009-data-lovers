@@ -1,6 +1,18 @@
-.estilo{
+*{
+    font-family: 'Scada', sans-serif;
+}
+
+.card-body{
     background: blue;
     display: inline;
     padding: 2px;
+}
+
+#textNameCard{
+    font-size: 2rem;
+}
+#tamaño{
+	width: 50px;
+
 }
 
