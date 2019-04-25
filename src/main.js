@@ -7,6 +7,7 @@ const selectChange = document.getElementById("userSelectedTag");
 
 selectChange.addEventListener('change', () =>{ 
    
+
   let selectedTag = document.getElementById("userSelectedTag").value;
   
   
@@ -37,6 +38,7 @@ selectChange.addEventListener('change', () =>{
     
     
     
+
         
       
    
