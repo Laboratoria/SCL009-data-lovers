@@ -29,3 +29,14 @@ describe('example', () => {
     assert.equal(example(), 'example');
   });
 })
+
+
+describe('filteringResult',() =>{
+  it('deberia ser una funcion',() =>{
+assert.equal(typeof filteringResult, 'function')
+  });
+  it('deberia retornar Ashe,Azir,Caitlyn,Corki,Draven,Ezreal,Graves,Jayce,Jhin,Jinx,Kalista,Kennen,Kindred,KogMaw,Lucian',() => { 
+    assert.equal(window.filteringResult('Marksman',data),"Ashe","Azir");
+  });
+
+})
