@@ -17,17 +17,12 @@ window.example = example;
   }else{
     return data[element].tags.includes(selectedTag);} //true si incluye tag
   });
-<<<<<<< HEAD
+
     return filterChampTag;
     } // champs seleccionados
   
 window.filteringResult=filteringResult;
-=======
-    return filterChampTag;  // champs seleccionados
-  } 
-  
-window.filteringResult = filteringResult;
->>>>>>> a0c755dc2e038a3ea68520f093819a5268192467
+
 
  
      
