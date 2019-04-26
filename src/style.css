@@ -2,6 +2,10 @@
 *{
     font-family: 'Scada', sans-serif;
 }
+.card{
+display: inline;
+}
+
 
 .card-body{
     background: blue;}

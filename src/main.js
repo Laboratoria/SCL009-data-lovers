@@ -1,6 +1,5 @@
 /* Manejo del DOM */
-const data= LOL.data; // ingresar a la data
-const dataKeys= Object.keys(data) // cada uno de los champs
+
 const championImg = document.getElementById("championImg");
 const selectChange = document.getElementById("userSelectedTag");
 
@@ -13,11 +12,12 @@ selectChange.addEventListener('change', () =>{
   
  
  championImg.innerHTML = ""; //
- for(let i=0;i<filteringResult(selectedTag,data).length;i++){
-  champName= (filteringResult(selectedTag,data)[i]);
+ for(let i=0;i< window.filteringResult(selectedTag,data).length;i++){
+  champName= (window.filteringResult(selectedTag,data)[i]);
+  champImg= data[champName].img
 
-  championImg.innerHTML += `<div class="card" style="width: 12rem;">
-  <img id="tamaño" src="" class="card-img-top" alt="...">
+  championImg.innerHTML += `<div class="card" style="width: 8rem;">
+  <img id="tamaño" src="${champImg}" class="card-img-top" alt="...">
   <div class="card-body">
     <p id="textNameCard" class="card-text">${champName}</p>
   </div>
