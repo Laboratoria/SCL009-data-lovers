@@ -15,7 +15,7 @@ describe('function filteringResult' ()=>{
 	}
 	];
 	it('deberia retornar el objeto Akali al filtrar', ()=>{
-		assert.equal(window.filteringResult(datalol, 'Assassin'),[{name:'Akali', tags:'Assassin'}])
+		assert.deepEqual(window.filteringResult(datalol, 'Assassin'),[{name:'Akali', tags:'Assassin'}])
 	})
 })
 
