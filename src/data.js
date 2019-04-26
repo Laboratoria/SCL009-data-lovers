@@ -15,9 +15,10 @@ window.example = example;
   }else{
     return data[element].tags.includes(selectedTag);} //true si incluye tag
   });
-    return filterChampTag;} // champs seleccionados
+    return filterChampTag;
+    } // champs seleccionados
   
-
+window.filteringResult=filteringResult;
 
  
      

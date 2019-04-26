@@ -1,6 +1,6 @@
 /* Manejo del DOM */
-const data= LOL.data; // ingresar a la data
-const dataKeys= Object.keys(data) // cada uno de los champs
+const data= LOL.data;   // ingresar a la data
+const dataKeys= Object.keys(data); // cada uno de los champs
 const championImg = document.getElementById("championImg");
 const selectChange = document.getElementById("userSelectedTag");
 
