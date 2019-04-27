@@ -1,4 +1,25 @@
 const accessValue = Object.values(LOL.data); // OB arr q contiene los valores de las prop de obj
+    //console.log(accessValue);
+    
+accessValue.forEach(element => {
+    element.tags;
+});  // asi me da ahora.  
+
+////////////////////////////////////////////////////////////////////////////
+
+function tagsSelect() {
+    const selecRol= document.getElementById("rol-lol");
+    const optionSelect = selecRol.options[selecRol.selectedIndex].value;   
+const resultado = window.filterData(accessValue, optionSelect.value);
+console.log(resultado); 
+}
+
+
+
+
+
+// lo de abajo es con btns 27 abril
+/*const accessValue = Object.values(LOL.data); // OB arr q contiene los valores de las prop de obj
 console.log(LOL.data);
 accessValue.forEach(elemento => {
     console.log(elemento);
@@ -12,4 +33,4 @@ btnAssasin.addEventListener("click", () => {
         return (element.tags[0] === "Assassin" || element.tags[1] === "Assassin");
       });
       return console.log(filterRol);
-})
+}) */
