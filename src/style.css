@@ -22,8 +22,10 @@ body{
 .textNameChamp{
     font-size: 30px;
 }
-.card{
+.cardstyle{
 display: inline;
+background: white;
+
 }
 .selectClass{
 background: black;
@@ -34,8 +36,7 @@ font-size: 30px;
 color: #AE8D16;
 }
 
-.card-body{
-    background: blue;}
+
 
 .estilo{
 
