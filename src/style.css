@@ -2,10 +2,37 @@
 *{
     font-family: 'Scada', sans-serif;
 }
+
+body{
+    background-image: url("img/Freljord.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+  }
+.title{
+    font-size: 5rem;
+    text-align: center;
+    color: #AE8D16;
+    border: 30px;
+    text-shadow: 2px 0 0 #E5D598, -5px 0 0 #E5D598, 0 5px 0 #E5D598, 0 -5px 0 #E5D598, 5px 5px #E5D598, -5px -5px 0 #E5D598, 5px -5px 0 #E5D598, -5px 5px 0 #E5D598;
+}
+
+.textNameChamp{
+    font-size: 30px;
+}
 .card{
 display: inline;
 }
-
+.selectClass{
+background: black;
+opacity: 0,5;
+border: 3px solid;
+border-radius: 2px;
+font-size: 30px;
+color: #AE8D16;
+}
 
 .card-body{
     background: blue;}

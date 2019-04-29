@@ -15,14 +15,22 @@ selectChange.addEventListener('change', () =>{
  for(let i=0;i< window.filteringResult(selectedTag,data).length;i++){
   champName= (window.filteringResult(selectedTag,data)[i]);
   champImg= data[champName].img
-
-  championImg.innerHTML += `<div class="card" style="width: 8rem;">
-  <img id="tamaño" src="${champImg}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <p id="textNameCard" class="card-text">${champName}</p>
+championImg.innerHTML +=
+  `<div class="col-md-1">
+  <div class="card">
+      <div class="card-img"><img src="${champImg}"></div>
+      <div class="card-body">
+         
+         <h4 class="textNameChamp"> ${champName} </h4>
+       
+         
+      </div>
   </div>
 </div>`
 
+
+
+   
  
  }
 });

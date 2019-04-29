@@ -10,10 +10,17 @@
  </head>
  <body>
    
-   <div class="container">
+   <div class="container fluid">
+    
+      <div class="row md-2">
+          <div class="col-md-2">...</div>
+          <div class="col-md-8 title">DATA LOL</div>
+          <div class="col-md-2">...</div>
+        </div>
+      </div>
      <div class="row">
-       <div class="col-md-9">
-         <select id="userSelectedTag">
+       <div class="col-md-8">
+         <select class="selectClass" id="userSelectedTag">
             <option selected>Ver</option>
              <option value="Todos">Todos</option>
              <option value="Fighter"> Fighter </option>
@@ -25,11 +32,15 @@
              
          </select>
          CHAMPS
-         <div id="championImg" class=estilo2>
+         <div class="row"></div>
+           <div id="championImg" class="card-deck"></div>
+         </div>
+
+         
            
          </div>
        </div>
-       <div class="col-md-3">
+       <div class="col-md-2">
          INFO
          <p>b</p>
        <div class=estilo2 >
