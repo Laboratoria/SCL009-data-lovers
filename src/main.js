@@ -26,7 +26,7 @@ championImg.innerHTML +=
          
       </div>
   </div>
-</div>`
+</div></a>`
 
 
 
@@ -34,7 +34,7 @@ championImg.innerHTML +=
  
  }
 });
-
+console.log(championImg);
 
 
 

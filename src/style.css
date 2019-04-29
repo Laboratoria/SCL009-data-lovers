@@ -54,4 +54,9 @@ color: #AE8D16;
 	width: 50px;
 
 }
-
+#section-information-champ-left{
+	background-color: aqua;
+}
+#section-information-champ-rigth{
+	background-color: gold;
+}
