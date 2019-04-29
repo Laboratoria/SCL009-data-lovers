@@ -1,8 +1,13 @@
-/* Manejo de data */
+const filterData =(data, condition) =>{
 
-// esta es una función de ejemplo
-// puedes ver como agregamos la función a nuestro objeto global window
+    const datatype = data.filter(el=> {
+    
+    return el.type.includes(condition);
+    });
+    
+    return datatype;
+    };
 
 
-
+window.filterData = filterData;
 
