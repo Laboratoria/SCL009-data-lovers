@@ -19,8 +19,10 @@ body{
     text-shadow: 2px 0 0 #E5D598, -5px 0 0 #E5D598, 0 5px 0 #E5D598, 0 -5px 0 #E5D598, 5px 5px #E5D598, -5px -5px 0 #E5D598, 5px -5px 0 #E5D598, -5px 5px 0 #E5D598;
 }
 
-.textNameChamp{
-    font-size: 30px;
+.card-text{
+    font-size: 10px;
+    text-align: center;
+    display: inline-block;
 }
 .cardstyle{
 display: inline;

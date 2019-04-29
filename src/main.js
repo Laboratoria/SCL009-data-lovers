@@ -19,15 +19,16 @@ selectChange.addEventListener('change', () =>{
  championImg.innerHTML += // <a class="btn btn-primary" aria-pressed="true" role="button">
  `<div class="col-md-2">
   <div class="card cardstyle">
-      <div class="cardstyle" ><img src="${champImg}"></div>
+      
       <div class="card-body cardstyle">
-         
-         <h4 class="textNameChamp"> ${champName} </h4>
+         <img src="${champImg}">
+         <p class="card-text"> ${champName} </p>
        
          
       </div>
   </div>
-</div></a>`
+</div>`
+//</a>
 
 
 
