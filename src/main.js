@@ -5,6 +5,7 @@ const selectChange = document.getElementById("userSelectedTag");
 const dataMain = window.LOL.data;
 let champImg;
 let champName;
+//window. la funcion se vuelve global
 window.onload = function showAllOnload() {  //funcion para mostrar todos al inicio
  
   for(let i=0;i< window.filteringResult("Todos",dataMain).length;i++){
