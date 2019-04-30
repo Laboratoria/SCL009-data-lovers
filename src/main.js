@@ -9,13 +9,10 @@ btnFilter.addEventListener("click", () => {
     const result = window.filterData(accessValue, selectRol);
    result.forEach(element => {
     
-        containerRol.innerHTML += `  <div class="card col-4">
+        containerRol.innerHTML += `  <div class="card col-2">
         <img class="card-img-top" src="${element.splash}" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">${element.name}</h5>
-          <p class="card-text">${element.title} </p>
-          <p class="card-text">${element.tags} </p>
-          <p class="card-text">${element.blurb} </p>
           <p class="card-text"><small class="text-muted">WinnerLegends</small></p>
         </div>
       </div>
@@ -24,6 +21,9 @@ btnFilter.addEventListener("click", () => {
     })
 })
 
+/*<p class="card-text">${element.title} </p>
+<p class="card-text">${element.tags} </p>
+<p class="card-text">${element.blurb} </p>*/
 
 
 
@@ -31,7 +31,7 @@ const btnChampions = document.getElementById("champions");
 btnChampions.addEventListener("click", () => {
   container.innerHTML = "";
  accessValue.forEach(element => {
-        container.innerHTML += ` <div class="card col-3" style="width: 18em;">
+        container.innerHTML += ` <div class="card col-2"style="width: 18em;">
 <img class="card-img-top" src="${element.img}" alt="Card image cap">
 <div class="card-body"> ${element.name} <br> ${element.title} 
 <div class="text-info"> ${element.tags} </div>
