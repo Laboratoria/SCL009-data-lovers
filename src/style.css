@@ -4,3 +4,31 @@
     font-style: italic;
 }
 
+body
+{ background: center;
+ text-align: center;
+ background: url(fondo2.png);
+ background-repeat:no-repeat;
+ background-position: 10% 0; 
+ background-size: 100%;
+ background-attachment:fixed;
+
+} 
+h1
+{
+    font-family: 'Volkhov', serif;
+    font-size: 70px;
+   /* text-shadow: -2px -2px 1px rgb(255, 254, 254), 2px 2px 1px
+     rgb(250, 248, 248), -2px 2px 1px  rgb(250, 248, 248), 2px -2px 1px
+      rgb(255, 255, 255);*/
+      color: #FCD203;
+      text-shadow: -2px -2px 1px #000, 
+      2px 2px 1px #000, 
+      -2px 2px 1px #000, 
+      2px -2px 1px #000;
+}
+p1
+{  font-family: 'Scada', sans-serif;
+    font-size: 20px;
+    color: #FCD203;
+}
