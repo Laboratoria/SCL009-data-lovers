@@ -3,21 +3,6 @@ global.assert = require('chai').assert;
 require('../src/data');
 require('./data.spec.js');
 
-describe('function filteringResult' ()=>{
-	const datalol=[
-	{
-		name: 'Akali',
-		tags: 'Assassin'
-	}
-	{
-		name: 'Annie',
-		tags: 'Mage'
-	}
-	];
-	it('deberia retornar el objeto Akali al filtrar', ()=>{
-		assert.deepEqual(window.filteringResult(datalol, 'Assassin'),[{name:'Akali', tags:'Assassin'}])
-	})
-})
 
 describe('example', () => {
   
@@ -36,7 +21,7 @@ describe('filteringResult',() =>{
 assert.equal(typeof filteringResult, 'function')
   });
   it('deberia retornar Ashe,Azir,Caitlyn,Corki,Draven,Ezreal,Graves,Jayce,Jhin,Jinx,Kalista,Kennen,Kindred,KogMaw,Lucian',() => { 
-    assert.equal(window.filteringResult('Marksman',data),"Ashe","Azir");
+    assert.equal(window.filteringResult('Marksman',window.LOL.data),"Ashe","Azir");
   });
 
 })

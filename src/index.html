@@ -11,17 +11,12 @@
  <body>
    
    <div class="container fluid">
-    
-      <div class="row md-2">
-          <div class="col-md-2"></div>
-          <div class="col-md-8 title">DATA LOL</div>
-          <div class="col-md-2"></div>
-        </div>
-      </div>
-     <div class="row">
+    <h1 class="title">DATA LOL</h1>
+      
+     <div class="row"> <!--CHAMPIONS CARDS-->
        <div class="col-md-8">
          <select class="selectClass" id="userSelectedTag">
-            <option selected>Ver</option>
+            <option disabled selected>Filtrar</option>
              <option value="Todos">Todos</option>
              <option value="Fighter"> Fighter </option>
              <option value="Tank"> Tank </option>
@@ -33,40 +28,20 @@
          </select>
          CHAMPS
 
-         <div class="row"></div>
-           <div id="championImg" class="card-group"></div>
+         
+           <div id="divChampionImg" class="row">
+           
+           <div id="championImg" class="card-group text-center scrollable"></div>
          </div>
-
+</div>
+</div> <!--FIN CHAMPIONS CARDS-->
 
       
            
-         </div>
-       </div> <!--FIN COL CHAMPIONS VIEW-->
+         </div><!--FIN COINTAINER-->
+       
 
-       <!--SECTION INFORM CHAMPIONS-->
-       <div class="col-md-2" id="section-information-champ-left">
-        
-       </div>
-       <div class="col-md-2">
-         INFO
-         <p>b</p>
-       <div class=estilo2 >
-             <p>a</p>
-
-       <div class="col-md-2" id="section-information-champ-rigth">
-         
-       </div>
-
-     </div> <!--FIN ROW CHAMPIONS VIEW-->
-
-     </div>
-
-
-
-   <!-- <script src="./data/injuries/injuries.js"></script> -->
-   <!-- <script src="./data/pokemon/pokemon.js"></script> -->
-   <!-- <script src="./data/steam/steam.js"></script> -->
-   <!-- <script src="./data/worldbank/worldbank.js"></script> -->
+  
    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

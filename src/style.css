@@ -12,23 +12,38 @@ body{
     
   }
 .title{
-    font-size: 5rem;
+    
     text-align: center;
     color: #AE8D16;
     border: 30px;
     text-shadow: 2px 0 0 #E5D598, -5px 0 0 #E5D598, 0 5px 0 #E5D598, 0 -5px 0 #E5D598, 5px 5px #E5D598, -5px -5px 0 #E5D598, 5px -5px 0 #E5D598, -5px 5px 0 #E5D598;
 }
 
-.card-text{
-    font-size: 10px;
-    text-align: center;
-    display: inline-block;
+.pname{
+    font-size: 17px;
+    margin-top: 20px;
+    
 }
-.cardstyle{
-display: inline;
-background: white;
 
+
+
+#divChampionImg{
+    overflow: hidden;
+    
+    
 }
+.scrollable {
+    height: 1224px;
+    overflow-y: auto;
+}
+
+@media screen and (max-width: 992px){
+    .scrollable {
+        height: auto;
+        overflow-y: auto;
+    }
+}
+
 .selectClass{
 background: black;
 opacity: 0,5;

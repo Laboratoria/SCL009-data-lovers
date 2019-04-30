@@ -1,8 +1,8 @@
 /* Manejo de data */
 // esta es una función de ejemplo
 // puedes ver como agregamos la función a nuestro objeto global window
+const data = window.LOL.data;
 
-const data= LOL.data; // ingresar a la data
 const dataKeys= Object.keys(data) // cada uno de los champs
 const example = () => {
   return 'example';
