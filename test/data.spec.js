@@ -1,16 +1,15 @@
-global.window = global;
-global.assert = require('chai').assert;
-require('../src/data');
-require('./data.spec.js');
-
-
-describe('example', () => {
+describe('filterData', () => {
   
+
   it('debería ser una función', () => {
-    assert.equal(typeof example, 'function');
+
+    assert.equal(typeof 'filterData', 'function')
   });
 
-  it('debería retornar "example"', () => {
-    assert.equal(example(), 'example');
-  });
+ /* it('debería retornar el objeto Soporte al filtrar por tags Support', () => {
+
+    assert.deepEqual(filterData(data, 'Support'), [{ "name": "Alistar" }]
+      });*/
+
 })
+      //usar deepEqual porq es para array y objetos

@@ -7,21 +7,17 @@
 window.filterData =  filterData; */
 
 const filterData = (data, rol) => {
-  const nowFilter = data.filter ((element) => {
+  const nowFilter = data.filter((element) => {
     return element.tags.includes(rol);
   });
   return nowFilter;
 };
-window.filterData =  filterData; 
+window.filterData = filterData;
 
-const sortData = (data, sortBy, sortOrder) => {
-  const nowSort = data.sort ((low, high)=> {
-    if (low.name > high.name) {
-      return 1;
-    } if (low.name < high.name) {
-      return 0;
-    }
+/*const sortData = (data, sortBy, sortOrder) => {
+  data.sort((a, b) => {
+    return a - b;
+
   });
-  return sortData;
-};
-window.sortData = sortData;
+}
+window.sortData = sortData; */

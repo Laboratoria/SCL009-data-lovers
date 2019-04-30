@@ -8,7 +8,6 @@ btnFilter.addEventListener("click", () => {
     const selectRol = document.getElementById("rol-lol").value
     const result = window.filterData(accessValue, selectRol);
    result.forEach(element => {
-    
         containerRol.innerHTML += `  <div class="card col-4">
         <img class="card-img-top" src="${element.splash}" alt="Card image cap">
         <div class="card-body">
@@ -24,7 +23,10 @@ btnFilter.addEventListener("click", () => {
     })
 })
 
-
+/*const btnFilterOfFilter = document.getElementById("filter-filter");
+btnFilterOfFilter.addEventListener("click" () => {
+const resultFilter = window.sortData(result, )
+})*/
 
 
 const btnChampions = document.getElementById("champions");
