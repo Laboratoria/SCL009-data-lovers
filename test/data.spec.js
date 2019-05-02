@@ -3,14 +3,22 @@ global.assert = require('chai').assert;
 require('../src/data');
 require('./data.spec.js');
 
+describe('filterData', () => {
 
-describe('example', () => {
-  
+  const data = [
+    { name: "Aatrox", tags: ["Fighter", "Tank"]},
+    { name: "Alistar", tags: ["Tank", "Support"]},
+    { name: "Amumu", tags: ["Tank", "Mage"]}
+  ]
+
   it('debería ser una función', () => {
-    assert.equal(typeof example, 'function');
+    assert.equal(typeof window.filterData, 'function');
   });
 
-  it('debería retornar "example"', () => {
-    assert.equal(example(), 'example');
+  it('debería retornar los objetos filtrados por rol seleccionado', () => {
+    assert.deepEqual(window.filterData(data, 'Fighter'),  [{ name: "Aatrox", tags: ["Fighter", "Tank"]}] );
   });
+
 })
+
+//usar deepEqual porq es para array y objetos
