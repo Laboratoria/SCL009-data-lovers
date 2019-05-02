@@ -1,27 +1,27 @@
 /* Manejo de data */
 // esta es una función de ejemplo
 // puedes ver como agregamos la función a nuestro objeto global window
-const data = window.LOL.data;
 
-const dataKeys= Object.keys(data) // cada uno de los champs
-const example = () => {
-  return 'example';
-};
 
-window.example = example;
-
-  const filteringResult = (selectedTag,data)=>{
-  let filterChampTag = dataKeys.filter( (element)=>{ 
+  const filteringResult = (selectedTag,allChampionData)=>{
+  const allChampionNames = Object.keys(allChampionData);
+  let filterChampTag = allChampionNames.filter( singleChampionName =>{ 
   if(selectedTag==="Todos"){ //true para todos
-    return data[element];
+    return allChampionData[singleChampionName];
   }else{
-    return data[element].tags.includes(selectedTag);} //true si incluye tag
+    return allChampionData[singleChampionName].tags.includes(selectedTag);} //true si incluye tag
   });
 
     return filterChampTag;
-    } // champs seleccionados
+    } 
   
-window.filteringResult=filteringResult;
+window.filteringResult = filteringResult;
+
+//const resultFilterhouse= data.filter(element =>{
+  //return element.house === condicion;
+//})
+//return resultFilterhouse
+//)
 
 
  

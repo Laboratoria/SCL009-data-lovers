@@ -1,27 +1,34 @@
 global.window = global;
 global.assert = require('chai').assert;
 require('../src/data');
-require('./data.spec.js');
+require('../src/data/lol/lol');
 
 
-describe('example', () => {
-  
-  it('debería ser una función', () => {
-    assert.equal(typeof example, 'function');
-  });
 
-  it('debería retornar "example"', () => {
-    assert.equal(example(), 'example');
-  });
-})
 
 
 describe('filteringResult',() =>{
+  const dataTest = {
+    type: "champion",
+    format: "standAloneComplex",
+    version: "6.24.1",
+    data: {
+      Aatrox: {
+        id: "Aatrox",
+       name: "Aatrox",
+       tags: ["Fighter", "Tank"],
+       },
+       Camille: {
+       id: "Camille",
+       name: "Camille",
+       tags: ["Fighter", "Tank"],
+       },}}
+
   it('deberia ser una funcion',() =>{
 assert.equal(typeof filteringResult, 'function')
   });
-  it('deberia retornar Ashe,Azir,Caitlyn,Corki,Draven,Ezreal,Graves,Jayce,Jhin,Jinx,Kalista,Kennen,Kindred,KogMaw,Lucian',() => { 
-    assert.equal(window.filteringResult('Marksman',window.LOL.data),"Ashe","Azir");
+  it('deberia retornar Aatrox y Camille al filtrar por tank',() => { 
+    assert.deepEqual(window.filteringResult("Tank",dataTest.data),["Aatrox", "Camille"]);
   });
 
 })
