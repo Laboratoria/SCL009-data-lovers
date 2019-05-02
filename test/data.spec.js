@@ -27,12 +27,6 @@ require('./data.spec.js');
 
 describe('filterData', () => {
   
-
-
-
-
-
-
   it('debería ser una función', () => {
     assert.equal(typeof filterData, 'function');
   });
@@ -71,7 +65,7 @@ describe('sortData', () => {
 
 
   it('debería retornar la data ordenada a-z por nombre', () => {
-    assert.deepEqual(window.filterData(data,"num","ascaz"), [
+    assert.deepEqual(window.sortData(data,"name","ascaz"), [
        {"num": "001",
       "name": "Bulbasaur",
       "type": [
@@ -94,6 +88,77 @@ describe('sortData', () => {
   )
   });
 
+  it('debería retornar la data ordenada z-a por nombre', () => {
+    assert.deepEqual(window.sortData(data,"name","descza"), [
+      {"num": "004",
+      "name": "Charmander",
+      "type": [
+        "Fire"]
+      },
+        {"num": "010",
+      "name": "Caterpie",
+      "type": [
+        "Bug"]
+      },
+      
+      {"num": "001",
+      "name": "Bulbasaur",
+      "type": [
+        "Grass",
+        "Poison"]
+      }
+               
+    
+  ]
+  )
+  });
+
+  it('debería retornar la data ordenada 1-151 por numero', () => {
+    assert.deepEqual(window.sortData(data,"num","ascnum"), [
+        {"num": "001",
+      "name": "Bulbasaur",
+      "type": [
+        "Grass",
+        "Poison"]
+      },
+      {"num": "004",
+      "name": "Charmander",
+      "type": [
+        "Fire"]
+      },
+        {"num": "010",
+      "name": "Caterpie",
+      "type": [
+        "Bug"]
+      }
+      
+    ]
+  )
+  });
+
+
+  it('debería retornar la data ordenada 151-1 por numero', () => {
+    assert.deepEqual(window.sortData(data,"num","descnum"), [
+        {"num": "010",
+      "name": "Caterpie",
+      "type": [
+        "Bug"]
+      }, 
+      {"num": "004",
+      "name": "Charmander",
+      "type": [
+        "Fire"]
+      },{"num": "001",
+      "name": "Bulbasaur",
+      "type": [
+        "Grass",
+        "Poison"]
+      }
+       
+      
+    ]
+  )
+  });
 
 
 });
