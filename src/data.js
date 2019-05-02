@@ -1,11 +1,3 @@
-/*const filterData = (data, rol) => {
-  const nowFilter = data.filter ((element) => {
-      return (element.tags[0] === rol || element.tags[1] === rol );
-  });
- return nowFilter;
-};
-window.filterData =  filterData; */
-
 const filterData = (data, rol) => {
   const nowFilter = data.filter((element) => {
     return element.tags.includes(rol);
@@ -14,10 +6,21 @@ const filterData = (data, rol) => {
 };
 window.filterData = filterData;
 
-/*const sortData = (data, sortBy, sortOrder) => {
-  data.sort((a, b) => {
-    return a - b;
-
+const sortData = (data, sortOrder) => {
+  const nowSort = data.sort ((a, z)=> {
+    if (a.name > z.name) {
+      return 1;
+    } if (a.name < z.name) {
+      return 0;
+    }
   });
-}
-window.sortData = sortData; */
+  /*if (sortOrder === '00') {
+    return nowSort;
+  }
+  if (sortOrder === '01') {
+    nowSort.reverse();
+  }
+  return 0;*/
+};
+window.sortData = sortData;
+

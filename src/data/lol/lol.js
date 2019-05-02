@@ -6972,4 +6972,4 @@ const LOL = {
     }
   }
 };
-//window.LOL = LOL;
+window.LOL = LOL;

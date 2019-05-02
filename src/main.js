@@ -1,40 +1,27 @@
-const accessValue = Object.values(LOL.data); // OB arr q contiene los valores de las prop de obj
-const containerRol = document.getElementById("container-rol"); // div que imprime lo q seleccione en select
-const container = document.getElementById("container-result"); //div q contiene todos mis campeones
+const myData = Object.values(LOL.data); // OB arr q contiene los valores de las prop de obj
+const resultDiv = (data) =>{
+  containerResult.innerHTML = "";
+  data.forEach(element => {
+    containerResult.innerHTML += `<div class="card col-sm-12 col-md-4 col-lg-2 mt-4">
+                                    <img class="card-img-top" src="${element.splash}" alt="Card image cap">
+                                    <div class="card-body">${element.name} <br> ${element.title} 
+                                    <div class="text-info"> ${element.tags} </div>
+                                  </div>
+                                `;
+  })
+} 
 
-const btnFilter = document.getElementById("select-filter");
-btnFilter.addEventListener("click", () => {
-    containerRol.innerHTML = "";
-    const selectRol = document.getElementById("rol-lol").value
-    const result = window.filterData(accessValue, selectRol);
-   result.forEach(element => {
-        containerRol.innerHTML += `  <div class="card col-4">
-        <img class="card-img-top" src="${element.splash}" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">${element.name}</h5>
-          <p class="card-text"><small class="text-muted">WinnerLegends</small></p>
-        </div>
-      </div>
-   
-   `
-    })
+const containerResult = document.getElementById("container-result"); //div q contiene todos mis resultados
+
+const selectRol = document.getElementById("rol-lol"); // accedo al evento (addEventListener)
+selectRol.addEventListener("change", () => {
+  const selectRol = document.getElementById("rol-lol").value // accedo al valor (el rol que escoge el usuario)
+  const result = window.filterData(myData, selectRol);
+  resultDiv(result);
+
 })
-
-/*const btnFilterOfFilter = document.getElementById("filter-filter");
-btnFilterOfFilter.addEventListener("click" () => {
-const resultFilter = window.sortData(result, )
-})*/
-
 
 const btnChampions = document.getElementById("champions");
 btnChampions.addEventListener("click", () => {
-  container.innerHTML = "";
- accessValue.forEach(element => {
-        container.innerHTML += ` <div class="card col-2"style="width: 18em;">
-<img class="card-img-top" src="${element.img}" alt="Card image cap">
-<div class="card-body"> ${element.name} <br> ${element.title} 
-<div class="text-info"> ${element.tags} </div>
-</div>
-`
-    });
+    resultDiv(myData);
 })
