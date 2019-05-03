@@ -17,6 +17,23 @@
   
 window.filteringResult = filteringResult;
 
+
+
+const orderDifficulty = (selectOrder,allChampionData) =>{
+ 
+  const allChampionNames = Object.values(allChampionData);
+  if(selectOrder === "difficulty"){
+    let orderResult = allChampionNames.sort(function (a, b){
+    return  a.info.difficulty-b.info.difficulty;})
+    
+  return orderResult;
+  }
+  
+};
+
+
+window.orderDifficulty = orderDifficulty
+
 //const resultFilterhouse= data.filter(element =>{
   //return element.house === condicion;
 //})
