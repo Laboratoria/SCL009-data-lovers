@@ -15,12 +15,11 @@ body
  
 } 
 
-
-
 .headboard{
   /* background-color: aliceblue; */
   margin-top:50px;   /*  margin, corresponde al margen */
   padding-top: 5px;   /*  padding es como margen pero interior */
+
 
 }
 .headboard h1{
