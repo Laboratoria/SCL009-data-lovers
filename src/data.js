@@ -4,12 +4,12 @@
 
 
   const filteringResult = (selectedTag,allChampionData)=>{
-  const allChampionNames = Object.keys(allChampionData);
-  let filterChampTag = allChampionNames.filter( singleChampionName =>{ 
+  const allChampionValues = Object.values(allChampionData);
+  let filterChampTag = allChampionValues.filter( element =>{ 
   if(selectedTag==="Todos"){ //true para todos
-    return allChampionData[singleChampionName];
+    return element;
   }else{
-    return allChampionData[singleChampionName].tags.includes(selectedTag);} //true si incluye tag
+    return element.tags.includes(selectedTag);} //true si incluye tag
   });
 
     return filterChampTag;
