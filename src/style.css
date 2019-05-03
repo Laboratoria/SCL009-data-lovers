@@ -33,7 +33,7 @@ body{
     
 }
 .scrollable {
-    height: 1224px;
+    height: 1024px;
     overflow-y: auto;
 }
 
@@ -43,6 +43,8 @@ body{
         overflow-y: auto;
     }
 }
+
+
 
 .selectClass{
 background: black;

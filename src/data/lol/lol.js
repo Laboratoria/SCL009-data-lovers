@@ -6975,4 +6975,6 @@ const LOL = {
   }
 };
 
-window.LOL=LOL;
+
+window.LOLdata = LOL.data;
+
