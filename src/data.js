@@ -1,14 +1,17 @@
 const filterData = (data, rol) => {
   const nowFilter = data.filter((element) => {
+
     return element.tags.includes(rol);
   });
   return nowFilter;
 };
 window.filterData = filterData;
 
-const sortData = (data, sortBy) => { //intentar con split
+
+const sortData = (data, sortBy) => {
   let newData = [];
- data.forEach((element) => {
+  data.forEach((element) => {
+
     newData.push(element);
     newData.sort((a, b) => {
       if (a.name > b.name) {
@@ -24,7 +27,8 @@ const sortData = (data, sortBy) => { //intentar con split
     } else {
       return newData.reverse();
     }
- });
+
+  });
   return newData;
 };
 
@@ -48,3 +52,4 @@ const sortDifficulty = (data, sortOrder) => {
 }
 
 window.sortDifficulty = sortDifficulty;
+

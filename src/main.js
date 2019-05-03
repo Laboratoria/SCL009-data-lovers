@@ -3,7 +3,8 @@ let  result = "";
 
 const containerResult = document.getElementById("container-result"); //div q contiene todos mis resultados
 
-const resultDiv = (data) =>{
+const resultDiv = (data) => {
+
   containerResult.innerHTML = "";
   data.forEach(element => {
     containerResult.innerHTML += `<div class="card col-sm-12 col-md-4 col-lg-2 mt-4" onclick="loadModal('${element.name}')" >
@@ -20,6 +21,23 @@ selectRol.addEventListener("change", () => {
   const selectRol = document.getElementById("rol-lol").value // accedo al valor (el rol que escoge el usuario)
   result = window.filterData(myData, selectRol);
   resultDiv(result);
+})
+
+const sortTest = document.getElementById("sort-by");
+sortTest.addEventListener("change", () => {
+//const selectSort = document.getElementById("sort-by").value
+const selectSort = document.getElementById("ascendente").selected; // capturo sólo el que quiero
+result = window.sortData(result, selectSort);
+resultDiv(result);
+
+})
+
+const difficult = document.getElementById("sort-dif");
+difficult.addEventListener("change", () => {
+const selectDifficult = document.getElementById("lowDifficult").selected; // capturo sólo el que quiero
+result = window.sortDifficulty(result, selectDifficult);
+resultDiv(result);
+
 
 })
 

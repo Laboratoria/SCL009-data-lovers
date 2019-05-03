@@ -13,6 +13,7 @@
   </head>
   <body>
   <div  class="container">
+
     <!-- corresponde a la cabecera -->
     <div class="headboard"> 
     <h1>Winner Legends</h1>
@@ -22,38 +23,36 @@
       
     
     <div id="root">
-      <div id= "select-rol" class="container-fluid">
-          <select id="rol-lol" >
-              <option value=""> --Selecciona el Rol --</option>
-              <option value="Assassin">Asesino</option>
-              <option value="Support">Soporte</option>
-              <option value="Mage">Mago</option>
-              <option value="Tank">Tanque</option>
-              <option value="Marksman">Tirador</option>
-              <option value="Fighter">Luchador</option>
-          </select>
 
-          <select id="sort-by" >
-              <option value="">--Selecciona el orden alfabético--</option>
-              <option  id= "ascendente" value="ascendente">Ascendente</option>
-              <option id= "descendente" value="descendente">Descendente</option>
-          </select>
-          <select id="sort-dif" >
-              <option value="">--Selecciona el orden de dificultad--</option>
-              <option  id= "lowDifficult" value="lowDifficult">Menor dificultad</option>
-              <option id= "highDifficult" value="highDifficult" >Mayor dificultad</option>
-          </select>
-       </div> <br>
-         
-       <button id= "champions" class="btn btn-primary">Revisa tus campeones</button>
-      </div>
+        <div id= "select-rol" class="container-fluid">
+            <select id="rol-lol" >
+                <option value=""> --Selecciona el Rol --</option>
+                <option value="Assassin">Asesino</option>
+                <option value="Support">Soporte</option>
+                <option value="Mage">Mago</option>
+                <option value="Tank">Tanque</option>
+                <option value="Marksman">Tirador</option>
+                <option value="Fighter">Luchador</option>
+            </select>
+
+            <select id="sort-by" >
+                <option value="">--Selecciona el orden alfabético--</option>
+                <option  id= "ascendente" value="ascendente">Ascendente</option>
+                <option id= "descendente" value="descendente">Descendente</option>
+            </select>
+            <select id="sort-dif" >
+                <option value="">--Selecciona el orden de dificultad--</option>
+                <option  id= "lowDifficult" value="lowDifficult">Menor dificultad</option>
+                <option id= "highDifficult" value="highDifficult" >Mayor dificultad</option>
+            </select>
+         </div> <br>
+       
+      <button id= "champions" class="btn btn-primary">Revisa tus campeones</button>
+    </div>
     <!-- mantengo todos los resultados -->
     <div id="container-result" class="row"> </div>
-          
  
-    <!-- The Modal -->
-    <div id="container-modal"  class="row" ></div> 
-  </div> <!--fin container-->
+
    <!--Enlace a jquery, popper y boostrap-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
