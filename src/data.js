@@ -11,6 +11,7 @@ window.filterData = filterData;
 const sortData = (data, sortBy) => {
   let newData = [];
   data.forEach((element) => {
+
     newData.push(element);
     newData.sort((a, b) => {
       if (a.name > b.name) {
@@ -26,6 +27,7 @@ const sortData = (data, sortBy) => {
     } else {
       return newData.reverse();
     }
+
   });
   return newData;
 };
@@ -50,3 +52,4 @@ const sortDifficulty = (data, sortOrder) => {
 }
 
 window.sortDifficulty = sortDifficulty;
+
