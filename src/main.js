@@ -4,7 +4,7 @@ const showPokemones = document.getElementById("cards");
 
 const filterType = document.getElementById("filterType");
 
-const orderdata= document.getElementById("order");
+const orderData= document.getElementById("order");
 
 let i=0, cardPokemon = '',j=0;
 
@@ -13,9 +13,11 @@ const data = window.POKEMON.pokemon;
 
 
 
+
+
 /*Funcion que muestra pokemones*/
 
-const showPokemon = () =>{
+const showPokemon = (data) =>{
 
 for ( i=0; i<data.length;i++){
 
@@ -24,24 +26,45 @@ for ( i=0; i<data.length;i++){
 cardPokemon += `<div class="pokemonCards  col-xs-12 col-md-3">
 <div class="cardsAll">
 <div class="imgPokemon">
- <img src=${data[i].img}  alt='Pokemon' class="imgpokemonlist">
+ <img src=${data[i].img}  alt="${data[i].name}" class="imgpokemonlist">
 
 </div>
 <div class="card-body">
-    <div class ="namePokemon">
-    <h5 class="card-title">${data[i].name} N${data[i].num}</h5>
-    </div><span>Tipo:</span>`
+    <div class="">
+    <p class="card-title">${data[i].name} N${data[i].num}</p>
+    </div>
+    <p class = "card-title"><span class="titlePokemon">Tipo:`
 
 
 for ( j=0; j<data[i].type.length;j++){
 
-    cardPokemon += `<span class="card-text">${data[i].type[j]} </span>`
+    cardPokemon += `${data[i].type[j]} </span>`
   
 }
 
-cardPokemon += `<p></p><a href="#" class="btn btn-primary">Detalle</a>
+cardPokemon += `</p><a href="#" class="btn btn-primary" data-toggle="modal" data-target="#miModal" id="${data[i].id}" onclick = "alert(${data[i].id})">Detalle</a>
 </div>
 </div>
+</div>
+
+
+
+
+<div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel"></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				
+			</div>
+			<div class="modal-body">
+				Texto del modal
+			</div>
+		</div>
+	</div>
 </div>`;
 
     
@@ -55,108 +78,57 @@ showPokemones.innerHTML = cardPokemon;
 showPokemon(data);
 
 /*Filtrar pokemones*/
-
-filterType.addEventListener("change",()=>{
+filterType.addEventListener("click",(event)=>{
     cardPokemon= '';
-    let condition = document.getElementById("filterType").value;
-        
+    let condition = event.target.text;
+
+           
     const dataType = window.filterData(data, condition);
  
 
-    for ( i=0; i<dataType.length;i++){
-
-  
-
-        cardPokemon += `<div class="pokemonCards  col-xs-12 col-md-3">
-        <div class="cardsAll">
-        <div class="imgPokemon">
-         <img src=${dataType[i].img}  alt='Pokemon' class="imgpokemonlist">
-        
-        </div>
-        <div class="card-body">
-            <div class ="namePokemon"><h5 class="card-title">${dataType[i].name} N${dataType[i].num}</h5>
-            
-            </div><span>Tipo:</span>`
-        
-        
-        for ( j=0; j<dataType[i].type.length;j++){
-        
-            cardPokemon += `<span class="card-text">${dataType[i].type[j]} </span>`
-          
-        }
-        
-        cardPokemon += `<p></p><a href="#" class="btn btn-primary">Detalle</a>
-        </div>
-        </div>
-        </div>`;
-        
-
-
-    
-
-    showPokemones.innerHTML = cardPokemon;
-
-}
+ showPokemon(dataType);
 
 });
 
 /*Ordenar pokemones*/
 
-orderdata.addEventListener("change", () => {
+orderData.addEventListener("click", (event) => {
 cardPokemon= '';
 
-let sortOrderSelect = document.getElementById("order").value;
+let sortOrderSelect = event.target.text;
 
 
 let dataSorted;
 
-    if (sortOrderSelect === "orderaz"){
+    if (sortOrderSelect === "A-Z"){
         dataSorted = window.sortData(data,"name","ascaz");
 
     }
 
-    if (sortOrderSelect === "orderza"){
+    if (sortOrderSelect === "Z-A"){
         dataSorted = window.sortData(data,"name","descza");
 
     }
-if (sortOrderSelect=== "ascendent"){
+if (sortOrderSelect=== "Ascendente"){
     dataSorted = window.sortData(data,"num","ascnum");
 }
 
-if (sortOrderSelect=== "descendent"){
+if (sortOrderSelect=== "Descendente"){
     dataSorted = window.sortData(data,"num","descnum");
 }
 
-for ( i=0; i<dataSorted.length;i++){
-
-  
-
-    cardPokemon += `<div class="pokemonCards  col-xs-12 col-md-3">
-    <div class="cardsAll">
-    <div class="imgPokemon">
-     <img src=${dataSorted[i].img}  alt='Pokemon' class="imgpokemonlist">
-    
-    </div>
-    <div class="card-body">
-        <div class ="namePokemon"><h5 class="card-title">${dataSorted[i].name} N${dataSorted[i].num}</h5>
-        
-        </div><span>Tipo:</span>`
-    
-    
-    for ( j=0; j<dataSorted[i].type.length;j++){
-    
-        cardPokemon += `<span class="card-text">${dataSorted[i].type[j]} </span>`
-      
-    }
-    
-    cardPokemon += `<p></p><a href="#" class="btn btn-primary">Detalle</a>
-    </div>
-    </div>
-    </div>`;
-    
-
-
-}
-
-showPokemones.innerHTML = cardPokemon;
+showPokemon(dataSorted);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+

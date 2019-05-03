@@ -3,7 +3,6 @@ body {
 }
 
 .pokemonCards {
-    display: inline-block;
     margin-bottom: 25px;
 }
 
@@ -27,10 +26,11 @@ body {
 }
 
 .img-logo {
-    width: 240px;
-    height: 70px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    background-color: red;
+    max-width: 220px;
+    max-height: 60px;
+    height: 100%;
+    width: 100%;
+    background-color: #f8f9fa;
     padding: 3px;
 }
 
@@ -39,18 +39,24 @@ body {
 }
 
 .imgpokemonlist {
-    width: 60%px;
-    height: 150px;
+    max-width: 60%;
+    max-height: 120px;
+    width: 100%;
+    height: 100%;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     display: block;
 }
 
 .imgPokemon {
     width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    height: 100px;
 }
 
 .cardsAll {
@@ -67,27 +73,21 @@ body {
     box-sizing: border-box;
 }
 
-.soflow {
-    -webkit-appearance: button;
-    -webkit-border-radius: 2px;
-    -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-    -webkit-padding-end: 20px;
-    -webkit-padding-start: 2px;
-    -webkit-user-select: none;
-    background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
-    background-position: 97% center;
-    background-repeat: no-repeat;
-    border: 1px solid #AAA;
-    color: #555;
-    font-size: inherit;
-    margin: 20px;
-    overflow: hidden;
-    padding: 5px 20px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 200px;
+.titlePokemon {
+    height: 50px;
+    max-height: 100%;
+    font-size: 1rem;
 }
 
-.namePokemon {
-    height: 80px;
+.btn {
+    width: 100%
+}
+
+.card-title {
+    height: 50px;
+    text-align: center;
+}
+
+img {
+    padding-top: 4px;
 }

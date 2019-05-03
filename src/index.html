@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <title>Pokemones</title>
 </head>
 
@@ -14,67 +15,62 @@
     <div id="root">
         <header>
             <section class="headerNav">
-                <div class="row">
-                    <div class="col-12 col-md-3">
-                        <img src="./img/logo.png" alt="logo" class="img-logo">
-                    </div>
-                    <div class="col-12 col-md-9">
-                        <ul class="nav justify-content-end">
-                            <li class="nav-item">
-                                <a class="nav-link active " href="#">Inicio</a>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" href="#"> <img src="./img/logo.png" alt="logo" class="img-logo"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#" onclick="window.location.reload(true)">Inicio<span class="sr-only">(current)</span></a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Compara Pokemones</a>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Filtrar
+          </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="filterType">
+
+                                    <a class="dropdown-item" href="#">Bug</a>
+                                    <a class="dropdown-item" href="#">Dragon</a>
+                                    <a class="dropdown-item" href="#">Electric</a>
+                                    <a class="dropdown-item" href="#">Fighting</a>
+                                    <a class="dropdown-item" href="#">Fire</a>
+                                    <a class="dropdown-item" href="#">Flying</a>
+                                    <a class="dropdown-item" href="#">Ghost</a>
+                                    <a class="dropdown-item" href="#">Grass</a>
+                                    <a class="dropdown-item" href="#">Ground</a>
+                                    <a class="dropdown-item" href="#">Ice</a>
+                                    <a class="dropdown-item" href="#">Normal</a>
+                                    <a class="dropdown-item" href="#">Poison</a>
+                                    <a class="dropdown-item" href="#">Psychic</a>
+                                    <a class="dropdown-item" href="#">Rock</a>
+                                    <a class="dropdown-item" href="#">Water</a>
+                                </div>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://www.pokemon.com/es/">Sitio Oficial</a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Ordenar
+          </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="order">
+
+                                    <a class="dropdown-item" href="#">A-Z</a>
+                                    <a class="dropdown-item" href="#">Z-A</a>
+                                    <a class="dropdown-item" href="#">Ascendente</a>
+                                    <a class="dropdown-item" href="#">Descendente</a>
+                                </div>
                             </li>
 
                         </ul>
+
                     </div>
-                </div>
+                </nav>
             </section>
         </header>
 
-        <!--Mostar , filtar y ordenar pokemones-->
-        <section class="pokemonList">
-            <div class="row">
 
-
-                <div class="col-xs-12 col-md-6"><select id="filterType" class="soflow">
-                            <!-- This method is nice because it doesn't require extra div tags, but it also doesn't retain the style across all browsers. -->
-                            <option value = "Filtrar" >Filtrar</option>
-                            <option value = "Bug">Bug</option>
-                            <option value = "Dragon">Dragon</option>
-                            <option value = "Electric">Electric</option>
-                            <option value = "Fighting">Fighting</option>
-                            <option value = "Fire">Fire</option>
-                            <option value = "Ghost">Ghost</option>
-                            <option value = "Grass">Grass</option>
-                            <option value = "Ground">Ground</option>
-                            <option value = "Ground">Ground</option>
-                            <option value = "Ice">Ice</option>
-                            <option value = "Normal">Normal</option>
-                            <option value = "Poison">Poison</option>
-                            <option value = "Psychic">Psychic</option>
-                            <option value = "Rock">Rock</option>
-                            <option value = "Water">Water</option>
-                          </select>
-
-                </div>
-                <div class="col-xs-12 col-md-6"><select class="soflow" id="order">
-                            <!-- This method is nice because it doesn't require extra div tags, but it also doesn't retain the style across all browsers. -->
-                            <option value="orderOption">Ordenar</option>
-                            <option value="orderaz">A-Z</option>
-                            <option value="orderza">Z-A</option>
-                            <option value="ascendent">Ascendente</option>
-                            <option value="descendent">Descendente</option>
-                          </select>
-                </div>
-
-            </div>
-
-        </section>
 
         <!--listado de pokemones-->
         <section class="pokemonList">
