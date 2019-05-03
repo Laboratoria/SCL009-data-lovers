@@ -10,7 +10,8 @@ window.filterData = filterData;
 
 const sortData = (data, sortBy) => { //intentar con split
   let newData = [];
- data.forEach((element) => {
+  data.forEach((element) => {
+
     newData.push(element);
     newData.sort((a, b) => {
       if (a.name > b.name) {
@@ -26,7 +27,8 @@ const sortData = (data, sortBy) => { //intentar con split
     } else {
       return newData.reverse();
     }
- });
+
+  });
   return newData;
 };
 
