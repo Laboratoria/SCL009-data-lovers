@@ -1,5 +1,7 @@
 const myData = Object.values(window.LOL.data); // OB arr q contiene los valores de las prop de obj
+
 let  result = "";
+
 const containerResult = document.getElementById("container-result"); //div q contiene todos mis resultados
 
 const resultDiv = (data) => {
@@ -20,6 +22,7 @@ selectRol.addEventListener("change", () => {
   const selectRol = document.getElementById("rol-lol").value // accedo al valor (el rol que escoge el usuario)
   result = window.filterData(myData, selectRol);
   resultDiv(result);
+  console.log(result);
 })
 
 const sortTest = document.getElementById("sort-by");
