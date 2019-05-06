@@ -38,3 +38,27 @@ body
     font-size: 20px;
     color: #FCD203;
 }
+#stats-compute{
+    display: none;
+}
+.compute-stats{
+    font-family: 'Scada', sans-serif;
+    font-size: 20px;
+    color: #FCD203;
+}
+
+#my-card{
+    background-color: rgba(83, 72, 72, 0.884);
+    padding-top:auto;
+    padding-right:auto;
+    padding-bottom:auto;
+    padding-left:auto;
+}
+#img-card {
+    width: 60px;
+    height: auto;
+    border-radius: 50%;
+margin-left: auto;
+  margin-right: auto;
+
+}

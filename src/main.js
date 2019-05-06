@@ -8,10 +8,11 @@ const resultDiv = (data) => {
 
   containerResult.innerHTML = "";
   data.forEach(element => {
-    containerResult.innerHTML += `<div class="card col-sm-12 col-md-4 col-lg-2 mt-4" onclick="loadModal('${element.name}')" >
-                                    <img class="card-img-top" src="${element.splash}" alt="Card image cap">
+    containerResult.innerHTML += `<div class="card col-sm-12 col-md-4 col-lg-2 mt-4"  id="my-card" onclick="loadModal('${element.name}')" >
+                                    <img class="card-img-top" id="img-card" src="${element.img}" alt="Card image cap">
                                     <div class="card-body">${element.name} <br> ${element.title} 
                                     <div class="text-info"> ${element.tags} </div>
+                                    
                                   </div>
                                 `;
   })
@@ -22,41 +23,26 @@ selectRol.addEventListener("change", () => {
   const selectRol = document.getElementById("rol-lol").value // accedo al valor (el rol que escoge el usuario)
   result = window.filterData(myData, selectRol);
   resultDiv(result);
-  console.log(result);
+ 
+  
 })
 
 const sortTest = document.getElementById("sort-by");
 sortTest.addEventListener("change", () => {
-//const selectSort = document.getElementById("sort-by").value
-const selectSort = document.getElementById("ascendente").selected; // capturo sólo el que quiero
-result = window.sortData(result, selectSort);
+const selectSort = document.getElementById("sort-by").value
+result = window.sortData(result, "name", selectSort);
 resultDiv(result);
 
+
 })
+
 
 const difficult = document.getElementById("sort-dif");
 difficult.addEventListener("change", () => {
-const selectDifficult = document.getElementById("lowDifficult").selected; // capturo sólo el que quiero
-result = window.sortDifficulty(result, selectDifficult);
+const selectDifficult = document.getElementById("sort-dif").value // capturo sólo el que quiero
+result = window.sortDifficulty(result, "info.difficulty" , selectDifficult);
 resultDiv(result);
 
-
-})
-
-const sortTest = document.getElementById("sort-by");
-sortTest.addEventListener("change", () => {
-//const selectSort = document.getElementById("sort-by").value
-const selectSort = document.getElementById("ascendente").selected; // capturo sólo el que quiero
-result = window.sortData(result, selectSort);
-resultDiv(result);
-
-})
-
-const difficult = document.getElementById("sort-dif");
-difficult.addEventListener("change", () => {
-const selectDifficult = document.getElementById("lowDifficult").selected; // capturo sólo el que quiero
-result = window.sortDifficulty(result, selectDifficult);
-resultDiv(result);
 
 
 })
@@ -64,12 +50,20 @@ resultDiv(result);
 const btnChampions = document.getElementById("champions");
 btnChampions.addEventListener("click", () => {
     resultDiv(myData);
+    const statistic = window.computeStats(myData);
+    document.getElementById("max-result").innerHTML = statistic[0];
+    document.getElementById("min-result").innerHTML = statistic[1];
+    document.getElementById("average-result").innerHTML = statistic[2];
+    document.getElementById("stats-compute").style.display="block";
+
+
 })
+
 
 const containerModal = document.getElementById("container-modal");
 
 const loadModal = (name) => {   // este name me lo entrega onclick
-//console.log(name);
+//console.log(name);*/
 const resultModal = myData.filter((element) =>{
   if (element.name === name ){
     // console.log(element.name);
@@ -77,11 +71,10 @@ const resultModal = myData.filter((element) =>{
   }
   return false;
 } 
-);
+); 
 
 const element = resultModal[0]
      
-  
 
 containerModal.innerHTML = "";
   containerModal.innerHTML = `<div class="modal fade" id="myModal">
@@ -95,9 +88,8 @@ containerModal.innerHTML = "";
       
       <!-- Modal body -->
       <div class="modal-body">
-        <img class="card-img-top" src="${element.splash}" alt="Card image cap">
+        <img class="card-img-top" id="img-modal" src="${element.splash}" alt="Card image cap">
       </div>
-
       <div class="modal-body">
           <h4 class="modal-title">${element.name}</h4>
           <div class="text-info">Info <br>
@@ -108,9 +100,10 @@ containerModal.innerHTML = "";
           <div class="card-body">${element.title} 
           <div class="text-info"> ${element.tags} </div>
           <div class="text-blurb"> ${element.blurb} </div>
+          
+          
          
       </div>
-
       <!-- Modal footer -->
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>

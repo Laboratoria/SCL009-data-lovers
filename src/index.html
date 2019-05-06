@@ -1,68 +1,87 @@
 <!DOCTYPE html>
-<html lang= "es">
-  <head>
-    <meta charset="utf-8">
-    <meta name = "viewport" content="width=device-width, initial-scale=1,
-      maximum-scale=1">
-    <title>Winner Legends</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css?family=Volkhov" rel="stylesheet">  
-    <link href="https://fonts.googleapis.com/css?family=Scada" rel="stylesheet">
+<html lang="es">
 
-  </head>
-  <body>
-  <div  class="container">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1,
+      maximum-scale=1">
+  <title>Winner Legends</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Volkhov" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Scada" rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="container">
 
     <!-- corresponde a la cabecera -->
-    <div class="headboard"> 
-    <h1>Winner Legends</h1>
-       <p>Te invitamos a que puedas encontrar toda la información que necesitas de tus campeones y de esta forma
+    <div class="headboard">
+      <h1>Winner Legends</h1>
+      <p>Te invitamos a que puedas encontrar toda la información que necesitas de tus campeones y de esta forma
         poder asegurar tu victoria.</p>
-    </div>    
-      
-    
+    </div>
+
+
     <div id="root">
 
-        <div id= "select-rol" class="container-fluid">
-            <select id="rol-lol" >
-                <option value=""> --Selecciona el Rol --</option>
-                <option value="Assassin">Asesino</option>
-                <option value="Support">Soporte</option>
-                <option value="Mage">Mago</option>
-                <option value="Tank">Tanque</option>
-                <option value="Marksman">Tirador</option>
-                <option value="Fighter">Luchador</option>
-            </select>
+      <div id="select-rol" class="container-fluid">
+        <select id="rol-lol">
+          <option value=""> --Selecciona el Rol --</option>
+          <option value="Assassin">Asesino</option>
+          <option value="Support">Soporte</option>
+          <option value="Mage">Mago</option>
+          <option value="Tank">Tanque</option>
+          <option value="Marksman">Tirador</option>
+          <option value="Fighter">Luchador</option>
+        </select>
 
-            <select id="sort-by" >
-                <option value="">--Selecciona el orden alfabético--</option>
-                <option  id= "ascendente" value="ascendente">Ascendente</option>
-                <option id= "descendente" value="descendente">Descendente</option>
-            </select>
-            <select id="sort-dif" >
-                <option value="">--Selecciona el orden de dificultad--</option>
-                <option  id= "lowDifficult" value="lowDifficult">Menor dificultad</option>
-                <option id= "highDifficult" value="highDifficult" >Mayor dificultad</option>
-            </select>
-         </div> <br>
-       
-      <button id= "champions" class="btn btn-primary">Revisa tus campeones</button>
+        <select id="sort-by">
+          <option value="">--Selecciona el orden que desees--</option>
+          <option id="a-z" value="a-z">Ascendente</option>
+          <option id="z-a" value="z-a">Descendente</option>
+
+        </select>
+        <select id="sort-dif">
+          <option value="">--Selecciona el orden de dificultad--</option>
+          <option id="lowDifficult" value="lowDifficult">Menor dificultad</option>
+          <option id="highDifficult" value="highDifficult">Mayor dificultad</option>
+        </select>
+      </div> <br>
+
+      <button id="champions" class="btn btn-primary">Revisa tus campeones</button> <br>
+
+      <div id="stats-compute" class="compute-stats">
+        <p class="stats-result">Max. salud es = </p><p id = "max-result" class="stats-results"> </p><br>
+        <p class="stats-result">Min. salud es = </p><p id = "min-result" class="stats-results"> </p><br>
+        <p class="stats-result">Salud promedio = </p><p id = "average-result" class="stats-results"></p>
+    </div>
+
     </div>
     <!-- mantengo todos los resultados -->
     <div id="container-result" class="row"> </div>
- 
+    <div id="container-modal"> </div>
+  </div>
 
-   <!--Enlace a jquery, popper y boostrap-->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    
- 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="./data/lol/lol.js"></script>
-    <script src="data.js"></script>
-    <script src="main.js"></script>
+  <!--Enlace a jquery, popper y boostrap-->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
 
 
-  </body>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="./data/lol/lol.js"></script>
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+
+
+</body>
+
 </html>
