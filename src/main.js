@@ -8,9 +8,12 @@ const resultDiv = (data) => {
 
   containerResult.innerHTML = "";
   data.forEach(element => {
-    containerResult.innerHTML += `<div class="card col-sm-12 col-md-4 col-lg-2 mt-4"  id="my-card" onclick="loadModal('${element.name}')" >
+    containerResult.innerHTML += `<div class="my-card card col-sm-12 col-md-4 col-lg-2 mt-4" 
+                                    id ="${element.name}">
                                     <img class="card-img-top" id="img-card" src="${element.img}" alt="Card image cap">
-                                    <div class="card-body">${element.name} <br> ${element.title} 
+                                    <div class="card-body">
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">${element.name}   </button><br> 
+                                    ${element.title} 
                                     <div class="text-info"> ${element.tags} </div>
                                     
                                   </div>
@@ -62,21 +65,26 @@ btnChampions.addEventListener("click", () => {
 
 const containerModal = document.getElementById("container-modal");
 
-const loadModal = (name) => {   // este name me lo entrega onclick
-//console.log(name);*/
+/*document.getElementById("${element.name}").addEventListener("click", () => {
+  data.forEach(element => {
+    if (element.name === name ){
+      return true;
+    }
+    return false;
+  } 
+  );
+})
+/*const loadModal = (name) => {   // este name me lo entrega onclick
 const resultModal = myData.filter((element) =>{
   if (element.name === name ){
-    // console.log(element.name);
     return true;
   }
   return false;
 } 
-); 
+); */
 
 const element = resultModal[0]
-     
-
-containerModal.innerHTML = "";
+  containerModal.innerHTML = "";
   containerModal.innerHTML = `<div class="modal fade" id="myModal">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -87,10 +95,24 @@ containerModal.innerHTML = "";
       </div>
       
       <!-- Modal body -->
-      <div class="modal-body">
-        <img class="card-img-top" id="img-modal" src="${element.splash}" alt="Card image cap">
+      <div class="modal-body">const loadModal = (name) => {   // este name me lo entrega onclick
+        const resultModal = myData.filter((element) =>{
+          if (element.name === name ){
+            return true;
+          }
+          return false;
+        } 
+        ); 
+        <img class="card-img-top" id="img-modal" src="${element.splash}" alt="Card image cap">const loadModal = (name) => {   // este name me lo entrega onclick
+          const resultModal = myData.filter((element) =>{
+            if (element.name === name ){
+              return true;
+            }
+            return false;
+          } 
+          ); 
       </div>
-      <div class="modal-body">
+      <div class="modal-body"><div class="text-info"> ${element.tags} </div>
           <h4 class="modal-title">${element.name}</h4>
           <div class="text-info">Info <br>
                                   attack:       ${element.info.attack} <br>
@@ -113,6 +135,5 @@ containerModal.innerHTML = "";
   </div>
 </div> <!--  fin  The Modal -->`;
 
- $("#myModal").modal(); /* lanza  el modal*/
-
-}
+ //$("#myModal").modal(); /* lanza  el modal*/
+        

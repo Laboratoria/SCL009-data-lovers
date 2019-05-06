@@ -15,7 +15,8 @@
 </head>
 
 <body>
-  <div class="container">
+ 
+    <div class="container">
 
     <!-- corresponde a la cabecera -->
     <div class="headboard">
@@ -23,9 +24,15 @@
       <p>Te invitamos a que puedas encontrar toda la información que necesitas de tus campeones y de esta forma
         poder asegurar tu victoria.</p>
     </div>
-
+    <header> <a class="nav-link"; " href="index.html"><img src="img/home.png" style="width:5%; height:5%;" alt="x" /> Home <span class="sr-only">(current)</span></a>
+    </header> 
 
     <div id="root">
+        <div>
+            <input type="text" id="textBuscar"></input>
+            <button id="buscar">Buscar</button>
+        </div>
+
 
       <div id="select-rol" class="container-fluid">
         <select id="rol-lol">
@@ -63,6 +70,7 @@
     <!-- mantengo todos los resultados -->
     <div id="container-result" class="row"> </div>
     <div id="container-modal"> </div>
+    
   </div>
 
   <!--Enlace a jquery, popper y boostrap-->
