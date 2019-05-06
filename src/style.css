@@ -21,55 +21,65 @@ body{
 
 .pname{
     font-size: 17px;
-    margin-top: 20px;
+    margin-top: 10px;
+    font-weight: bold;
     
+}
+.card-group{
+    background: rgba(0, 0, 0, 0.7);
+    border:  2px outset #AE8D16;
+    
+}
+
+.pdifficulty{
+    font-size: 15px;
 }
 
 
 
 #divChampionImg{
     overflow: hidden;
+   
     
     
 }
 .scrollable {
-    height: 1024px;
+    height: 500px;
     overflow-y: auto;
 }
 
-@media screen and (max-width: 992px){
+@media screen and (max-width: 480px){
     .scrollable {
-        height: auto;
+        height: 400;
         overflow-y: auto;
     }
 }
 
 
 
-.selectClass{
+.selectClass, .infoBar{
 background: black;
 opacity: 0,5;
 border: 3px solid;
 border-radius: 2px;
 font-size: 30px;
-color: #AE8D16;
+color: #AE8D16; 
+margin-bottom: 3px;
+margin-left: -15px;
+margin-right: 14px;
+cursor: pointer;
+padding: 6px;
 }
-
-
-
-.estilo{
-
-    background: aqua;
-    display: inline;
-    padding: 2px;
-
+.infoBar{
+    text-align: center;
+    cursor: default;
 }
-#tamaño{
-	width: 50px;}
+.selectClass option:hover{
+    
+    background: white;
+  }
 
-#textNameCard{
-    font-size: 2rem;
-}
+
 #tamaño{
 	width: 50px;
 

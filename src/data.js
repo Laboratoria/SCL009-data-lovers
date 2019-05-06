@@ -6,7 +6,7 @@
   const filteringResult = (selectedTag,allChampionData)=>{
   const allChampionValues = Object.values(allChampionData);
   let filterChampTag = allChampionValues.filter( element =>{ 
-  if(selectedTag==="Todos"){ //true para todos
+  if(selectedTag=="Todos"){ //true para todos
     return element;
   }else{
     return element.tags.includes(selectedTag);} //true si incluye tag
@@ -19,26 +19,37 @@ window.filteringResult = filteringResult;
 
 
 
-const orderDifficulty = (selectOrder,allChampionData) =>{
- 
+const orderData = (sortBy,allChampionData) =>{
+ let orderResult;
   const allChampionNames = Object.values(allChampionData);
-  if(selectOrder === "difficulty"){
-    let orderResult = allChampionNames.sort(function (a, b){
+  if(sortBy == "difficultyEasiestFirst"){
+    orderResult = allChampionNames.sort((a, b)=>{
     return  a.info.difficulty-b.info.difficulty;})
-    
-  return orderResult;
-  }
   
-};
+  }else if(sortBy == "difficultyHardestFirst"){
+    orderResult = allChampionNames.sort((a, b)=>{
+      return  b.info.difficulty-a.info.difficulty;})
+
+  }else if(sortBy == "nameA_Z"){
+    orderResult = allChampionNames.sort((a, b)=>{
+      return  a.info.name-b.info.name;})
+  }else if(sortBy == "nameZ_A"){
+    orderResult = allChampionNames.sort()
+      return  orderResult.reverse()
+  }
+  return orderResult;
+  };
+  
 
 
-window.orderDifficulty = orderDifficulty
+  
 
-//const resultFilterhouse= data.filter(element =>{
-  //return element.house === condicion;
-//})
-//return resultFilterhouse
-//)
+
+window.orderData = orderData;
+
+
+
+
 
 
  

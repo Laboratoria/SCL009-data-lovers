@@ -13,10 +13,10 @@
    <div class="container fluid">
     <h1 class="title">DATA LOL</h1>
       
-     <div class="row"> <!--CHAMPIONS CARDS-->
-       <div class="col-md-8">
+     <div class="row"> 
+       <div class="col-md-8 float-left text-left">
          <select class="selectClass" id="userSelectedTag">
-            <option disabled selected>Filtrar</option>
+            <option disabled selected>FILTRAR</option>
              <option value="Todos">Todos</option>
              <option value="Fighter"> Fighter </option>
              <option value="Tank"> Tank </option>
@@ -26,22 +26,30 @@
              <option value="Marksman"> Marksman </option>
              
          </select>
-         <select class="selectOrder" id="userSelectedOrder">
-          <option disabled selected value="0">Ordenar</option>
-           <option value="difficulty">Dificultad</option>
-           <option value="name"> Nombre </option>
+         <select class="selectClass" id="userSelectedOrder">
+          <option disabled selected value="0">ORDENAR</option>
+           <option value="nameA_Z"> Nombre: A a Z </option>
+           <option value="nameZ_A"> Nombre: Z a A </option>
+           <option value="difficultyEasiestFirst">Dificultad: Fáciles Primero</option>
+           <option value="difficultyHardestFirst">Dificultad: Difíciles Primero</option>
+           
         </select>
-         CHAMPS
-
          
-           <div id="divChampionImg" class="row">
+         
+           <div id="divContainChampionImg" class="row"> <!--CHAMPIONS CARDS-->
            
            <div id="championImg" class="card-group text-center scrollable"></div>
          </div>
 </div>
-</div> <!--FIN CHAMPIONS CARDS-->
+ <!--FIN CHAMPIONS CARDS-->
 
-      
+  <div class="col-lg- 4 col-md-4 col-sm-6 col-xs-2 float-right">
+   
+      <p class="infoBar">INFORMACIÓN</p> 
+      <div id="championInfo">
+    </div>
+      </div>
+      </div>
            
          </div><!--FIN COINTAINER-->
        
