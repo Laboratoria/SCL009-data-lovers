@@ -41,6 +41,9 @@ Durante los test de prototipo de baja fidelidad que realizamos a los usuarios  p
 
 Todas estas sugerencias han sido evaluadas y se intentarán implementar, pero principalmente nos guiaremos por los datos que nos entrega la data.
 
+Luego de analizar e intentar satisfacer las necesidades de los usuarios es que modificamos algunas caracteristicas del prototipo planteado.
+Tras esta evaluación se dejo la página con las siguientes propiedades:
+
 **Caso n°2.**
 Yo COMO jugador novato/intermedio de LoL, server LAS, QUIERO comparar las características de dos Campeones de un mismo rol, PARA escoger el más adecuado en la partida. 
 

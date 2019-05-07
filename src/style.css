@@ -1,64 +1,133 @@
 .text-info {
 
     font-style: italic;
+    font-size: 1em;
 }
 
-body
+/*body
 { background: center;
  text-align: center;
  background: url(fondo2.png);
- /* background-repeat:no-repeat; */
  background-size: 100%;
  background-position: 10% 0; 
  background-attachment:fixed;
  background-color: #000;
  
-} 
+} */
+.fondocss{
+    position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%; 
+      min-height: 100%;
+    }
 
-.headboard{
-  /* background-color: aliceblue; */
-  margin-top:50px;   /*  margin, corresponde al margen */
-  padding-top: 5px;   /*  padding es como margen pero interior */
+    .headboard{
+        /* background-color: aliceblue; */
+        margin-top:40px;   /*  margin, corresponde al margen */
+        padding-top: 5px;   /*  padding es como margen pero interior */
+        position: relative;
+        justify-content: center;     
+      }
 
-
-}
-.headboard h1{
-    font-family: 'Volkhov', serif;
-     font-size: 70px; 
-      color: #FCD203;
-      text-shadow: -2px -2px 1px #000, 
-      2px 2px 1px #000, 
-      -2px 2px 1px #000, 
-      2px -2px 1px #000;
-    
-
-}
-.headboard p{
-    font-family: 'Scada', sans-serif;
-    font-size: 20px;
-    color: #FCD203;
-}
-#stats-compute{
-    display: none;
-}
-.compute-stats{
-    font-family: 'Scada', sans-serif;
-    font-size: 20px;
-    color: #FCD203;
-}
-
-.my-card{
-    background-color: rgba(83, 72, 72, 0.884);
-    padding-top:auto;
-    padding-right:auto;
-    padding-bottom:auto;
-    padding-left:auto;
-}
-#img-card {
-    width: 60px;
-    height: auto;
-    border-radius: 50%;
-margin-left: auto;
-  margin-right: auto;
-
-}
+      .headboard h1{
+          font-family: 'Volkhov', serif;
+           font-size: 70px; 
+            color: #FCD203;
+            text-shadow: -2px -2px 1px #000, 
+            2px 2px 1px #000, 
+            -2px 2px 1px #000, 
+            2px -2px 1px #000;
+            justify-content: center;
+          
+      
+      }
+      .headboard p{
+          font-family: 'Scada', sans-serif;
+          font-size: 20px;
+          color: #FCD203;
+          text-shadow: -2px -2px 1px #000, 
+            2px 2px 1px #000, 
+            -2px 2px 1px #000, 
+            2px -2px 1px #000;
+          justify-content: center;
+      }
+      #stats-compute{
+          display: none;
+      }
+      .compute-stats{
+          font-family: 'Scada', sans-serif;
+          font-size: 20px;
+          color: #FCD203;
+      }
+      
+      .my-card{
+          background-color: rgba(83, 72, 72, 0.884);
+         /* padding-top:auto;
+          padding-right:auto;
+          padding-bottom:auto;
+          padding-left:auto;
+          justify-content: center;*/
+          justify-content: center;
+          margin: 10px;
+          padding: 10px;
+          position: relative;
+          border: 5px solid #FCD203;
+          overflow: hidden;
+      }
+      #img-card {
+          width: 60px;
+          height: auto;
+          border-radius: 50%;
+          margin-left: auto;
+        margin-right: auto;
+      
+      }
+      header{
+          width: 100%;
+          position: relative;
+      }
+      
+      #header-container{
+              width: 100%;
+              overflow: hidden;
+          }
+      
+          nav{
+             top: 0%;
+              width: 90%;
+              max-width: 1000px;
+              justify-content: center;
+              margin-bottom: 0%;
+          }
+         
+          nav > ul {
+              display:table;
+              overflow: hidden;
+              width: 100%;
+              position: relative;
+             /* background-color: rgba(5, 5, 5, 1.0);*/
+          }
+          nav > ul li {
+              display: table-cell;
+          }
+          nav > ul li a{
+              color: rgb(179, 154, 12);
+              display: block;
+              line-height: 20px;
+              padding: 20px;
+              position: relative;
+              text-align: center;
+              font-family: 'Volkhov', serif;
+              font-size: 20px; 
+               color: #FCD203;
+              -webkit-transition: all 500ms ease;
+              -o-transition: all 500ms ease;
+              transition: all 500ms ease;
+              border-radius:50px;
+          }
+          nav > ul li a:hover{
+              color: rgb(250, 249, 249);
+              background-color: rgba(31, 27, 27, 0.959);
+              
+          }
