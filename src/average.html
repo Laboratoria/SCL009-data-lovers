@@ -7,35 +7,107 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="style.css">
     <title>Average</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <h1>Average Champion Team</h1>
     <div class="container">
     	<div class="row">
-    		<div class="col">
+    		<div class="col-md-6" id="averageChampion">
     			
-    		</div>
-    	</div>
+        </div>
+        <div class="col-md-6">
+          <select name="top" id="topFirstTeam">
+            <option disabled selected>Top</option>
+            <option value="Aatrox" id="Aatrox">Aatrox</option>
+            <option value="Ahri" id="Ahri">Ahri</option>
+            <option value="Akali" id="Akali">Akali</option>
+            <option value="Alistar" id="Alistar">Alistar</option>
+            <option value="Amumu" id="Amumu">Amumu</option>
+            <option value="Anivia" id="Anivia">Anivia</option>
+            <option value="Annie" id="Annie">Annie</option>
+            <option value="Ashe"id="Ashe">Ashe</option>
+            <option value="AurelionSol"id="AurelionSol">Aurelion Sol</option>
+            <option value="Azir"id="Azir">Azir</option>
+            <option value="Bard"id="Bard">Bard</option>
+            <option value="Blitzcrank"id="Blitzcrank">Blitzcrank</option>
+            <option value="Brand"id="Brand">Brand</option>
+            <option value="Braum"id="Braum">Braum</option>
+            <option value="Caitlyn"id="Caitlyn">Caitlyn</option>
+            <option value="Camille"id="Camille">Camille</option>
+            <option value="Cassiopeia"id="Cassiopeia">Cassiopeia</option>
+            <option value="Chogath"id="Chogath">Chogath</option>
+            <option value="Corki"id="Corki">Corki</option>
+            <option value="Darius"id="Darius">Darius</option>
+            <option value="Diana"id="Diana">Diana</option>
+            <option value="Draven"id="Draven">Draven</option>
+            <option value="DrMundo"id="DrMundo">Dr. Mundo</option>
+            <option value="Ekko"id="Ekko">Ekko</option>
+            <option value="Elise"id="Elise">Elise</option>
+            <option value="Evelynn"id="Evelynn">Evelynn</option>
+        </select> 
+        <select name="jungle" id="jumgleFirstTeam">
+            <option disabled selected>Jungle</option>
+            <option value="Aatrox" id="Aatrox">Aatrox</option>
+            <option value="Ahri" id="Ahri">Ahri</option>
+            <option value="Akali" id="Akali">Akali</option>
+            <option value="Alistar" id="Alistar">Alistar</option>
+            <option value="Amumu" id="Amumu">Amumu</option>
+            <option value="Anivia" id="Anivia">Anivia</option>
+            <option value="Annie" id="Annie">Annie</option>
+            <option value="Ashe"id="Ashe">Ashe</option>
+            <option value="AurelionSol"id="AurelionSol">Aurelion Sol</option>
+            <option value="Azir"id="Azir">Azir</option>
+            <option value="Bard"id="Bard">Bard</option>
+            <option value="Blitzcrank"id="Blitzcrank">Blitzcrank</option>
+            <option value="Brand"id="Brand">Brand</option>
+            <option value="Braum"id="Braum">Braum</option>
+            <option value="Caitlyn"id="Caitlyn">Caitlyn</option>
+            <option value="Camille"id="Camille">Camille</option>
+            <option value="Cassiopeia"id="Cassiopeia">Cassiopeia</option>
+            <option value="Chogath"id="Chogath">Chogath</option>
+            <option value="Corki"id="Corki">Corki</option>
+            <option value="Darius"id="Darius">Darius</option>
+            <option value="Diana"id="Diana">Diana</option>
+            <option value="Draven"id="Draven">Draven</option>
+            <option value="DrMundo"id="DrMundo">Dr. Mundo</option>
+            <option value="Ekko"id="Ekko">Ekko</option>
+            <option value="Elise"id="Elise">Elise</option>
+            <option value="Evelynn"id="Evelynn">Evelynn</option>
+        </select> 
+        <select name="mid" id="midFirstTeam">
+
+        </select>
+        </div> 
+    	</div> <!--FIN ROW-->
     	
+    </div> <!--FIN CONTAINER SELECTSS-->
+    <div class="container">
+      <div class="row">
+        <div class="col">
+
+          <div id="average">
+
+
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
 
-    <div class="form-group">
-    <label for="exampleFormControlSelect1">Example select</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
+    
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="averageMain.js"></script>
+    <script src="./data/lol/lol.js"></script>
+    <script src="data.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>
