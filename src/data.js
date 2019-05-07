@@ -9,26 +9,27 @@ window.filterData = filterData;
 
 const sortData= (data, sortBy, sortOrder) => {
   const dataSort= data;
-  if(sortBy==="name" && sortOrder === "a-z" ){
+  /*if(sortBy==="name" && sortOrder === "a-z" ){
     dataSort.sort((a,b)=>{
-      if(a.name<b.name){
-        return -1;
-      }
-      if(a.name>b.name){
+     //if(a.nam<b.name){
+        //return -1;
+     // }
+     if(a.name>b.name){
        return 1;
       }
-      //return 0;
+
     });
-  }
+  }*/
   if(sortBy==="name" && sortOrder === "z-a" ){
     dataSort.sort((a,b)=>{
+   
      if(a.name>b.name){
-        return -1;
+       return -1;
       }
-     if(a.name<b.name){
-       return 1;
-      }
-      //return 0;
+     //if(a.name<b.name){
+     // return 1;
+     //}
+ 
     });
   }
   return dataSort;
@@ -39,24 +40,26 @@ const sortDifficulty= (data, sortBy, sortOrder) => {
   const difficultySort= data;
   if(sortBy==="info.difficulty" && sortOrder === "lowDifficult" ){
     difficultySort.sort((a,b)=>{
+     
+    /*if(a.info.difficulty>b.info.difficulty){
+        return 1;
+      }*/
       if(a.info.difficulty<b.info.difficulty){
-        return -1;
+       return -1;
       }
-      if(a.info.difficulty>b.info.difficulty){
-       return 1;
-      }
-     // return 0;
+ 
     });
   }
   if(sortBy==="info.difficulty" && sortOrder === "highDifficult" ){
     difficultySort.sort((a,b)=>{
+    
+     //if(a.info.difficulty<b.info.difficulty){
+     // return 1;
+      //}
      if(a.info.difficulty>b.info.difficulty){
-        return -1;
+       return -1;
       }
-     if(a.info.difficulty<b.info.difficulty){
-       return 1;
-      }
-      //return 0;
+
     });
   }
   return difficultySort;
@@ -77,6 +80,7 @@ const computeStats = (data) => {
   let average = Math.round(maxValue + minValue) / 2; //promedio
   
   const statsResults = [maxValue, minValue, average];
+  
   return statsResults;
 };
 window.computeStats = computeStats;

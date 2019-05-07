@@ -1,6 +1,7 @@
 const myData = Object.values(window.LOL.data); // OB arr q contiene los valores de las prop de obj
 
-let  result = "";
+let result = "";
+
 
 const containerResult = document.getElementById("container-result"); //div q contiene todos mis resultados
 
@@ -11,30 +12,32 @@ const resultDiv = (data) => {
     containerResult.innerHTML += `<div class="my-card card col-sm-12 col-md-4 col-lg-2 mt-4" 
                                     id ="${element.name}">
                                     <img class="card-img-top" id="img-card" src="${element.img}" alt="Card image cap">
+
                                     <div class="card-body">
                                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">${element.name}   </button><br> 
                                     ${element.title} 
+
                                     <div class="text-info"> ${element.tags} </div>
                                     
                                   </div>
                                 `;
   })
-} 
+}
 
 const selectRol = document.getElementById("rol-lol"); // accedo al evento (addEventListener)
 selectRol.addEventListener("change", () => {
   const selectRol = document.getElementById("rol-lol").value // accedo al valor (el rol que escoge el usuario)
   result = window.filterData(myData, selectRol);
   resultDiv(result);
- 
-  
+
+
 })
 
 const sortTest = document.getElementById("sort-by");
 sortTest.addEventListener("change", () => {
-const selectSort = document.getElementById("sort-by").value
-result = window.sortData(result, "name", selectSort);
-resultDiv(result);
+  const selectSort = document.getElementById("sort-by").value
+  result = window.sortData(result, "name", selectSort);
+  resultDiv(result);
 
 
 })
@@ -42,28 +45,27 @@ resultDiv(result);
 
 const difficult = document.getElementById("sort-dif");
 difficult.addEventListener("change", () => {
-const selectDifficult = document.getElementById("sort-dif").value // capturo sólo el que quiero
-result = window.sortDifficulty(result, "info.difficulty" , selectDifficult);
-resultDiv(result);
-
-
-
+  const selectDifficult = document.getElementById("sort-dif").value // capturo sólo el que quiero
+  result = window.sortDifficulty(result, "info.difficulty", selectDifficult);
+  resultDiv(result);
 })
 
 const btnChampions = document.getElementById("champions");
 btnChampions.addEventListener("click", () => {
-    resultDiv(myData);
-    const statistic = window.computeStats(myData);
-    document.getElementById("max-result").innerHTML = statistic[0];
-    document.getElementById("min-result").innerHTML = statistic[1];
-    document.getElementById("average-result").innerHTML = statistic[2];
-    document.getElementById("stats-compute").style.display="block";
-
+  resultDiv(myData);
+  let statistic = window.computeStats(myData);
+  document.getElementById("max-result").innerHTML = statistic[0];
+  document.getElementById("min-result").innerHTML = statistic[1];
+  document.getElementById("average-result").innerHTML = statistic[2];
+  document.getElementById("stats-compute").style.display = "block";
+ 
 
 })
 
 
+
 const containerModal = document.getElementById("container-modal");
+
 
 /*document.getElementById("${element.name}").addEventListener("click", () => {
   data.forEach(element => {
@@ -75,6 +77,7 @@ const containerModal = document.getElementById("container-modal");
   );
 })
 /*const loadModal = (name) => {   // este name me lo entrega onclick
+
 const resultModal = myData.filter((element) =>{
   if (element.name === name ){
     return true;
@@ -136,4 +139,5 @@ const element = resultModal[0]
 </div> <!--  fin  The Modal -->`;
 
  //$("#myModal").modal(); /* lanza  el modal*/
-        
+
+
