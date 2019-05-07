@@ -3026,7 +3026,6 @@ const LOL = {
       key: "7",
       name: "LeBlanc",
       title: "the Deceiver",
-      name:"",
       img:
         "https://www.masterypoints.com/assets/img/lol/champion_icons/Leblanc.png",
       splash:
