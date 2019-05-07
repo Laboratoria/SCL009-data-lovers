@@ -69,14 +69,6 @@ window.onload = function showAllOnload() {  //funcion para mostrar todos al inic
 
   }
   
-  
-
-    
-  
-
-
-
-
 selectChange.addEventListener('change', () =>{ 
   let selectedTag = document.getElementById("userSelectedTag").value;
   document.getElementById("userSelectedOrder").value= 0;

@@ -1,3 +1,4 @@
+
 let first = document.getElementById("midFirstTeam");// SELECT VACIO
 let team= [];
 let showAverage=getElementById("average");// div para mostrar resultado
@@ -26,7 +27,7 @@ data.forEach(element=>{
 
 }
 //EJEMPLO
-const resultDiv = (data) => {
+/* const resultDiv = (data) => {
 
     containerResult.innerHTML = "";
     data.forEach(element => {
@@ -39,4 +40,4 @@ const resultDiv = (data) => {
                                   `;
     })
   } 
-  
+   */
