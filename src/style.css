@@ -10,8 +10,11 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     
-  }
-.title{
+  }  
+  
+ 
+
+.titleLogo{
     width: 45%; 
     margin-bottom: 40px;
     margin-top: 15px;
@@ -84,6 +87,21 @@ padding: 6px;
     font-size: 16px;
     
 }
+
+.infoChampNameClass{
+    text-align: center;
+    font-size: 30px;
+}
+.imgInfoChamp{
+    width: 20%
+}
+.infoDivImgTittle{
+  
+    
+    background-repeat: no-repeat;
+background-size: 100%    
+
+}
 #championInfo{
     background:  rgba(0, 0, 0, 0.7);
     border:  3px outset #AE8D16;
@@ -100,3 +118,4 @@ select:hover {
 background:rgba(0, 0, 0, 0.9);
     };
 
+  
