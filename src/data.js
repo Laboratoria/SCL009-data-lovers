@@ -9,7 +9,7 @@ window.filterData = filterData;
 
 const sortData= (data, sortBy, sortOrder) => {
   const dataSort= data;
-  if(sortBy==="name" && sortOrder === "a-z" ){
+  /*if(sortBy==="name" && sortOrder === "a-z" ){
     dataSort.sort((a,b)=>{
      if(a.nam<b.name){
       return -1;
@@ -19,7 +19,7 @@ const sortData= (data, sortBy, sortOrder) => {
       }
 
     });
-  }
+  }*/
   if(sortBy==="name" && sortOrder === "z-a" ){
     dataSort.sort((a,b)=>{
    

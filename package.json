@@ -7,7 +7,9 @@
     "htmlhint": "htmlhint src/*.html test/*.html",
     "eslint": "eslint --ext .js src/ test/",
     "pretest": "npm run eslint && npm run htmlhint",
+
     "test": "nyc mocha"
+
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
