@@ -48,7 +48,28 @@ const orderData = (sortBy,allChampionData) =>{
 window.orderData = orderData;
 
 
+const average = (top, jungle, mid, adc, support, data)=>{
+  
+  const attackJungle = data[jungle].stats.attackdamage;
+  const attackTop = data[top].stats.attackdamage;
+  const attackMid = data[mid].stats.attackdamage;
+  const attackAdc = data[adc].stats.attackdamage;
+  const attackSupport = data[support].stats.attackdamage;
+  const allAttacks = [attackTop,attackJungle,attackMid,attackAdc,attackSupport];
+ 
+  const suma = allAttacks.reduce((a,b)=>{
+    return a+b
+  })
+  return console.log(suma);
+ 
 
+
+  /* let ataquetotal=( top.stats.attackdamage+ jungle.stats.attackdamage+mid.stats.attackdamage+
+     adc.stats.attackdamage+support.stats.attackdamage)/5;
+  */
+
+}
+ window.average = average
 
 
 

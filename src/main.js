@@ -9,33 +9,38 @@ let champName;
 let champDifficulty;
 
 
- const championInfo = (infoName,infoHp,infoHpLvl,infoMp,infoMpLvl,infoAttack,infoMS,infoArmor,infoArmorLvl,infoSpellBlock,infoSpellBlockLvl,infoAttackRange,
-  infoHpRegen,infoHpRegenLvl) =>{
+ const championInfo = (infoImg,infoName,infoHp,infoHpLvl,infoHpRegen,infoHpRegenLvl,infoMp,infoMpLvl,infoAttack,infoAttackRange,infoMs,infoArmor,infoArmorLvl,infoSpellBlock,infoSpellBlockLvl,infoSplash) =>{
       const championInfoDiv = document.getElementById("championInfo");
+     // var body = document.getElementsByTagName('body')[0];
+     // body.style.backgroundImage = url
+     
       championInfoDiv.innerHTML=""
-       championInfoDiv.innerHTML += 
+      championInfoDiv.innerHTML += 
        
        
-       `<div>
-         <p align="center" class="infoChampClass"> 
-         ${infoName}<br><br>
+       `<div align="center">
+       <img src="${infoImg}"><br>
+         <p class="infoChampNameClass">${infoName}</p>
+         <p class="infoChampClass">
          <strong>Vida</strong><br>
          ${infoHp} (+${infoHpLvl} por nivel) <br> 
-             <strong>Mana</strong> <br>
-             ${infoMp} (+${infoMpLvl} por nivel) <br>
-             <strong>Ataque</strong><br>
-             ${infoAttack} <br>
-             <strong>Velocidad Movimiento</strong><br>
-              ${infoMS} <br>
-             <strong>Armadura</strong><br>
-             ${infoArmor} (+${infoArmorLvl})<br>
-             <strong>Resistencia mágica</strong><br>
-             ${infoSpellBlock} (+${infoSpellBlockLvl})<br>
-             <strong>Rango de ataque</strong><br>
-             ${infoAttackRange}<br>
-             <strong>Regeneración de vida</strong><br>
-              ${infoHpRegen} (+${infoHpRegenLvl})<br>
-         </p>
+         <strong>Mana</strong> <br>
+         ${infoMp} (+${infoMpLvl} por nivel) <br>
+         <strong>Regeneración de vida</strong><br>
+          ${infoHpRegen} (+${infoHpRegenLvl} por nivel)<br>
+         <strong>Ataque</strong><br>
+         ${infoAttack} <br>
+         <strong>Rango de ataque</strong><br>
+         ${infoAttackRange}<br>
+         <strong>Velocidad de movimiento</strong><br>
+          ${infoMs} <br>
+         <strong>Armadura</strong><br>
+         ${infoArmor} (+${infoArmorLvl} por nivel)<br>
+         <strong>Resistencia mágica</strong><br>
+         ${infoSpellBlock} (+${infoSpellBlockLvl} por nivel)<br>
+         
+          
+     </p>
        </div>`;
        
       }
@@ -44,13 +49,12 @@ window.onload = function showAllOnload() {  //funcion para mostrar todos al inic
  
   let allResultFilter = window.filteringResult("Todos",dataLol)
      allResultFilter.forEach(element => {
-     console.log(element.title);
     championImgDiv.innerHTML += 
     
    `<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
     <div class="card mt-4" style="background-color: #e2e2e2";>
-    <div style="cursor: pointer;" id="${element.name}" onclick="championInfo(${element.tittle},${element.stats.hp},${element.stats.hpperlevel},${element.stats.mp},${element.stats.mpperlevel},${element.stats.attackdamage},${element.stats.movespeed},
-      ${element.stats.armor},${element.stats.armorperlevel},${element.stats.spellblock},${element.stats.spellblockperlevel},${element.stats.attackrange},${element.stats.hpregen},${element.stats.hpregenperlevel})">
+    <div style="cursor: pointer;" id="${element.id}" onclick=championInfo(${JSON.stringify(element.img)},${JSON.stringify(element.id)},${element.stats.hp},${element.stats.hpperlevel},${element.stats.hpregen},${element.stats.hpregenperlevel},${element.stats.mp},${element.stats.mpperlevel},${element.stats.attackdamage},${element.stats.attackrange},${element.stats.movespeed},${element.stats.armor},${element.stats.armorperlevel},${element.stats.spellblock},${element.stats.spellblockperlevel},${JSON.stringify(element.splash)})
+    )>
         <div class="card-header">
         <img src="${element.img}">
         <div class="card-content">
@@ -134,3 +138,6 @@ orderChange.addEventListener('change', () =>{
 
 });
 
+
+//addevent de boton
+//console.log(window.average("Jinx","Bard","Aatrox","Nami", "Soraka", dataLol))
