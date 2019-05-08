@@ -62,8 +62,6 @@ const average = (top, jungle, mid, adc, support, data)=>{
   })
   return suma;
  
-
-
   /* let ataquetotal=( top.stats.attackdamage+ jungle.stats.attackdamage+mid.stats.attackdamage+
      adc.stats.attackdamage+support.stats.attackdamage)/5;
   */

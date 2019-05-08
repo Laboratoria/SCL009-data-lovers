@@ -11,8 +11,16 @@
     <title>Average</title>
   </head>
   <body>
-    <h1>Average Champion Team</h1>
-    <div class="container">
+    
+    <div class="container"> <!-- LOGO -->
+      <div class="row">
+        <div class="col">
+            <img  src="img/logo.png" class="titleLogo" alt="League of Data Home">
+        </div>
+      </div>
+    </div> <!-- LOGO -->
+
+    <div class="container fluid"> <!-- SECCION SELECT TOP MID ADC SIPPPORT -->
     	<div class="row">
         <div class="col">
           <select name="top" id="topFirstTeam" class="selectClass">
@@ -80,7 +88,7 @@
             
             
         </select> 
-        <select name="jungle" id="jumgleFirstTeam" class="selectClass">
+        <select name="jungle" id="jungleFirstTeam" class="selectClass">
             <option disabled selected>Jungle</option>
             <option value="Amumu" id="Amumu">Amumu</option>
             <option value="Camille"id="Camille">Camille</option>
@@ -254,12 +262,22 @@
     	</div> <!--FIN ROW-->
     	
     </div> <!--FIN CONTAINER SELECTSS-->
-    <div class="container"> <!-- SECCION MOSTRAR PROMEDIO -->
-      <div class="row">
-        <div class="col">
+    <br><br><br>
+    <div class="container fluid"> <!-- BOTON CALCULAR -->
+      <div class="row" id="btncalculate">
+        <div class="col-lg-12">
+          <button id="btnCalculateAverage" class="likeButton">Calcular por Equipo</button>
+
+        </div>
+      </div>
+    </div> <!-- FIN BOTON CALCULAR -->
+    <br><br>
+    <div class="container fluid"> <!-- SECCION MOSTRAR PROMEDIO -->
+      <div class="row" id="showaverage">
+        <div class="col showaverage" id="championInfo" >
 
           <div id="average">
-            <p>Mostrar</p>
+            <p class="startText">Información por Equipo</p>
 
 
           </div>
@@ -267,8 +285,17 @@
         </div>
 
       </div>
+      
+    </div> <!-- FIN SECCION MOSTRAR PROMEDIO -->
+    <br><br>
+    <div class="container fluid"> <!-- BOTON VOLVER -->
+      <div  class="row">
+        <div class="col" id="btnComeBack">
+          <a href="index.html" style="text-decoration:none"role="button"class="likeButton">Volver</a>
 
-    </div> <!-- FIN SECCION MOSTRAR -->
+        </div>
+      </div>
+    </div> <!--FIN BOTON VOLVER -->
 
     
 
@@ -280,6 +307,7 @@
     <script src="averageMain.js"></script>
     <script src="./data/lol/lol.js"></script>
     <script src="data.js"></script>
-    <script src="main.js"></script>
+    <!-- <script src="main.js"></script> -->
+    
   </body>
 </html>
