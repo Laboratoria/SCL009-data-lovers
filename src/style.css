@@ -1,133 +1,163 @@
-.text-info {
+@import url('https://fonts.googleapis.com/css?family=Artifika|Shadows+Into+Light');
 
-    font-style: italic;
-    font-size: 1em;
+.fondocss{
+	position: fixed;
+	left: 0;
+	top: 20;
+	width: 100%;
+	height: auto;
+	z-index: -10;
+	visibility: visible;
+}
+header{
+    width: 100%;
+    position: relative;
 }
 
-/*body
-{ background: center;
- text-align: center;
- background: url(fondo2.png);
- background-size: 100%;
- background-position: 10% 0; 
- background-attachment:fixed;
- background-color: #000;
- 
-} */
-.fondocss{
-    position: fixed;
-      right: 0;
-      bottom: 0;
-      min-width: 100%; 
-      min-height: 100%;
+#header-container{
+        width: 100%;
+        overflow: hidden;
     }
 
-    .headboard{
-        /* background-color: aliceblue; */
-        margin-top:40px;   /*  margin, corresponde al margen */
-        padding-top: 5px;   /*  padding es como margen pero interior */
+    nav{
+       top: 0%;
+        width: 90%;
+        max-width: 1000px;
+        justify-content: center;
+        margin-bottom: 0%;
+    }
+   
+    nav > ul {
+        display:table;
+        overflow: hidden;
+        width: 100%;
         position: relative;
-        justify-content: center;     
-      }
+       /* background-color: rgba(5, 5, 5, 1.0);*/
+    }
+    nav > ul li {
+        display: table-cell;
+    }
+    nav > ul li a{
+        color: rgb(179, 154, 12);
+        display: block;
+        line-height: 20px;
+        padding: 20px;
+        position: relative;
+        text-align: center;
+        font-family: 'Volkhov', serif;
+        font-size: 20px; 
+         color: #FCD203;
+        -webkit-transition: all 500ms ease;
+        -o-transition: all 500ms ease;
+        transition: all 500ms ease;
+        border-radius:50px;
+    }
+    nav > ul li a:hover{
+        color: rgb(250, 249, 249);
+        background-color: rgba(77, 43, 43, 0.959);
+        
+    }
+#logo-lol {
+    width: 70%;
+    height: auto;
+    border: 2px solid rgb(75, 66, 20);
+    border-radius: 50%;
+}
+.headboard{
+  /* background-color: aliceblue; */
+  margin-top:40px;   /*  margin, corresponde al margen */
+  padding-top: 5px;   /*  padding es como margen pero interior */
+  position: relative;
+  justify-content: center;
 
-      .headboard h1{
-          font-family: 'Volkhov', serif;
-           font-size: 70px; 
-            color: #FCD203;
-            text-shadow: -2px -2px 1px #000, 
-            2px 2px 1px #000, 
-            -2px 2px 1px #000, 
-            2px -2px 1px #000;
-            justify-content: center;
-          
-      
-      }
-      .headboard p{
-          font-family: 'Scada', sans-serif;
-          font-size: 20px;
-          color: #FCD203;
-          text-shadow: -2px -2px 1px #000, 
-            2px 2px 1px #000, 
-            -2px 2px 1px #000, 
-            2px -2px 1px #000;
-          justify-content: center;
-      }
-      #stats-compute{
-          display: none;
-      }
-      .compute-stats{
-          font-family: 'Scada', sans-serif;
-          font-size: 20px;
-          color: #FCD203;
-      }
-      
-      .my-card{
-          background-color: rgba(83, 72, 72, 0.884);
-         /* padding-top:auto;
-          padding-right:auto;
-          padding-bottom:auto;
-          padding-left:auto;
-          justify-content: center;*/
-          justify-content: center;
-          margin: 10px;
-          padding: 10px;
-          position: relative;
-          border: 5px solid #FCD203;
-          overflow: hidden;
-      }
-      #img-card {
-          width: 60px;
-          height: auto;
-          border-radius: 50%;
-          margin-left: auto;
-        margin-right: auto;
-      
-      }
-      header{
-          width: 100%;
-          position: relative;
-      }
-      
-      #header-container{
-              width: 100%;
-              overflow: hidden;
-          }
-      
-          nav{
-             top: 0%;
-              width: 90%;
-              max-width: 1000px;
-              justify-content: center;
-              margin-bottom: 0%;
-          }
-         
-          nav > ul {
-              display:table;
-              overflow: hidden;
-              width: 100%;
-              position: relative;
-             /* background-color: rgba(5, 5, 5, 1.0);*/
-          }
-          nav > ul li {
-              display: table-cell;
-          }
-          nav > ul li a{
-              color: rgb(179, 154, 12);
-              display: block;
-              line-height: 20px;
-              padding: 20px;
-              position: relative;
-              text-align: center;
-              font-family: 'Volkhov', serif;
-              font-size: 20px; 
-               color: #FCD203;
-              -webkit-transition: all 500ms ease;
-              -o-transition: all 500ms ease;
-              transition: all 500ms ease;
-              border-radius:50px;
-          }
-          nav > ul li a:hover{
-              color: rgb(250, 249, 249);
-              background-color: rgba(31, 27, 27, 0.959);
-              
-          }
+}
+.headboard h1{
+    font-family: 'Volkhov', serif;
+     font-size: 50px; 
+      color: #FCD203;
+      text-shadow: -2px -2px 1px #000, 
+      2px 2px 1px #000, 
+      -2px 2px 1px #000, 
+      2px -2px 1px #000;
+      justify-content: center;   
+
+}
+.headboard p{
+    font-family: 'Scada', sans-serif;
+    font-size: 20px;
+    color: #FCD203;
+    text-shadow: -2px -2px 1px #000, 
+      2px 2px 1px #000, 
+      -2px 2px 1px #000, 
+      2px -2px 1px #000;
+    justify-content: center;
+}
+#stats-compute{
+    display: none;
+}
+.compute-stats{
+    font-family: 'Scada', sans-serif;
+    font-size: 20px;
+    color: #FCD203;
+}
+
+.my-card{
+    background-color: rgba(20, 19, 19, 0.288);
+   padding: 0.5em;
+    text-justify:  center;
+    margin: 0.5em;
+    position: relative;
+    border: 2px solid rgb(75, 66, 20);
+    overflow: hidden;
+    font-family: 'Scada', sans-serif;
+    font-size: 20px;
+    color: #FCD203;
+    font-family: 'Shadows Into Light', cursive;
+}
+
+.btn-style {
+    color: white;
+    text-shadow: 0 -1px  rgba(145, 11, 11, 0.25);
+    background-color: rgba(163, 52, 52, 0.288);
+    font-family: 'Artifika', serif;
+  }
+
+
+#img-card {
+    width: 80px;
+    height: auto;
+    border-radius: 50%;
+    margin-left: auto;
+  margin-right: auto;
+  border: 2px solid rgb(75, 66, 20);
+}
+
+#container-result {
+    background-color: rgba(12, 3, 0.288, 0);
+    justify-content: center;
+     position: relative;
+     padding: 0.5em;
+     margin-left: 0.5em;
+     margin-right: 0.5em;
+     margin-top: 0.5em;
+     margin-bottom: 0.5em;
+  
+}
+
+.modal-content{
+    background-color:rgba(239,197,202,1);
+    position: absolute;
+}
+.modal-title{
+    font-family: 'Scada', sans-serif;
+    font-size: 20px;
+    color: rgb(252, 3, 65);
+    vertical-align: middle;
+}
+#img-modal{
+    border-radius: 10%;
+    margin-left: auto;
+  margin-right: auto;
+  border: 2px solid rgb(75, 66, 20);
+
+}

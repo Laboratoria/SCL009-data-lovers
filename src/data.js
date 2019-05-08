@@ -84,3 +84,9 @@ const computeStats = (data) => {
   return statsResults;
 };
 window.computeStats = computeStats;
+
+const statsRol = (data) => {
+  let rolStats= Math.round((data.length*100)/134);
+  return rolStats;
+}
+window.statsRol= statsRol;

@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1,
       maximum-scale=1">
   <title>Winner Legends</title>
+  <link rel="icon" type="image/png" href="img/icon.png">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css" />
@@ -17,7 +18,7 @@
 <body>
       <div class="container">
         <video class="fondocss"  autoplay muted loop>
-          <source src="/src/videos/poppy.mp4" type="video/mp4">
+          <source src="videos/poppy.webm" type="video/webm">
           </video>
       <!-- corresponde a la cabecera -->
       
@@ -26,10 +27,10 @@
               <div id="header-container" class="row">
                 <nav>
                   <ul>
-                    <li><a href="#" id="home"><i class="link-header"></i> INICIO </a></li>
-                    <li><a href="#" id="champions"><i class="link-header"></i> CAMPEONES </a></li>
-                    <li><a href="#" id="stats-champions"><i class="link-header"></i> ESTADISTICA </a></li>
-                    <li><a href="#" id="filter-champions"><i class="link-header"></i> FILTROS </a></li>
+                      <li><img id= "logo-lol" src="img/Presentación1.png" alt=""></li>
+                      <li><a href="#" id="home"><i class="link-header"></i> INICIO </a></li>
+                      <li><a href="#" id="champions"><i class="link-header"></i> CAMPEONES </a></li>
+                      <li><a href="#" id="stats-champions"><i class="link-header"></i> ESTADISTICA </a></li>
                   </ul>
                 </nav>
               </div>
@@ -62,6 +63,7 @@
             <option id="lowDifficult" value="lowDifficult">Menor dificultad</option>
             <option id="highDifficult" value="highDifficult">Mayor dificultad</option>
           </select>
+          <p class="percent">Porcentaje por rol= </p><p id = "percent-rol" class="percents"> </p>
         </div> <br>
         <div id="stats-compute" class="compute-stats">
           <p class="stats-result">Max. HP es = </p><p id = "max-result" class="stats-results"> </p>
