@@ -139,5 +139,5 @@ orderChange.addEventListener('change', () =>{
 });
 
 
-//addevent de boton
+//addevent de boton calcular
 //console.log(window.average("Jinx","Bard","Aatrox","Nami", "Soraka", dataLol))
