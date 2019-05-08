@@ -30,7 +30,7 @@ window.onload = () => {
     const selectRol = document.getElementById("rol-lol").value // accedo al valor (el rol que escoge el usuario)
     result = window.filterData(myData, selectRol);
     resultDiv(result);
-    let percentForRol= window.statsRol(result);
+    let percentForRol= window.statsRol(result, selectRol);
     document.getElementById("percent-rol").innerHTML= percentForRol + '%';
   })
   
@@ -59,7 +59,7 @@ window.onload = () => {
   const btnChampions = document.getElementById("champions");
   btnChampions.addEventListener("click", () => {
     resultDiv(myData);
-    document.getElementById("select-rol").style.display="none";
+
     document.getElementById("stats-compute").style.display="none";
   })
   

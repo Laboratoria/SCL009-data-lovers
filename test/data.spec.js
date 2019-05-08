@@ -93,3 +93,20 @@ describe('computeStats', () => {
     assert.deepEqual(window.computeStats(dataStats), [613.36, 537.8, 575.5]);
   });
 })
+
+describe('statsRol', () => {
+
+  const dataStatsRol = [
+    { name: "Aatrox", tags: ["Fighter", "Tank"] },
+    { name: "Alistar", tags: ["Tank", "Support"] },
+    { name: "Amumu", tags: ["Tank", "Mage"] }
+  ]
+
+  it('debería ser una función', () => {
+    assert.equal(typeof window.statsRol, 'function');
+  });
+
+  it('debería retornar el porcentaje de campeones por rol', () => {
+    assert.deepEqual(window.statsRol(dataStatsRol), [613.36, 537.8, 575.5]);
+  });
+})

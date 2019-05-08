@@ -85,7 +85,9 @@ const computeStats = (data) => {
 };
 window.computeStats = computeStats;
 
-const statsRol = (data) => {
+const statsRol = (data, rol) => {
+   data.filter((element) => {
+    return element.tags.includes(rol); })
   let rolStats= Math.round((data.length*100)/134);
   return rolStats;
 }
