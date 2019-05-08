@@ -1,4 +1,4 @@
-let championImgDiv = document.getElementById("championImg");
+const championImgDiv = document.getElementById("championImg");
 const orderChange = document.getElementById("userSelectedOrder");
 const selectChange = document.getElementById("userSelectedTag");
 const dataLol = window.LOLdata;
