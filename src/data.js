@@ -60,7 +60,7 @@ const average = (top, jungle, mid, adc, support, data)=>{
   const suma = allAttacks.reduce((a,b)=>{
     return a+b
   })
-  return console.log(suma);
+  return suma;
  
 
 
