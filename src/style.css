@@ -138,6 +138,16 @@ select:hover {
     text-align: center;
     font-size: 20px;
 }
+#btncalculate{
+    text-align: center;
+}
+#btnComeBack{
+    text-align: end;
+}
+.showaverage{
+    width: 300px;
+
+}
 
 
 

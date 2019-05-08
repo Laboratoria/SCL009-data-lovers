@@ -37,12 +37,10 @@ const dataLol = window.LOLdata;
          ${infoSpellBlock} (+${infoSpellBlockLvl} por nivel)<br>
         </p>
        </div>`;
-<<<<<<< HEAD
+
        
       }
-=======
-       }
->>>>>>> 7b5d1ae82499278f3f5671b8939c2561b99652f0
+
 
 window.onload = function showAllOnload() {  //funcion para mostrar todos al inicio
  
@@ -66,19 +64,8 @@ window.onload = function showAllOnload() {  //funcion para mostrar todos al inic
   });
 }
   
-<<<<<<< HEAD
-  
- 
- 
-     });
-      
 
-  }
-  
-selectChange.addEventListener('change', () =>{ 
-=======
 selectChange.addEventListener('change', () =>{ //mostrar filtro
->>>>>>> 7b5d1ae82499278f3f5671b8939c2561b99652f0
   let selectedTag = document.getElementById("userSelectedTag").value;
   document.getElementById("userSelectedOrder").value= 0;
   championImgDiv.innerHTML = ""; 
