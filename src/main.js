@@ -1,6 +1,4 @@
-/* Manejo del DOM */
-
-const championImgDiv = document.getElementById("championImg");
+let championImgDiv = document.getElementById("championImg");
 const orderChange = document.getElementById("userSelectedOrder");
 const selectChange = document.getElementById("userSelectedTag");
 const dataLol = window.LOLdata;
@@ -69,8 +67,8 @@ window.onload = function showAllOnload() {  // mostrar todos al inicio
 }
   
 
-
-selectChange.addEventListener('change', () =>{ //mostrar filtro
+//mostrar filtro
+selectChange.addEventListener('change', () =>{ 
   let selectedTag = document.getElementById("userSelectedTag").value;
   document.getElementById("userSelectedOrder").value= 0;
   championImgDiv.innerHTML = ""; 
@@ -118,7 +116,9 @@ orderChange.addEventListener('change', () =>{ //ordenar segun filtro
   championImgDiv.innerHTML += 
     `<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
     <div class="card mt-3" style="background-color: #e2e2e2";>
-    <div style="cursor: pointer;" id="${element.id}" onclick=championInfo(${JSON.stringify(element.img)},${JSON.stringify(element.id)},${element.stats.hp},${element.stats.hpperlevel},${element.stats.hpregen},${element.stats.hpregenperlevel},${element.stats.mp},${element.stats.mpperlevel},${element.stats.attackdamage},${element.stats.attackrange},${element.stats.movespeed},${element.stats.armor},${element.stats.armorperlevel},${element.stats.spellblock},${element.stats.spellblockperlevel})
+    <div style="cursor: pointer;" id="${element.id}" onclick=championInfo(${JSON.stringify(element.img)},${JSON.stringify(element.id)},${element.stats.hp},${element.stats.hpperlevel},${element.stats.hpregen},${element.stats.hpregenperlevel},${element.stats.mp},${element.stats.mpperlevel},${element.stats.attackdamage},${element.stats.attackrange},
+    ${element.stats.movespeed},${element.stats.armor},${element.stats.armorperlevel},
+    ${element.stats.spellblock},${element.stats.spellblockperlevel})
     )>
         <div class="card-header">
         <img src="${element.img}">
@@ -134,13 +134,27 @@ orderChange.addEventListener('change', () =>{ //ordenar segun filtro
 }) 
 })
 ;
-  
-}
-  
-
-
-
-
-
+   
 //addevent de boton calcular
 //console.log(window.average("Jinx","Bard","Aatrox","Nami", "Soraka", dataLol))
+/*  let calculateBtn= document.getElementById("btnCalculateAverage");
+ calculateBtn.addEventListener("click", ()=>{
+   let showMyTeamAverage= document.getElementById("average");
+   let topAverage =document.getElementById("topFirstTeam").value;
+   let jungleAverage=document.getElementById("jumgleFirstTeam").value;
+   let midAverage=document.getElementById("midFirstTeam").value;
+   let adcAverage=document.getElementById("adcFirstTeam").value;
+   let supportAverage=document.getElementById("supportFirstTeam").value;
+  
+   let calculateAverage = window.average(topAverage, jungleAverage, midAverage, adcAverage, 
+    supportAverage, dataLol);
+   
+
+   showMyTeamAverage.innerHTML="";
+   showMyTeamAverage.innerHTML+= `<p>${calculateAverage}</p>`
+   
+ 
+ });
+
+
+ console.log(window.average("Jinx","Bard","Aatrox","Nami", "Soraka", dataLol)) */
