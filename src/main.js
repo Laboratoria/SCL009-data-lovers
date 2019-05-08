@@ -1,13 +1,12 @@
 window.onload = () => {
   const myData = Object.values(window.LOL.data); // OB arr q contiene los valores de las prop de obj
   
-  let result = ""; //Var que contiene resultados, vacía.
   
   const containerResult = document.getElementById("container-result"); //div q contiene todos mis resultados
   
   const resultDiv = (data) => {
     containerResult.innerHTML = "";
-    containerModal.innerHTML = "";
+    //containerModal.innerHTML = "";
     data.forEach(element => {
       containerResult.innerHTML += `<div class="my-card card col-sm-12 col-md-4 col-lg-2 mt-4" 
                                       >
@@ -20,10 +19,53 @@ window.onload = () => {
                                     
                                     </div>
                                     `;
-                                    loadModal(element);
+                                   // loadModal(element);
                                   });
   }
-  
+  resultDiv(myData); 
+
+
+
+
+ /*funcion del modal*/
+ const containerModal = document.getElementById("container-modal");
+ const loadModal = (element) => {
+   containerModal.innerHTML += `<div class="modal fade" id="${element.id}">
+   <div class="modal-dialog">
+     <div class="modal-content">
+     
+       <!-- Modal Header -->
+       <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal">X</button>
+       </div>
+       
+       <!-- Modal body -->
+       <div class="modal-body">
+       <h3 class="modal-title">${element.id.toUpperCase()}</h3>
+         <img class="card-img-top" id="img-modal" src="${element.splash}" alt="Card image cap">
+           <div class="card-body">${element.title} 
+           <div class="text-info"> ${element.tags} </div>
+           <div class="text-blurb"> ${element.blurb} </div>
+           <div class= "stats-info">
+ 
+     <p>Ataque</p> <meter min="0" max="10" low="3" high="5" optimum="7" value="${element.info.attack}" ></meter>
+     <p>Defensa </p> <meter min="0" max="10" low="3" high="5" optimum="7" value="${element.info.defense}" ></meter>
+     <p>Magia </p> <meter min="0" max="10" low="3" high="5" optimum="7" value="${element.info.magic}" ></meter>
+     <p>Dificultad </p> <meter min="0" max="10" low="3" high="5" optimum="7" value="${element.info.difficulty}" ></meter>
+     </div>
+       </div>
+       <!-- Modal footer -->
+       <div class="modal-footer">
+         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+       </div>
+     </div>
+   </div>
+ </div> <!--  fin  The Modal -->`;
+ }
+
+
+let result = ""; //Var que contiene resultados, vacía.
+
   /*Filtrado por rol*/
   const selectRol = document.getElementById("rol-lol"); // accedo al evento (addEventListener)
   selectRol.addEventListener("change", () => {
@@ -52,16 +94,9 @@ window.onload = () => {
   
   /*Enlace que lleva al inicio*/
   const btnHome= document.getElementById("home");
-  btnHome.addEventListener("click", function(){location.reload()});
-  //document.getElementById("select-rol").style.display="none";
-  
-  /*Enlace que muestra todos los campeones*/
-  const btnChampions = document.getElementById("champions");
-  btnChampions.addEventListener("click", () => {
-    resultDiv(myData);
-
-    document.getElementById("stats-compute").style.display="none";
-  })
+  btnHome.addEventListener("click", function(){location.reload()
+    });
+   
   
   /*Enlace que muestra las estadísticas*/
   const btnStats = document.getElementById("stats-champions");
@@ -74,41 +109,14 @@ window.onload = () => {
     document.getElementById("select-rol").style.display="none";
   })
   
-  /*funcion del modal*/
-  const containerModal = document.getElementById("container-modal");
-  const loadModal = (element) => {
-    containerModal.innerHTML += `<div class="modal fade" id="${element.id}">
-    <div class="modal-dialog">
-      <div class="modal-content">
-      
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">X</button>
-        </div>
-        
-        <!-- Modal body -->
-        <div class="modal-body">
-        <h3 class="modal-title">${element.id.toUpperCase()}</h3>
-          <img class="card-img-top" id="img-modal" src="${element.splash}" alt="Card image cap">
-            <div class="card-body">${element.title} 
-            <div class="text-info"> ${element.tags} </div>
-            <div class="text-blurb"> ${element.blurb} </div>
-            <div class= "stats-info">
-  
-      <p>Ataque</p> <meter min="0" max="10" low="3" high="5" optimum="7" value="${element.info.attack}" ></meter>
-      <p>Defensa </p> <meter min="0" max="10" low="3" high="5" optimum="7" value="${element.info.defense}" ></meter>
-      <p>Magia </p> <meter min="0" max="10" low="3" high="5" optimum="7" value="${element.info.magic}" ></meter>
-      <p>Dificultad </p> <meter min="0" max="10" low="3" high="5" optimum="7" value="${element.info.difficulty}" ></meter>
-      </div>
-        </div>
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div> <!--  fin  The Modal -->`;
+ 
+  const initapp = () => {
+    containerModal.innerHTML = '';
+    myData.forEach(element => {
+    loadModal(element);
+    })
   }
   
-  }
+  initapp();
   
+}

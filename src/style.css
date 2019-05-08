@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Artifika|Shadows+Into+Light');
 
 .fondocss{
-	position: fixed;
-	left: 0;
-	top: 20;
-	width: 100%;
-	height: auto;
-	z-index: -10;
-	visibility: visible;
+
+    position: fixed;
+    top: 20;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -10;
 }
 header{
     width: 100%;
@@ -102,7 +103,8 @@ header{
 }
 
 .my-card{
-    background-color: rgba(20, 19, 19, 0.288);
+    background: rgb(131,109,20);
+background: linear-gradient(90deg, rgba(131,109,20,0.9500175070028011) 0%, rgba(202,213,86,0.8239670868347339) 90%);
    padding: 0.5em;
     text-justify:  center;
     margin: 0.5em;
