@@ -7,35 +7,279 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="style.css">
     <title>Average</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <h1>Average Champion Team</h1>
     <div class="container">
     	<div class="row">
-    		<div class="col">
-    			
-    		</div>
-    	</div>
-    	
-    </div>
+        <div class="col">
+          <select name="top" id="topFirstTeam" class="selectClass">
+            <option disabled selected>Top</option>
+            <option value="Aatrox" id="Aatrox">Aatrox</option>
+            <option value="Akali" id="Akali">Akali</option>
+            <option value="Alistar" id="Alistar">Alistar</option>
+            <option value="Camille"id="Camille">Camille</option>
+            <option value="Chogath"id="Chogath">Chogath</option>
+            <option value="Darius"id="Darius">Darius</option>
+            <option value="Diana"id="Diana">Diana</option>
+            <option value="DrMundo"id="DrMundo">Dr. Mundo</option>
+            <option value="Ekko"id="Ekko">Ekko</option>
+            <option value="Fiora" id="Fiora">Fiora</option>
+            <option value="Fizz" id="Fizz">Fizz</option>
+            <option value="Galio" id="Galio">Galio</option>
+            <option value="Gangplank" id="Gangplank">Gangplank</option>
+            <option value="Garen" id="Garen">Garen</option>
+            <option value="Gnar" id="Gnar">Gnar</option>
+            <option value="Gragas" id="Gragas">Gragas</option>
+            <option value="Graves" id="Graves">Graves</option>
+            <option value="Hecarim" id="Hecarim">Hecarim</option>
+            <option value="Heimerdinger" id="Heimerdinger">Heimerdinger</option>
+            <option value="Illaoi" id="Illaoi">Illaoi</option>
+            <option value="Irelia" id="Irelia">Irelia</option>
+            <option value="JarvanIV" id="JarvanIV">Jarvan IV</option>
+            <option value="Jax" id="Jax">Jax</option>
+            <option value="Jayce" id="Jayce">Jayce</option>
+            <option value="Kayle" id="Kayle">Kayle</option>
+            <option value="Kennen" id="Kennen">Kennen</option>
+            <option value="Khazix" id="Khazix">Khazix</option>
+            <option value="Kled" id="Kled">Kled</option>
+            <option value="Lissandra" id="Lissandra">Lissandra</option>
+            <option value="Malphite" id="Malphite">Malphite</option>
+            <option value="Maokai" id="Maokai">Maokai</option>
+            <option value="MonkeyKing" id="MonkeyKing">Wukong</option>
+            <option value="Mordekaiser" id="Mordekaiser">Mordekaiser</option>
+            <option value=" Nasus" id="Nasus">Nasus</option>
+            <option value="Nautilus" id="Nautilus">Nautilus</option>
+            <option value="Nidalee" id="Nidalee">Nidalee</option>
+            <option value="Olaf" id="Olaf">Olaf</option>
+            <option value="Pantheon" id="Pantheon">Pantheon</option>
+            <option value="Poppy" id="Poppy">Poppy</option>
+            <option value="Quinn" id="Quinn">Quinn</option>
+            <option value="Rammus" id="Rammus">Rammus</option>
+            <option value="Renekton" id="Renekton">Renekton</option>
+            <option value="Rengar" id="Rengar">Rengar</option>
+            <option value="Riven" id="Riven">Riven</option>
+            <option value="Rumble" id="Rumble">Rumble</option>
+            <option value="Ryze" id="Ryze">Ryze</option>
+            <option value="Shen" id="Shen">Shen</option>
+            <option value="Shyvana" id="Shyvana">Shyvana</option>
+            <option value="Singed" id="Singed">Singed</option>
+            <option value="Sion" id="Sion">Sion</option>
+            <option value="Swain" id="Swain">Swain</option>
+            <option value="Teemo" id="Teemo">Teemo</option>
+            <option value="Trundle" id="Trundle">Trundle</option>
+            <option value="Tryndamere" id="Tryndamere">Tryndamere</option>
+            <option value="Udyr" id="Udyr">Udyr</option>
+            <option value="Urgot" id="Urgot">Urgot</option>
+            <option value="Vladimir" id="Vladimir">Vladimir</option>
+            <option value="Volibear" id="Volibear">Volibear</option>
+            <option value="Yasuo" id="Yasuo">Yasuo</option>
+            <option value="Yorick" id="Yorick">Yorick</option>
+            
+            
+        </select> 
+        <select name="jungle" id="jumgleFirstTeam" class="selectClass">
+            <option disabled selected>Jungle</option>
+            <option value="Amumu" id="Amumu">Amumu</option>
+            <option value="Camille"id="Camille">Camille</option>
+            <option value="Chogath"id="Chogath">Chogath</option>
+            <option value="DrMundo"id="DrMundo">Dr. Mundo</option>
+            <option value="Ekko"id="Ekko">Ekko</option>
+            <option value="Elise"id="Elise">Elise</option>
+            <option value="Evelynn"id="Evelynn">Evelynn</option>
+            <option value="FiddleSticks" id="FiddleSticks">FiddleSticks</option>
+            <option value="Graves" id="Graves">Graves</option>
+            <option value="Hecarim" id="Hecarim">Hecarim</option>
+            <option value="Ivern" id="Ivern">Ivern</option>
+            <option value="JarvanIV" id="JarvanIV">Jarvan IV</option>
+            <option value="Jayce" id="Jayce">Jayce</option>
+            <option value="Karthus" id="Karthus">Karthus</option>
+            <option value="Khazix" id="Khazix">Khazix</option>
+            <option value="Kindred" id="Kindred">Kindred</option>
+            <option value="LeeSin" id="Lee Sin">Lee Sin</option>
+            <option value="Malphite" id="Malphite">Malphite</option>
+            <option value="Maokai" id="Maokai">Maokai</option>
+            <option value="MasterYi" id="MasterYi">Master Yi</option>
+            <option value="MonkeyKing" id="MonkeyKing">Wukong</option>
+            <option value="Nautilus" id="Nautilus">Nautilus</option>
+            <option value="Nidalee" id="Nidalee">Nidalee</option>
+            <option value="Nocturne" id="Nocturne">Nocturne</option>
+            <option value="Nunu" id="Nunu">Nunu</option>
+            <option value="Olaf" id="Olaf">Olaf</option>
+            <option value="Pantheon" id="Pantheon">Pantheon</option>
+            <option value="Quinn" id="Quinn">Quinn</option>
+            <option value="Rammus" id="Rammus">Rammus</option>
+            <option value="RekSai" id="RekSai">RekSai</option>
+            <option value="Rengar" id="Rengar">Rengar</option>
+            <option value="Sejuani" id="Sejuani">Sejuani</option>
+            <option value="Shaco" id="Shaco">Shaco</option>
+            <option value="Shen" id="Shen">Shen</option>
+            <option value="Shyvana" id="Shyvana">Shyvana</option>
+            <option value="Sion" id="Sion">Sion</option>
+            <option value="Skarner" id="Skarner">Skarner</option>
+            <option value="TahmKench" id="TahmKench">TahmKench</option>
+            <option value="Taliyah" id="Taliyah">Taliyah</option>
+            <option value="Trundle" id="Trundle">Trundle</option>
+            <option value="Tryndamere" id="Tryndamere">Tryndamere</option>
+            <option value="Twitch" id="Twitch">Twitch</option>
+            <option value="Udyr" id="Udyr">Udyr</option>
+            <option value="Vi" id="Vi">Vi</option>
+            <option value="Volibear" id="Volibear">Volibear</option>
+            <option value="Warwick" id="Warwick">Warwick</option>
+            <option value="XinZhao" id="XinZhao">Xin Zhao</option>
+            <option value="Zac" id="Zac">Zac</option>
+            
+          </select> 
+        <select name="mid" id="midFirstTeam" class="selectClass">
+            <option disabled selected>MID</option>
+          <option value="Ahri" id="Ahri">Ahri</option>
+          <option value="Akali" id="Akali">Akali</option>
+          <option value="Anivia" id="Anivia">Anivia</option>
+          <option value="Annie" id="Annie">Annie</option>
+          <option value="AurelionSol" id="AurelionSol">Aurelion Sol</option>
+          <option value="Azir" id="Azir">Azir</option>
+          <option value="Brand" id="Brand">Brand</option>
+          <option value="Cassiopeia" id="Cassiopeia">Cassiopeia</option>
+          <option value="Corki" id="Corki">Corki</option>
+          <option value="Diana" id="Diana">Diana</option>
+          <option value="Ekko" id="Ekko">Ekko</option>
+          <option value="Ezreal" id="Ezreal">Ezreal</option>
+          <option value="Fiora" id="Fiora">Fiora</option>
+          <option value="Fizz" id="Fizz">Fizz</option>
+          <option value="Galio" id="Galio">Galio</option>
+          <option value="Gangplank" id="Gangplank">Gangplank</option>
+          <option value="Heimerdinger" id="Heimerdinger">Heimerdinger</option>
+          <option value="Irelia" id="Irelia">Irelia</option>
+          <option value="Jayce" id="Jayce">Jayce</option>
+          <option value="Karma" id="Karma">Karma</option>
+          <option value="Karthus" id="Karthus">Karthus</option>
+          <option value="Kassadin" id="Kassadin">Kassadin</option>
+          <option value="Katarina" id="Katarina">Katarina</option>
+          <option value="Kayle" id="Kayle">Kayle</option>
+          <option value="Kennen" id="Kennen">Kennen</option>
+          <option value="Khazix" id="Khazix">Khazix</option>
+          <option value="Leblanc" id="">Leblanc</option>
+          <option value="Lissandra" id="Lissandra">Lissandra</option>
+          <option value="Lux" id="Lux">Lux</option>
+          <option value="Malzahar" id="Malzahar">Malzahar</option>
+          <option value="MonkeyKing" id="MonkeyKing">Wukong</option>
+          <option value="Mordekaiser" id="Mordekaiser">Mordekaiser</option>
+          <option value="Morgana" id="Morgana">Morgana</option>
+          <option value="Nidalee" id="Nidalee">Nidalee</option>
+          <option value="Orianna" id="Orianna">Orianna</option>
+          <option value="Pantheon" id="Pantheon">Pantheon</option>
+          <option value="Quinn" id="Quinn">Quinn</option>
+          <option value="Riven" id="Riven">Riven</option>
+          <option value="Ryze" id="Ryze">Ryze</option>
+          <option value="Swain" id="Swain">Swain</option>
+          <option value="Syndra" id="Syndra">Syndra</option>
+          <option value="Taliyah" id="Taliyah">Taliyah</option>
+          <option value="Talon" id="Talon">Talon</option>
+          <option value="Teemo" id="Teemo">Teemo</option>
+          <option value="TwistedFate" id="TwistedFate">TwistedFate</option>
+          <option value="Varus" id="Varus">Varus</option>
+          <option value="Veigar" id="Veigar">Veigar</option>
+          <option value="Velkoz" id="Velkoz">Velkoz</option>
+          <option value="Viktor" id="Viktor">Viktor</option>
+          <option value="Vladimir" id="Vladimir">Vladimir</option>
+          <option value="Xerath" id="Xerath">Xerath</option>
+          <option value="Yasuo" id="Yasuo">Yasuo</option>
+          <option value="Zed" id="Zed">Zed</option>
+          <option value="Ziggs" id="Ziggs">Ziggs</option>
+          <option value="Zilean" id="Zilean">Zilean</option>
+          <option value="Zyra" id="Zyra">Zyra</option>
 
-    <div class="form-group">
-    <label for="exampleFormControlSelect1">Example select</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
+        </select>
+        <select name="adc" id="adcFirstTeam" class="selectClass">
+            <option disabled selected>ADC</option>
+          <option value="Ashe" id="Ashe">Ashe</option>
+          <option value="Azir" id="Azir">Azir</option>
+          <option value="Caitlyn" id="Caitlyn">Caitlyn</option>
+          <option value="Corki" id="Corki">Corki</option>
+          <option value="Draven" id="Draven">Draven</option>
+          <option value="Ezreal" id="Ezreal">Ezreal</option>
+          <option value="Graves" id="Graves">Graves</option>
+          <option value="Jayce" id="Jayce">Jayce</option>
+          <option value="Jhin" id="Jhin">Jhin</option>
+          <option value="Jinx" id="Jinx">Jinx</option>
+          <option value="Kalista" id="Kalista">Kalista</option>
+          <option value="Kennen" id="Kennen">Kennen</option>
+          <option value="Kindred" id="Kindred">Kindred</option>
+          <option value="KogMaw" id="KogMaw">Kog'Maw</option>
+          <option value="Lucian" id="Lucian">Lucian</option>
+          <option value="MissFortune" id="MissFortune">Miss Fortune</option>
+          <option value="Quinn" id="Quinn">Quinn</option>
+          <option value="Sivir" id="Sivir">Sivir</option>
+          <option value="Teemo" id="Teemo">Teemo</option>
+          <option value="Tristana" id="Tristana">Tristana</option>
+          <option value="Twitch" id="Twitch">Twitch</option>
+          <option value="Urgot" id="Urgot">Urgot</option>
+          <option value="Varus" id="Varus">Varus</option>
+          <option value="Vayne" id="Vayne">Vayne</option>
+
+
+
+        </select>
+        <select name="support" id="supportFirstTeam" class="selectClass">
+            <option disabled selected>Support</option>
+          <option value="Ashe" id="Ashe">Ashe</option>
+          <option value="Azir" id="Azir">Azir</option>
+          <option value="Caitlyn" id="Caitlyn">Caitlyn</option>
+          <option value="Corki" id="Corki">Corki</option>
+          <option value="Draven" id="Draven">Draven</option>
+          <option value="Ezreal" id="Ezreal">Ezreal</option>
+          <option value="Graves" id="Graves">Graves</option>
+          <option value="Jayce" id="Jayce">Jayce</option>
+          <option value="Jhin" id="Jhin">Jhin</option>
+          <option value="Jinx" id="Jinx">Jinx</option>
+          <option value="Kalista" id="Kalista">Kalista</option>
+          <option value="Kennen" id="Kennen">Kennen</option>
+          <option value="Kindred" id="Kindred">Kindred</option>
+          <option value="KogMaw" id="KogMaw">Kog'Maw</option>
+          <option value="Lucian" id="Lucian">Lucian</option>
+          <option value="MissFortune" id="MissFortune">Miss Fortune</option>
+          <option value="Quinn" id="Quinn">Quinn</option>
+          <option value="Sivir" id="Sivir">Sivir</option>
+          <option value="Teemo" id="Teemo">Teemo</option>
+          <option value="Tristana" id="Tristana">Tristana</option>
+          <option value="Twitch" id="Twitch">Twitch</option>
+          <option value="Urgot" id="Urgot">Urgot</option>
+          <option value="Varus" id="Varus">Varus</option>
+          <option value="Vayne" id="Vayne">Vayne</option>
+
+        </select>
+        </div> 
+    	</div> <!--FIN ROW-->
+    	
+    </div> <!--FIN CONTAINER SELECTSS-->
+    <div class="container"> <!-- SECCION MOSTRAR PROMEDIO -->
+      <div class="row">
+        <div class="col">
+
+          <div id="average">
+            <p>Mostrar</p>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div> <!-- FIN SECCION MOSTRAR -->
+
+    
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="averageMain.js"></script>
+    <script src="./data/lol/lol.js"></script>
+    <script src="data.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>

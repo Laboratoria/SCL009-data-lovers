@@ -37,7 +37,8 @@ const dataLol = window.LOLdata;
          ${infoSpellBlock} (+${infoSpellBlockLvl} por nivel)<br>
          </p>
        </div>`;
-       }
+ }
+
 
 window.onload = function showAllOnload() {  // mostrar todos al inicio
   championInfo;
@@ -60,6 +61,7 @@ window.onload = function showAllOnload() {  // mostrar todos al inicio
     </div>
   </div>`    
   });
+
 selectChange.addEventListener('change', () =>{ //mostrar filtro
   let selectedTag = document.getElementById("userSelectedTag").value;
   document.getElementById("userSelectedOrder").value= 0;
@@ -132,5 +134,5 @@ orderChange.addEventListener('change', () =>{ //ordenar segun filtro
 
 
 
-//addevent de boton
+//addevent de boton calcular
 //console.log(window.average("Jinx","Bard","Aatrox","Nami", "Soraka", dataLol))
