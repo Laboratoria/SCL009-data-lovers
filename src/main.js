@@ -6,17 +6,17 @@ const selectChange = document.getElementById("userSelectedTag");
 const dataLol = window.LOLdata;
 
 
+//funcion para mostrar informacion de cada champ
  const championInfo = (infoImg,infoName,infoHp,infoHpLvl,infoHpRegen,infoHpRegenLvl,infoMp,infoMpLvl,infoAttack,infoAttackRange,infoMs,infoArmor,infoArmorLvl,infoSpellBlock,infoSpellBlockLvl) =>{
-      const championInfoDiv = document.getElementById("championInfo");
+    const championInfoDiv = document.getElementById("championInfo");
      // var body = document.getElementsByTagName('body')[0];
-     // body.style.backgroundImage = url
+     // body.style.backgroundImage = url 'url('+image+')';
      
-      championInfoDiv.innerHTML=""
-      championInfoDiv.innerHTML += 
-       
-       
-       `<div align="center" style="margin-top: 7px;">
-       <img src="${infoImg}">
+    championInfoDiv.innerHTML=""
+    championInfoDiv.innerHTML += 
+         
+      `<div align="center" style="margin-top: 7px;">
+        <img src="${infoImg}">
          <p class="infoChampNameClass">${infoName}</p>
          <p class="infoChampClass">
          <strong>Vida</strong><br>
@@ -35,18 +35,15 @@ const dataLol = window.LOLdata;
          ${infoArmor} (+${infoArmorLvl} por nivel)<br>
          <strong>Resistencia mágica</strong><br>
          ${infoSpellBlock} (+${infoSpellBlockLvl} por nivel)<br>
-        </p>
+         </p>
        </div>`;
-<<<<<<< HEAD
-       
-      }
-=======
-       }
->>>>>>> 7b5d1ae82499278f3f5671b8939c2561b99652f0
+ }
 
-window.onload = function showAllOnload() {  //funcion para mostrar todos al inicio
- 
-  let allResultFilter = window.filteringResult("Todos",dataLol)
+
+window.onload = function showAllOnload() {  // mostrar todos al inicio
+  championInfo;
+  let selectedTag = document.getElementById("userSelectedTag").value;
+  let allResultFilter = window.filteringResult(selectedTag,dataLol)
     allResultFilter.forEach(element => {
     championImgDiv.innerHTML += 
     
@@ -64,21 +61,8 @@ window.onload = function showAllOnload() {  //funcion para mostrar todos al inic
     </div>
   </div>`    
   });
-}
-  
-<<<<<<< HEAD
-  
- 
- 
-     });
-      
 
-  }
-  
-selectChange.addEventListener('change', () =>{ 
-=======
 selectChange.addEventListener('change', () =>{ //mostrar filtro
->>>>>>> 7b5d1ae82499278f3f5671b8939c2561b99652f0
   let selectedTag = document.getElementById("userSelectedTag").value;
   document.getElementById("userSelectedOrder").value= 0;
   championImgDiv.innerHTML = ""; 
@@ -99,6 +83,7 @@ selectChange.addEventListener('change', () =>{ //mostrar filtro
     </div>
   </div>`    
    }) })
+
 orderChange.addEventListener('change', () =>{ //ordenar segun filtro
   let selectedOrder = document.getElementById("userSelectedOrder").value;
   let selectedTag = document.getElementById("userSelectedTag").value;
@@ -106,7 +91,7 @@ orderChange.addEventListener('change', () =>{ //ordenar segun filtro
   let champData = window.filteringResult(selectedTag,dataLol)
   let allResultOrder = window.orderData(selectedOrder,champData)
   allResultOrder.forEach(element =>{
-  if (selectedOrder == "difficultyEasiestFirst" || selectedOrder == "difficultyHardestFirst"){
+  if (selectedOrder == "difficultyEasiestFirst" || selectedOrder == "difficultyHardestFirst"){//agrega p con dificultad
     championImgDiv.innerHTML += 
     `<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
     <div class="card mt-3" style="background-color: #e2e2e2";>
@@ -121,7 +106,7 @@ orderChange.addEventListener('change', () =>{ //ordenar segun filtro
        </div> 
     </div>
   </div>`    
-}else{
+}else{ 
   championImgDiv.innerHTML += 
     `<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
     <div class="card mt-3" style="background-color: #e2e2e2";>
@@ -141,6 +126,12 @@ orderChange.addEventListener('change', () =>{ //ordenar segun filtro
 }) 
 })
 ;
+  
+}
+  
+
+
+
 
 
 //addevent de boton calcular
