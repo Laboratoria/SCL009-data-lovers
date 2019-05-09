@@ -3,6 +3,7 @@
 
 
 
+
 let calculateBtn= document.getElementById("btnCalculateAverage");
 calculateBtn.addEventListener("click", ()=>{
   let showMyTeamTotal= document.getElementById("average");
@@ -11,6 +12,7 @@ calculateBtn.addEventListener("click", ()=>{
   let midTotal=document.getElementById("midFirstTeam").value;
   let adcTotal=document.getElementById("adcFirstTeam").value;
   let supportTotal=document.getElementById("supportFirstTeam").value;
+
   
   
   let calculateAllAttacks= window.calculateAllAttacks(topTotal,jungleTotal,midTotal,adcTotal,supportTotal,window.LOLdata)
