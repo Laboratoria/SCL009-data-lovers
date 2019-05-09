@@ -1,19 +1,21 @@
 /* Manejo del DOM */
-
+const clearInfo = document.getElementById("clearInfoChamp");
 const championImgDiv = document.getElementById("championImg");
 const orderChange = document.getElementById("userSelectedOrder");
 const selectChange = document.getElementById("userSelectedTag");
 const dataLol = window.LOLdata;
-
+const championInfoDiv = document.getElementById("championInfoA");
+const championInfoDivB = document.getElementById("championInfoB");
 
 
 //funcion para mostrar informacion de cada champ
  const championInfo = (infoImg,infoName,infoHp,infoHpLvl,infoHpRegen,infoHpRegenLvl,infoMp,infoMpLvl,infoAttack,infoAttackRange,infoMs,infoArmor,infoArmorLvl,infoSpellBlock,infoSpellBlockLvl) =>{
-    const championInfoDiv = document.getElementById("championInfo");
+
+    
      // var body = document.getElementsByTagName('body')[0];
      // body.style.backgroundImage = url 'url('+image+')';
      
-    championInfoDiv.innerHTML=""
+    
     championInfoDiv.innerHTML += 
          
       `<div align="center" style="margin-top: 7px;">
@@ -38,6 +40,11 @@ const dataLol = window.LOLdata;
          ${infoSpellBlock} (+${infoSpellBlockLvl} por nivel)<br>
          </p>
        </div>`;
+       //  console.log(championInfoDivB.childNodes[2]);
+      //  console.log(championInfoDiv.childNodes[0])
+      championInfoDivB.appendChild(championInfoDiv.childNodes[1])  //mover children :)
+      if (championInfoDivB.hasChildNodes()) {
+       championInfoDivB.removeChild(championInfoDivB.childNodes[0]);}
  }
 
 
@@ -48,7 +55,7 @@ window.onload = function showAllOnload() {  // mostrar todos al inicio
     allResultFilter.forEach(element => {
     championImgDiv.innerHTML += 
     
-   `<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+   `<div class="col-md-4 col-sm-6 col-xs-12">
     <div class="card mt-3" style="background-color: #e2e2e2";>
     <div style="cursor: pointer;" id="${element.id}" onclick=championInfo(${JSON.stringify(element.img)},${JSON.stringify(element.id)},${element.stats.hp},${element.stats.hpperlevel},${element.stats.hpregen},${element.stats.hpregenperlevel},${element.stats.mp},${element.stats.mpperlevel},${element.stats.attackdamage},${element.stats.attackrange},${element.stats.movespeed},${element.stats.armor},${element.stats.armorperlevel},${element.stats.spellblock},${element.stats.spellblockperlevel})
     )>
@@ -70,7 +77,7 @@ selectChange.addEventListener('change', () =>{ //mostrar filtro
   let allResultFilter = window.filteringResult(selectedTag,dataLol);
   allResultFilter.forEach(element =>{
     championImgDiv.innerHTML += 
-    `<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+    `<div class="col-md-4 col-sm-6 col-xs-12">
     <div class="card mt-3" style="background-color: #e2e2e2";>
     <div style="cursor: pointer;" id="${element.id}" onclick=championInfo(${JSON.stringify(element.img)},${JSON.stringify(element.id)},${element.stats.hp},${element.stats.hpperlevel},${element.stats.hpregen},${element.stats.hpregenperlevel},${element.stats.mp},${element.stats.mpperlevel},${element.stats.attackdamage},${element.stats.attackrange},${element.stats.movespeed},${element.stats.armor},${element.stats.armorperlevel},${element.stats.spellblock},${element.stats.spellblockperlevel})
     )>
@@ -94,7 +101,7 @@ orderChange.addEventListener('change', () =>{ //ordenar segun filtro
   allResultOrder.forEach(element =>{
   if (selectedOrder == "difficultyEasiestFirst" || selectedOrder == "difficultyHardestFirst"){//agrega p con dificultad
     championImgDiv.innerHTML += 
-    `<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+    `<div class="col-md-4 col-sm-6 col-xs-12">
     <div class="card mt-3" style="background-color: #e2e2e2";>
     <div style="cursor: pointer;" id="${element.id}" onclick=championInfo(${JSON.stringify(element.img)},${JSON.stringify(element.id)},${element.stats.hp},${element.stats.hpperlevel},${element.stats.hpregen},${element.stats.hpregenperlevel},${element.stats.mp},${element.stats.mpperlevel},${element.stats.attackdamage},${element.stats.attackrange},${element.stats.movespeed},${element.stats.armor},${element.stats.armorperlevel},${element.stats.spellblock},${element.stats.spellblockperlevel})
     )>
@@ -109,7 +116,7 @@ orderChange.addEventListener('change', () =>{ //ordenar segun filtro
   </div>`    
 }else{ 
   championImgDiv.innerHTML += 
-    `<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+    `<div class="col-md-4 col-sm-6 col-xs-12">
     <div class="card mt-3" style="background-color: #e2e2e2";>
     <div style="cursor: pointer;" id="${element.id}" onclick=championInfo(${JSON.stringify(element.img)},${JSON.stringify(element.id)},${element.stats.hp},${element.stats.hpperlevel},${element.stats.hpregen},${element.stats.hpregenperlevel},${element.stats.mp},${element.stats.mpperlevel},${element.stats.attackdamage},${element.stats.attackrange},${element.stats.movespeed},${element.stats.armor},${element.stats.armorperlevel},${element.stats.spellblock},${element.stats.spellblockperlevel})
     )>
@@ -127,13 +134,16 @@ orderChange.addEventListener('change', () =>{ //ordenar segun filtro
 }) 
 })
 ;
-  
+
 }
-  
 
 
 
 
 
-//addevent de boton calcular
-//console.log(window.average("Jinx","Bard","Aatrox","Nami", "Soraka", dataLol))
+// clearInfo.addEventListener('click', () =>{ 
+//   championInfoDiv.innerHTML = ""
+//   championInfoDivB.innerHTML = ""
+//   championInfoDiv.innerHTML+=`<p class="startText">Selecciona un campeón para ver su información aquí</p>`
+//   console.log(championInfoDiv.childNodes[0])
+//   })

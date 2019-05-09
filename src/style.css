@@ -41,7 +41,7 @@ body{
 }
 
 .scrollable {
-    height: 565px;
+    height: 620px;
     overflow-y: auto;
     margin-bottom: 10px;
 }
@@ -55,14 +55,20 @@ div::-webkit-scrollbar-thumb {
     border-radius:10px;
     }
 
-@media screen and (max-width: 480px){
-    .scrollable {
-    height: 400;
-    overflow-y: auto;
+    /* @media only screen and (max-width: 600px){
+        #championInfoA, #championInfoB{
+            width: auto;
+
+      }
+    } */
+
+    @media screen and (max-width: 992px){
+        .scrollable {
+            height: 700px;;
+            overflow-y: auto;
+        }
     }
-}
-
-
+    
 
 .selectClass, .bootstrap-select .btn{
    
@@ -86,7 +92,7 @@ div::-webkit-scrollbar-thumb {
 
 
 
-select:hover,select:focus, .bootstrap-select .btn:hover, .bootstrap-select .btn:focus {
+select:hover,select:focus, .bootstrap-select .btn:hover, .bootstrap-select .btn:focus,#clearInfoChamp:hover {
     color: rgb(230, 191, 51);
     background:rgba(0, 0, 0, 0.9);
 }
@@ -120,12 +126,15 @@ select:hover,select:focus, .bootstrap-select .btn:hover, .bootstrap-select .btn:
     background-size: 100%    
 }
 
-#championInfo{
+#championInfoA, #championInfoB{
     background: rgba(6, 42, 63, 0.8);
-    border:  4px outset #AE8D16;
     color: white;
-    height: 510px;
-}  
+   height: 510;
+}
+
+#championInfo{
+     border:  4px outset #AE8D16; 
+}
 
 .likeButton{
     background:  rgba(6, 42, 63, 0.8);
@@ -133,12 +142,26 @@ select:hover,select:focus, .bootstrap-select .btn:hover, .bootstrap-select .btn:
     letter-spacing: 2px;
     color: rgba(95, 223, 255, 1);
     text-align: center;
-    padding: 10px;
-    margin-top: 5px;
     border: 3px outset transparent;
     border-image: linear-gradient(to bottom, rgba(95, 223, 255, 1) 0%, rgb(59, 157, 182) 100%) 1
 }
+#calculateButton{
+    padding: 16px;
+    margin-top: 5px;
+    font-size: 20px;
+    
+}
 
+#clearInfoChamp{
+    width: inherit;
+    height: 40px;
+    color: #AE8D16;
+    font-size: 22px;
+    letter-spacing: 15px;
+    border: 3px outset transparent;
+    border-image: linear-gradient(to bottom, rgb(163, 139, 0) 0%, rgb(82, 63, 0) 100%) 1;
+    background:rgba(0, 0, 0, 0.7);
+}
 .likeButton:hover{
     background:rgba(0, 0, 0, 0.9);
 }
@@ -146,9 +169,11 @@ select:hover,select:focus, .bootstrap-select .btn:hover, .bootstrap-select .btn:
 .startText{
     text-align: center;
     font-size: 20px;
+    padding-bottom: 402px;
 }
 #btncalculate{
     text-align: center;
+    padding:auto;
 }
 #btnComeBack{
     text-align: end;
@@ -161,6 +186,12 @@ select:hover,select:focus, .bootstrap-select .btn:hover, .bootstrap-select .btn:
     text-align: center;
     font-size: 20px;
 }
+
+#championInfoB{
+    background: rgba(17, 76, 110, 0.7);
+}
+
+   
 
 
 

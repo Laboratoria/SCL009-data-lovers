@@ -16,7 +16,7 @@ calculateBtn.addEventListener("click", ()=>{
   let calculateAllAttacks= window.calculateAllAttacks(topTotal,jungleTotal,midTotal,adcTotal,supportTotal,window.LOLdata)
   
   showMyTeamTotal.innerHTML="";
-  showMyTeamTotal.innerHTML+= `<p class="textCalculated"> EL DAÑO TOTAL DE TU EQUIPO ES : <br>${calculateAllAttacks}</p>`
+  showMyTeamTotal.innerHTML+= `<p class="textCalculated">DAÑO TOTAL DEL EQUIPO <br>${calculateAllAttacks}</p>`
   
 });
 

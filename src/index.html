@@ -3,6 +3,7 @@
  <head>
    <meta charset="utf-8">
    <title>League of Data</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    <link rel="shortcut icon" href="img/icono.png" type="image/x-icon">
    <link rel="stylesheet" href="style.css" />
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -11,14 +12,13 @@
  </head>
  <body>
    
-   <div class="container fluid">
+   <div class="container">
     <div>
       <!--<a href="index.html"> -->
-      <img  src="img/logo.png" class="titleLogo" alt="League of Data Home">
-    </div>
+      <img  src="img/logo.png" class="titleLogo" alt="League of Data Home"></div>
       
-     <div class="row"> 
-       <div class="col-md-8 float-left text-left">
+     <div class="row justify-content-between"> 
+       <div class="col-md-7" id="colContainChamp">
          <select class="selectClass" id="userSelectedTag">
             <option disabled value="Todos" selected>FILTRAR</option>
              <option value="Todos">Todos</option>
@@ -47,16 +47,24 @@
 </div>
  <!--FIN CHAMPIONS CARDS-->
 
-  <div class="col-lg- 4 col-md-4 col-sm-12 col-xs-12 float-right">
-   
-      <p class="infoBar">INFORMACIÓN</p> 
-      <div id="championInfo">
-        <p class="startText">Selecciona un campeón para ver su información aquí</p>
+  <div class="col-md-5">
+  
+    <p class="infoBar">INFORMACIÓN</p> 
+    
+      <div class="col" id="championInfo">
+        <div class="row">
+        <div class="col-md-6 col-sm-6" id ="championInfoA">
+        <p class="startText">Selecciona un campeón para ver su información aquí</p></div>
+    
+    <div class="col-md-6 col-sm-6" id="championInfoB">
     </div>
-    <a style="text-decoration:none"  href="average.html"  role="button"><p class="likeButton">CALCULAR STATS DE UN EQUIPO</p></a>
+    </div>
+    
+  </div>
+   <button id="clearInfoChamp" class="likeButton"><p>LIMPIAR</p></button>
+    <a style="text-decoration:none"  href="average.html"  role="button"><p class="likeButton" id="calculateButton">CALCULAR STATS DE UN EQUIPO</p></a>
       </div>
       </div> <!--FIN ROW-->
-      
            
          </div><!--FIN COINTAINER-->
        

@@ -41,6 +41,51 @@ const dataTestOrder = {
       tags: ["Fighter"],
       },}}
 
+      const dataTestCalculate = {
+        data:{
+        Kled:{
+        stats: {
+          hp: 511.68,
+          movespeed: 335,
+          armor: 19.22,
+          spellblock: 30,
+          attackrange: 575,
+          attackdamage: 50.41,}},
+          Nunu:{
+            stats: {
+              hp: 598.28,
+              movespeed: 350,
+              armor: 26.38,
+              spellblock: 32.1,
+              attackrange: 125,
+              attackdamage: 59,}},
+          Ahri:{
+                stats: {
+                  hp: 514.4,
+                  movespeed: 330,
+                  armor: 20.88,
+                  spellblock: 30,
+                  attackrange: 550,
+                  attackdamage: 53.04,}},
+          Caitlyn:{
+                  stats: {
+                  hp: 524.4,
+                  movespeed: 325,
+                  armor: 22.88,
+                  spellblock: 30,
+                  attackrange: 650,
+                  attackdamage: 53.66,}},
+          Bard:{
+            stats: {
+            hp: 535,
+            movespeed: 330,
+            armor: 25,
+            spellblock: 30,
+            attackrange: 500,
+            attackdamage: 52,}}
+
+      }}
+
 
 
 
@@ -80,11 +125,22 @@ assert.equal(typeof orderData, 'function')
   );
   });
 
-  it('deberia retornar en orden values: Varus, Morgana, Amumu al ordenar por nombre de Z a A',() => { 
+  it('deberia retornar en orden: Varus, Morgana, Amumu al ordenar por nombre de Z a A',() => { 
     assert.deepEqual(window.orderData("nameZ_A",dataTestOrder.data),
     [{name:"Varus", info: {difficulty:2}},
     {name:"Morgana", info: {difficulty:1}},
      {name:"Amumu", info: {difficulty:3}}]
 );
+});
+})
+
+describe('calculateAllAttacks',() =>{
+  
+  it('deberia ser una funcion',() =>{
+assert.equal(typeof calculateAllAttacks, 'function')
+  })
+
+  it('deberia retornar para Kled,Nunu,Ahri,Caitlyn y Bard',() => { 
+    assert.equal(window.calculateAllAttacks("Kled","Nunu","Ahri","Caitlyn","Bard",dataTestCalculate.data),268)
 });
 })
