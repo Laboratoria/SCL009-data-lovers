@@ -12,7 +12,7 @@
     z-index: -10;
 }
 
-@media (max-width: 767px) {
+/*@media (max-width: 767px) {
     .video-background{
         display: none;
     }
@@ -20,7 +20,7 @@ body {
         background: url('img/fondo2.png');
         background-size: cover;
     }
-}
+}*/
 
 /*Styles del Header */
 header{
@@ -121,7 +121,7 @@ header{
     font-family: 'Scada', sans-serif;
     font-size: 20px;
     color: #FCD203;
-    font-family: 'Shadows Into Light', cursive;
+  
 }
 
 .btn-style {
@@ -139,6 +139,11 @@ header{
     margin-left: auto;
   margin-right: auto;
   border: 2px solid rgb(185, 102, 102);
+}
+
+#card-stats {
+    background-color:rgb(8, 8, 8);
+ 
 }
 
 /*Container de resultados*/

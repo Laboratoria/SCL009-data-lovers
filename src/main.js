@@ -108,7 +108,7 @@ let result = ""; //Var que contiene resultados, vacía.
     document.getElementById("stats-compute").innerHTML= 
     
     `
-    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+    <div class="card mb-3" id="card-stats" style="max-width: 18rem;">
   <div class="card-header">Estadísticas de salud de todos los campeones </div>
   <div class="card-body">
     
