@@ -1,5 +1,4 @@
-
-  const myData = Object.values(window.LOL.data); // OB arr q contiene los valores de las prop de obj
+const myData = Object.values(window.LOL.data); // OB arr q contiene los valores de las prop de obj
   
   
   const containerResult = document.getElementById("container-result"); //div q contiene todos mis resultados
@@ -81,6 +80,7 @@ initapp();
         resultDiv(result);
 
      }
+     document.getElementById("stats-compute").style.display = "none";
    });
 
 let result = ""; //Var que contiene resultados, vacía.
@@ -136,11 +136,11 @@ btnHome.addEventListener("click", function(){location.reload()});
      <p class="card-text"> El nivel mín de salud es de: ${statistic[1]} </p>
      <p class="card-text">El promedio de salud es de: ${statistic[2]} </p>
 </div>
-
      `
  
     document.getElementById("stats-compute").style.display = "block";
     document.getElementById("select-rol").style.display="none";
+
+    document.getElementById("text-head").style.display="none";
+    document.getElementById("text-champion").style.display="none";
   })
-  
- 
