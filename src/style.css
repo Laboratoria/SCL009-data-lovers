@@ -146,9 +146,12 @@ select:hover {
 }
 .showaverage{
     width: 300px;
-
 }
 
+.textCalculated{
+    text-align: center;
+    font-size: 20px;
+}
 
 
   
