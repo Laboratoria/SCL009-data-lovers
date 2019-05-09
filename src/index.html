@@ -8,13 +8,20 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Pokemones</title>
+    <title>Pokedata</title>
 </head>
 
 <body>
-    <div id="root">
+    <div>
         <header>
-            <section class="headerNav">
+            <div class="row">
+                <div class="col-12">
+                    <img class="img-fluid logo" src="./img/logo.jpg" alt="logo">
+                </div>
+            </div>
+
+            <section class="headerNav ">
+
 
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <a class="navbar-brand" href="#" onclick="window.location.reload(true)">Inicio</a>
@@ -30,20 +37,20 @@
                                 <select class="form-control" id="filterType">
 
                                     <option class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Filtrar por tipo</option>
-                                    <option>Dragon</option>
-                                    <option>Electric</option>
-                                    <option>Fighting</option>
-                                    <option>Fire</option>
-                                    <option>Flying</option>
-                                    <option>Ghost</option>
-                                    <option>Grass</option>
-                                    <option>Ground</option>
-                                    <option>Ice</option>
-                                    <option>Normal</option>
-                                    <option>Poison</option>
-                                    <option>Psychic</option>
-                                    <option>Rock</option>
-                                    <option>Water</option>
+                                    <option value = "Dragon">Dragon</option>
+                                    <option value = "Electric">Electrico</option>
+                                    <option value = "Fighting">Lucha</option>
+                                    <option value = "Fire">Fuego</option>
+                                    <option value = "Flying">Volador</option>
+                                    <option value = "Ghost">Fantasma</option>
+                                    <option value = "Grass">Planta</option>
+                                    <option value = "Ground">Tierra</option>
+                                    <option value = "Ice">Hielo</option>
+                                    <option value = "Normal">Normal</option>
+                                    <option value = "Poison">Veneno</option>
+                                    <option value = "Psychic">Psiquico</option>
+                                    <option value = "Rock">Roca</option>
+                                    <option value = "Water">Agua</option>
                                 </select>
                             </li>
 
@@ -52,10 +59,10 @@
                                 <select class="form-control" id="filterEggs">
                                 
                             <option class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Filtrar por huevos</option>
-                            <option>2 km</option>
-                            <option>5 km</option>
-                            <option>10 km</option>
-                            <option>Not in Eggs</option>
+                            <option value = "2 km">2 km</option>
+                            <option value = "5 km">5 km</option>
+                            <option value = "10 km">10 km</option>
+                            <option value = "Not in Egg">No huevos</option>
                                
                             </select>
                             </li>
@@ -66,16 +73,16 @@
 
                                     <option class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Ordenar</option>
-                                    <option>A-Z</option>
-                                    <option>Z-A</option>
-                                    <option>Ascendente</option>
-                                    <option>Descendente</option>
+                                    <option value = "A-Z">a-z</option>
+                                    <option value = "Z-A">z-a</option>
+                                    <option value = "Ascendente">001-151</option>
+                                    <option value = "Descendente">151-001</option>
                                 </select>
                             </li>
 
                         </ul>
                         <form class="form-inline my-2 my-lg-0">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Buscar nombre o numero" aria-label="Search" id="inputSearching">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Buscar nombre o numero" aria-label="Search" id="inputSearching" disabled>
                             <button class="btn btn-outline-success my-2 my-sm-0" id="buttonSearching">Buscar</button>
                         </form>
 

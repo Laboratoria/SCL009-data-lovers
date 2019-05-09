@@ -7,7 +7,7 @@ const filterEgg = document.getElementById("filterEggs");
 const data = window.POKEMON.pokemon;
 const size = document.getElementById("result");
 let condition;
-let i=0, cardPokemon = '', j=0;
+let i=0, cardPokemon = '', j,k;
 let dataEggs;
 let dataType;
 let sizePokemon = 0;
@@ -31,16 +31,15 @@ cardPokemon +=
 </div>
 <div class="card-body">
 <div class="">
-<h6 class="card-title">${data[i].name} N${data[i].num}</h6>
+<h6 class="card-title">${data[i].num} ${data[i].name} </h6>
 
 </div>
-<p class = "card-title"><span class="titlePokemon">Tipo:`
+<p class = "card-title"><span class="titlePokemon">Tipo: `
 
 
 for ( j=0; j<data[i].type.length;j++){
 
-cardPokemon += `${data[i].type[j]} 
-</span>`
+cardPokemon += ` ${data[i].type[j]} </span>`
   
 }
 
@@ -56,23 +55,54 @@ cardPokemon +=
 
 cardPokemon += `
 <div class="modal fade" id="miModal${data[i].name}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-<div class="modal-dialog" role="document">
+<div class="modal-dialog modal-sm" role="document">
 <div class="modal-content">
 <div class="modal-header">
-<h4 class="modal-title" id="myModalLabel">${data[i].name}</h4>
+<h4 class="modal-title" id="myModalLabel">${data[i].num} ${data[i].name}</h4>
 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 <span aria-hidden="true">&times;</span>
 </button>			
 </div>
-<div class="modal-body">
-<span>
+<div class="modal-body modalalign">
+<div>
 <img src="${data[i].img}" alt="${data[i].img}" class="">
-</span>
-<span>Height: ${data[i].height}</span>
-<span>Weight: ${data[i].weight}</span>
-
 </div>
+<div>
+<span>Peso:${data[i].weight}  </span>
 
+<span>  Alto:${data[i].height}</span>
+</div>
+<div>
+<span>Tipo: `
+
+
+for (j=0; j<data[i].type.length;j++){
+
+cardPokemon += `${data[i].type[j]} </span>`
+}
+cardPokemon += `
+</div>
+<div>
+<span>Caramelos: ${data[i].candy} </span>
+<div>  Huevos: ${data[i].egg}</div>
+</div>
+<div>
+<span>Evolucion:`
+    if (data[i].hasOwnProperty("next_evolution")){
+    let evolucion = Object.values(data[i].next_evolution);
+           for(let j=0; j<evolucion.length;j++){
+            cardPokemon += ` ${evolucion[j].name}`
+    }
+}
+else {
+    cardPokemon += ` No evoluciona`
+
+}`
+<span>`
+
+cardPokemon += `
+</div>
+</div>
 </div>
 </div>
 </div>`;
@@ -87,10 +117,11 @@ showPokemon(data);
 
 /*Filtrar pokemones*/
 filterType.addEventListener("change",()=>{
-
-
+filterEgg.selectedIndex =0;
+orderData.selectedIndex = 0;
 cardPokemon= '';
-condition = filterType.options[filterType.selectedIndex].text; 
+condition = filterType.options[filterType.selectedIndex].value;
+
 
 if (condition !== 'Filtrar por tipo') {
 
@@ -99,8 +130,8 @@ dataType = window.filterData(data, condition,"type");
 dataType = window.sortData(dataType,"num","Ascendente");
 eventOrder = 1;
 
-
-showResult(sizePokemon = window.computeStats(dataType));
+condition = filterType.options[filterType.selectedIndex].text;
+showResult(sizePokemon = window.computeStats(dataType,data),condition);
 
 
 showPokemon(dataType, sizePokemon);
@@ -109,8 +140,10 @@ showPokemon(dataType, sizePokemon);
 });
 
 filterEgg.addEventListener("change",()=>{
+    filterType.selectedIndex = 0;
+    orderData.selectedIndex =0;
     cardPokemon= '';
-    condition = filterEgg.options[filterEgg.selectedIndex].text;
+    condition = filterEgg.options[filterEgg.selectedIndex].value;
 
     
     if (condition !== 'Filtrar por huevos') {
@@ -118,7 +151,8 @@ filterEgg.addEventListener("change",()=>{
     eventOrder = 2;
     dataEggs = window.filterData(data, condition, "egg");
     dataEggs = window.sortData(dataEggs,"num","Ascendente");
-    showResult(sizePokemon = window.computeStats(dataEggs));
+    condition = filterEgg.options[filterEgg.selectedIndex].text;
+    showResult(sizePokemon = window.computeStats(dataEggs,data),condition);
     showPokemon(dataEggs, sizePokemon);
     }
     
@@ -126,16 +160,16 @@ filterEgg.addEventListener("change",()=>{
 
    
 /*Calcular pokemones*/ 
-const showResult =() =>{
-
+const showResult =(sizePokemon, condition) =>{
+  
 if(eventOrder === 1){
     
-    size.innerHTML = `<p col- 12 >Se muestran ${dataType.length} Pokemones tipo ${condition} que representa el ${sizePokemon}% del total de Pokemones</p>`;
+    size.innerHTML = `<p class = "col- 12 result" >Se muestran ${dataType.length} Pokemones tipo ${condition} que representa el ${sizePokemon}% del total de Pokemones</p>`;
 }
 
 if(eventOrder === 2){
     
-    size.innerHTML = `<p col-12>Se muestran ${dataEggs.length} Pokemones de ${condition} que representa el ${sizePokemon}% del total de Pokemones </p>`;
+    size.innerHTML = `<p class = "col- 12 result" >Se muestran ${dataEggs.length} Pokemones de ${condition} que representa el ${sizePokemon}% del total de Pokemones </p>`;
 }
 }
 
@@ -144,7 +178,7 @@ if(eventOrder === 2){
 
 orderData.addEventListener("change", () => {
 cardPokemon= '';
-let sortOrderSelect = orderData.options[orderData.selectedIndex].text;
+let sortOrderSelect = orderData.options[orderData.selectedIndex].value;
 
 if (eventOrder === 0){
 

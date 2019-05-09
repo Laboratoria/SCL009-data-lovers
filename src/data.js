@@ -64,9 +64,9 @@ else if (sortOrder === "Z-A"){
 
 }
 
-const computeStats = (data)=> {
+const computeStats = (dataFilter, data)=> {
 
-return(Math.round((data.length*100)/151));
+return(Math.round((dataFilter.length*100)/data.length));
 
 
 }

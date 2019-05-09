@@ -37,8 +37,16 @@ require('./data.spec.js');
     } 
 
 
-]
+];
 
+const dataFilter = [
+  {"num": "037",
+  "name": "Vulpix",
+  "type": [
+    "Fire"],
+    "egg": "5 km"
+  }
+];
 
 describe('filterData', () => {
   
@@ -318,5 +326,20 @@ describe('sortData', () => {
   )
   });
 
+
+});
+
+
+describe('computeStats', () => {
+
+  
+  it('debería ser una función', () => {
+    assert.equal(typeof computeStats, 'function');
+  });
+
+  it('debería retornar 25% cuando filtro por tipo fuego', () => {
+    assert.equal(window.computeStats(dataFilter,data),25);
+  
+  });
 
 });
