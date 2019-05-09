@@ -21,7 +21,6 @@ let dataSorted;
 
 const showPokemon = (data) =>{
 
-
 for ( i=0; i<data.length;i++){
 cardPokemon += 
 `<div class="pokemonCards  col-12 col-sm-4 col-md-3">
@@ -45,7 +44,7 @@ cardPokemon += ` ${data[i].type[j]} </span>`
 
 cardPokemon += 
 `</p>
-</p><a href="#" class="btn btn-primary btnCard" data-toggle="modal" data-target="#miModal${data[i].name}">Detalle</a>
+</p><a href="#" class="btn btn-primary btnCard" data-toggle="modal" data-target="#miModal${data[i].id}">Detalle</a>
 </div>
 </div>
 </div>`
@@ -54,7 +53,7 @@ cardPokemon +=
 /*Modal para mostrar pokemones*/
 
 cardPokemon += `
-<div class="modal fade" id="miModal${data[i].name}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="miModal${data[i].id}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 <div class="modal-dialog modal-sm" role="document">
 <div class="modal-content">
 <div class="modal-header">
@@ -89,11 +88,24 @@ cardPokemon += `
 <div>
 <span>Evolucion:`
     if (data[i].hasOwnProperty("next_evolution")){
+        
     let evolucion = Object.values(data[i].next_evolution);
-           for(let j=0; j<evolucion.length;j++){
-            cardPokemon += ` ${evolucion[j].name}`
+    if(evolucion.length ===2){
+         cardPokemon += ` Primera --> `  
     }
+    else {
+        cardPokemon += ` Unica --> `  
+    }
+    
+         
+         for(let j=0; j<evolucion.length;j++){
+            cardPokemon += ` ${evolucion[j].name}`
+         if(evolucion.length ===2 && j<1){
+            cardPokemon += ` Segunda -->`
+    } 
 }
+    }
+
 else {
     cardPokemon += ` No evoluciona`
 
@@ -101,6 +113,7 @@ else {
 <span>`
 
 cardPokemon += `
+
 </div>
 </div>
 </div>
