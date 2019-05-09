@@ -18,6 +18,6 @@ calculateBtn.addEventListener("click", ()=>{
   showMyTeamTotal.innerHTML="";
   showMyTeamTotal.innerHTML+= `<p class="textCalculated"> EL DAÑO TOTAL DE TU EQUIPO ES : <br>${calculateAllAttacks}</p>`
   
-
 });
+
 
