@@ -148,8 +148,9 @@ header{
      margin-right: 0.5em;
      margin-top: 0.5em;
      margin-bottom: 0.5em;
-  
-}
+    
+ }
+ 
 /*container del select*/
 .container-fluid{
   
@@ -202,4 +203,15 @@ footer{
     position: relative;
     bottom: 0;
     text-justify: center;
+}
+#text-champion{
+    font-family: 'Scada', sans-serif;
+    font-size: 30px;
+    color: #FCD203;
+    text-shadow: -2px -2px 1px #000, 
+      2px 2px 1px #000, 
+      -2px 2px 1px #000, 
+      2px -2px 1px #000;
+    justify-content: center;
+  
 }

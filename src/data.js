@@ -11,12 +11,12 @@ const sortData= (data, sortBy, sortOrder) => {
   const dataSort= data;
   
   if(sortBy==="name" && sortOrder === "z-a" ){
-    dataSort.sort((a,b)=>{
+    data.sort((a,b)=>{
    
      if(a.name>b.name){
        return -1;
       }
-  
+     
     });
   }
   return dataSort;
@@ -25,26 +25,25 @@ window.sortData = sortData;
 
 const sortDifficulty= (data, sortBy, sortOrder) => {
   const difficultySort= data;
-  if(sortBy==="info.difficulty" && sortOrder === "lowDifficult" ){
-    difficultySort.sort((a,b)=>{
-     
-    if(a.info.difficulty>b.info.difficulty){
+  if (sortBy === "info.difficulty" && sortOrder === "lowDifficult") {
+    difficultySort.sort((a, b) => {
+
+      if (a.info.difficulty < b.info.difficulty) {
+        return -1;
+      }
+      if(a.info.difficulty>b.info.difficulty){
         return 1;
-      }
-      if(a.info.difficulty<b.info.difficulty){
-       return -1;
-      }
- 
+       }
+
     });
   }
-  if(sortBy==="info.difficulty" && sortOrder === "highDifficult" ){
-    difficultySort.sort((a,b)=>{
-    
-    
-     if(a.info.difficulty>b.info.difficulty){
-       return -1;
-      }
+  if (sortBy === "info.difficulty" && sortOrder === "highDifficult") {
+    difficultySort.sort((a, b) => {
 
+      if (a.info.difficulty > b.info.difficulty) {
+        return -1;
+      }
+      
     });
   }
   return difficultySort;
