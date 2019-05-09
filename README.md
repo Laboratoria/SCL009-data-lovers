@@ -41,24 +41,49 @@ Durante los test de prototipo de baja fidelidad que realizamos a los usuarios  p
 
 Todas estas sugerencias han sido evaluadas y se intentarán implementar, pero principalmente nos guiaremos por los datos que nos entrega la data.
 
-Luego de analizar e intentar satisfacer las necesidades de los usuarios es que modificamos algunas caracteristicas del prototipo planteado.
-Tras esta evaluación se dejo la página con las siguientes propiedades:
+Además de este prototipo realizamos uno de alta fidelidad en [figma](https://www.figma.com/proto/VsSkrYK7O8IIJ6ozy9n2lodY/Intento-mil?node-id=1%3A2&scaling=scale-down) que tiene las mismas caracteristicas que el testeado posteriormente lo exportamos a [zeplin](zpl.io/V4eOQBM)
+![figma1](img/figma1.png)
+![figma2](img/figma2.png)
+![figma3](img/figma3.png)
+
+
+
+Luego de analizar e intentar satisfacer las necesidades de los usuarios es que modificamos algunas características del prototipo planteado.
+Tras esta evaluación se dejó la página con las siguientes propiedades:
+1. Botones ubicados en la parte superior para el acceso de cierta información: un botón para el inicio, otro para el acceso de los campeones en donde se despliega todo el contenido de estos.
+2. Select en la parte media que permiten el filtrado de los campeones de acuerdo a rol, orden alfabético y dificultad. 
+3. Un modal que se despliega posterior al seleccionar un campeón en particular.
+
+
+Todo esto se puede observar en la siguiente imagen 
 
 **Caso n°2.**
-Yo COMO jugador novato/intermedio de LoL, server LAS, QUIERO comparar las características de dos Campeones de un mismo rol, PARA escoger el más adecuado en la partida. 
+Yo COMO jugador novato/intermedio de LoL, server LAS, QUIERO comparar la dificultad de los Campeones de un mismo rol, PARA escoger el más adecuado en la partida. 
 
 _Criterios de aceptación._
-•	Campeones divididos por roles.
-•	Opción de seleccionar dos campeones para comparar sus características.
+1. Campeones ordenados por rol.
+2. Opción de ordenar los campeones por dificultad.
+
+Se dispuso de un select en el cual los usuarios pueden escoger el orden de dificultad de sus campeones, ya sea de menor a mayor o viceversa. De esta manera se cumplen los criterios de aceptación al estar primero filtrados por rol y luego ordenados de acuerdo a la dificultad.
 
 **Caso n°3.**
 Yo COMO jugador novato/intermedio de LoL, server LAS, QUIERO buscar directamente por nombre a un Campeón, PARA conocer sus características y escoger el más adecuado en la partida. 
 
 _Criterios de aceptación._
-•	Campo de búsqueda
-    o	Búsqueda predictiva.
-    o	Botón “buscar”
-        -	Despliegue de modal con resultado de búsqueda.
+1.  Campo de búsqueda
+2.  Búsqueda con autocompletado
+3.  Botón “buscar”
+4.  Mostrar campeon
+
+Para cumplir con estos criterios de aceptación se dispuso de un campo de búsqueda que permite encontrar al campeón requerido, para el hacking edition se espera poder terminar con la busqueda de autocompletado y de esta forma dejar habilitada esa opción, por el momento se cumple con la opción de buscar.
+
+
+
+
+
+
+
+
 
 
 
