@@ -1,7 +1,7 @@
 //addevent de boton calcular
 //console.log(window.average("Jinx","Bard","Aatrox","Nami", "Soraka", dataLol))
 
-const dataLol = window.LOLdata;
+const lolData = window.LOLdata;
 let calculateBtn= document.getElementById("btnCalculateAverage");
 calculateBtn.addEventListener("click", ()=>{
   let showMyTeamAverage= document.getElementById("average");
@@ -12,7 +12,7 @@ calculateBtn.addEventListener("click", ()=>{
   let supportAverage=document.getElementById("supportFirstTeam").value;
  
   let calculateAverage = window.average(topAverage,jungleAverage , midAverage, adcAverage, 
-   supportAverage, dataLol);
+   supportAverage, lolData);
   
 
   showMyTeamAverage.innerHTML="";
