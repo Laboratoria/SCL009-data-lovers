@@ -1,5 +1,9 @@
 /* Manejo de data */
 
+
+/* Funcion de filtrar data por tipo de pokemony por tipo de huevo
+recibe 3 parametros: la data, la condicion y la propiedad por la que se filtra */
+
 const filterData =(data, condition,filterBy) =>{
 // declaro la variable filterDataBy que contendra los pokemones de acuerdo al filtro elegido
 let filterDataBy;
@@ -26,7 +30,8 @@ return filterDataBy;
 };
  
 
-
+/* Funcion de ordenar data por tipo de pokemon y por tipo de huevo
+recibe 3 parametros: la data, la propiedad por la que se filtra y el orden */
 
 const sortData = (data, sortBy, sortOrder) =>{
 // declaro la variable dataSort que sera la nueva data ordenada
@@ -59,11 +64,14 @@ else if (sortOrder === "Z-A"){
      });
  
  }
-    
+ //retornando la data ordenada de acuerdo a la condicion   
  return dataSort;
 
 }
 
+/* Funcion de calculo de porcentaje de pokemones de acuerdo al 
+tipo y al huevo, recibe la data filtrada y la data que contiene todos los pokemones
+retrona el porcentaje de acuerdo al tamano de la data filtrada*/
 const computeStats = (dataFilter, data)=> {
 
 return(Math.round((dataFilter.length*100)/data.length));

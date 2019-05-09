@@ -151,61 +151,79 @@ showPokemones.innerHTML = cardPokemon;
 showPokemon(data);
 
 
-/*Filtrar pokemones*/
+/* Funcion filtrar pokemones por tipo*/
 filterType.addEventListener("change",()=>{
 //colocando los select de filtro por huevo y de ordenar en el primer index
 filterEgg.selectedIndex =0;
 orderData.selectedIndex = 0;
 //vaciando la variable que imprime las cards
 cardPokemon= '';
-//capturando la condicion por la que hara el filtro
+//capturando la condicion por la que se hara el filtro
 condition = filterType.options[filterType.selectedIndex].value;
 
-
+//condicionando que no tome el primer valor del select
 if (condition !== 'Filtrar por tipo') {
-
-
-dataType = window.filterData(data, condition,"type");
-dataType = window.sortData(dataType,"num","Ascendente");
+//capturando evento de select para mantener el filtro y poder ordenar de acuerdo al filtro
 eventOrder = 1;
-
+//capturando la data filtrada de acuerdo al tipo de pokemon
+dataType = window.filterData(data, condition,"type");
+//ordenando la data por numero para mostrarla la primera vez en el html
+dataType = window.sortData(dataType,"num","Ascendente");
+//igualando la condicion al valor del select para mostrar la cantidad del tipo elegido y su porcentaje
 condition = filterType.options[filterType.selectedIndex].text;
+//mostrando el parrafo de la cantidad y el porcentaje del tipo de pokemon filtrado
+//enviando la data filtrada por tipo y la data que contiene todos los pokemones
+//para hacer el calculo del porcentaje
 showResult(sizePokemon = window.computeStats(dataType,data),condition);
 
-
-showPokemon(dataType, sizePokemon);
+//pasando la data filtrada a la funcion para mostrar los pokemones
+showPokemon(dataType);
 }
 
 });
 
+/* Funcion filtrar pokemones por huevos*/
 filterEgg.addEventListener("change",()=>{
+    //colocando los select de filtro por tipo y de ordenar en el primer index
     filterType.selectedIndex = 0;
     orderData.selectedIndex =0;
+    //vaciando la variable que imprime las cards
     cardPokemon= '';
+    //capturando la condicion por la que se hara el filtro
     condition = filterEgg.options[filterEgg.selectedIndex].value;
 
-    
+    //condicionando que no tome el primer valor del select
     if (condition !== 'Filtrar por huevos') {
-     
+     //capturando evento de select para mantener el filtro y poder ordenar de acuerdo al filtro
     eventOrder = 2;
+    //capturando la data filtrada de acuerdo al tipo de huevo
     dataEggs = window.filterData(data, condition, "egg");
+    //ordenando la data por numero para mostrarla la primera vez en el html
     dataEggs = window.sortData(dataEggs,"num","Ascendente");
+    //igualando la condicion al valor del select para mostrar la cantidad del tipo elegido y su porcentaje
     condition = filterEgg.options[filterEgg.selectedIndex].text;
+    //mostrando el parrafo del la cantidad y el porcentaje del tipo de pokemon filtrado
+    //enviando la data filtrada por huevo y la data que contiene todos los pokemones
+    //para hacer el calculo del porcentaje
     showResult(sizePokemon = window.computeStats(dataEggs,data),condition);
-    showPokemon(dataEggs, sizePokemon);
+    //pasando la data filtrada a la funcion para mostrar los pokemones
+    showPokemon(dataEggs);
     }
     
     });
 
    
-/*Calcular pokemones*/ 
+/*Funcion Calcular pokemones*/ 
 const showResult =(sizePokemon, condition) =>{
-  
+
+ //comprobando que se esta en el evento del filtrar por tipo
+ //y mostrando la cantidad y el porcentaje por su tipo
 if(eventOrder === 1){
     
     size.innerHTML = `<p class = "col- 12 result" >Se muestran ${dataType.length} Pokemones tipo ${condition} que representa el ${sizePokemon}% del total de Pokemones</p>`;
 }
-
+//comprobando que se esta en el evento del filtrar huevos y 
+// y mostrando la cantidad y el porcentaje por km
 if(eventOrder === 2){
     
     size.innerHTML = `<p class = "col- 12 result" >Se muestran ${dataEggs.length} Pokemones de ${condition} que representa el ${sizePokemon}% del total de Pokemones </p>`;
@@ -213,25 +231,35 @@ if(eventOrder === 2){
 }
 
 
-/*Ordenar pokemones*/
+/*Funcion Ordenar pokemones*/
 
 orderData.addEventListener("change", () => {
+//vaciando la variable que imprime las cards
 cardPokemon= '';
+//capturando el valor del select para el criterio del orden
 let sortOrderSelect = orderData.options[orderData.selectedIndex].value;
+//capturando cual evento se selecciono
 
+//igual a 0 si no se ha accionado ningun select y se ordenan todos los pokemones
+//usando la variable data
 if (eventOrder === 0){
 
     dataSorted = data;
 }
+//igual a 1 si no se ha accionado el filtrar por tipo
+//usando la variable dataType que captura la data por tipo
 if (eventOrder === 1){
 
     dataSorted = dataType;
 }
+//igual a 2 si no se ha accionado el filtrar por huevo
+//usando la variable dataEggs que captura la data por huevos
 if (eventOrder === 2){
 
     dataSorted = dataEggs;
 } 
-
+//de acuerdo al evento accionado se envia la data correspondiente
+//y se ordena de acuerdo al nombre o numero de pokemon
 if (sortOrderSelect === "A-Z"){
 dataSorted = window.sortData(dataSorted,"name","A-Z");
 }
@@ -246,7 +274,7 @@ if (sortOrderSelect=== "Ascendente"){
 if (sortOrderSelect=== "Descendente"){
     dataSorted = window.sortData(dataSorted,"num","Descendente");
 }
-
+//mostrando la data ordenada
 showPokemon(dataSorted);
 });
 
