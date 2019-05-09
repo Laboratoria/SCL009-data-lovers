@@ -113,3 +113,25 @@ describe('statsRol', () => {
   });
 
 })
+
+describe('searchChampion', () => {
+
+  const dataSearch = [
+    { name: "Aatrox" },
+    { name: "Alistar" },
+    { name: "Amumu" }
+  ]
+
+  it('debería ser una función', () => {
+    assert.equal(typeof window.searchChampion, 'function');
+  });
+
+  it('debería retornar el campeón ingresado en buscar', () => {
+    assert.deepEqual(window.searchChampion(dataSearch), [
+      { name: "Aatrox" },
+      { name: "Alistar" },
+      { name: "Amumu" }
+    ]);
+  });
+
+})

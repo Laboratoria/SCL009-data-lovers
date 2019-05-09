@@ -12,15 +12,6 @@
     z-index: -10;
 }
 
-/*@media (max-width: 767px) {
-    .video-background{
-        display: none;
-    }
-body {
-        background: url('img/fondo2.png');
-        background-size: cover;
-    }
-}*/
 
 /*Styles del Header */
 header{
@@ -46,11 +37,11 @@ header{
         overflow: hidden;
         width: 100%;
         position: relative;
-       /* background-color: rgba(5, 5, 5, 1.0);*/
+      
     }
 
     nav > ul img {
-        width: 70%;
+        width: 150px;
         height: auto;
         border: 2px solid rgb(75, 66, 20);
         border-radius: 50%;
@@ -66,7 +57,7 @@ header{
         color: rgb(179, 154, 12);
         display: block;
         line-height: 20px;
-        padding: 20px;
+        padding: 10px;
         position: relative;
         text-align: center;
         font-family: 'Volkhov', serif;

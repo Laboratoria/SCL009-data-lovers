@@ -1,4 +1,4 @@
-window.onload = () => {
+
   const myData = Object.values(window.LOL.data); // OB arr q contiene los valores de las prop de obj
   
   
@@ -19,7 +19,7 @@ window.onload = () => {
                                     
                                     </div>
                                     `;
-                              
+                                    //loadModal(element);
                                   });
   }
   resultDiv(myData); 
@@ -58,9 +58,30 @@ window.onload = () => {
        </div>
      </div>
    </div>
- </div> <!--  fin  The Modal -->`;
- } //fin de windowOnload
+ </div> <!--  fin  The Modal -->`; 
 
+}
+ const initapp = () => { // función que carga más rápido el modal
+  containerModal.innerHTML = '';
+  myData.forEach(element => {
+  loadModal(element);
+  })
+}
+
+initapp();
+
+
+ //fin de windowOnload
+
+ /*función de búsqueda por nombre*/
+ const txtBuscar = document.getElementById('txtBuscar');
+ txtBuscar.addEventListener("keypress", (event) => {
+     if (event.keyCode === 13) {    
+        result = window.searchChampion(myData, txtBuscar.value);
+        resultDiv(result);
+
+     }
+   });
 
 let result = ""; //Var que contiene resultados, vacía.
 
@@ -73,7 +94,7 @@ let result = ""; //Var que contiene resultados, vacía.
     let percentForRol= window.statsRol(result);
     document.getElementById("percent-rol").innerHTML= ` <div class= "percent-div">
  
-   <meter min="10" max="100" low="20" high="50" value="${percentForRol}" ></meter> <p class="percent-p"> Porcentaje por rol: ${percentForRol} % </p>
+   <meter min="10" max="100" low="20" high="50" value="${percentForRol}" ></meter> <p class="percent-p"> Porcentaje de campeones que corresponden a este rol: ${percentForRol} % </p>
     </div>
   
     `
@@ -96,9 +117,8 @@ let result = ""; //Var que contiene resultados, vacía.
   })
   
   /*Enlace que lleva al inicio*/
-  const btnHome= document.getElementById("logo-lol");
-  btnHome.addEventListener("click", function(){location.reload()
-    });
+  const btnHome= document.getElementById("home");
+btnHome.addEventListener("click", function(){location.reload()});
    
   
   /*Enlace que muestra las estadísticas*/
@@ -124,13 +144,3 @@ let result = ""; //Var que contiene resultados, vacía.
   })
   
  
-  const initapp = () => { // función que carga más rápido el modal
-    containerModal.innerHTML = '';
-    myData.forEach(element => {
-    loadModal(element);
-    })
-  }
-  
-  initapp();
-  
-}

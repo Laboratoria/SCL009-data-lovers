@@ -9,26 +9,14 @@ window.filterData = filterData;
 
 const sortData= (data, sortBy, sortOrder) => {
   const dataSort= data;
-  /*if(sortBy==="name" && sortOrder === "a-z" ){
-    dataSort.sort((a,b)=>{
-     if(a.nam<b.name){
-      return -1;
-     }
-     if(a.name>b.name){
-       return 1;
-      }
-    });
-  }*/ // no me corre test con esta linea
+  
   if(sortBy==="name" && sortOrder === "z-a" ){
     dataSort.sort((a,b)=>{
    
      if(a.name>b.name){
        return -1;
       }
-     /*if(a.name<b.name){
-      return 1;
-     }*/ // no me corre test con esta linea
- 
+  
     });
   }
   return dataSort;
@@ -52,9 +40,7 @@ const sortDifficulty= (data, sortBy, sortOrder) => {
   if(sortBy==="info.difficulty" && sortOrder === "highDifficult" ){
     difficultySort.sort((a,b)=>{
     
-     /*if(a.info.difficulty<b.info.difficulty){
-     return 1;
-      }*/ // no me  corre test con esta línea
+    
      if(a.info.difficulty>b.info.difficulty){
        return -1;
       }
@@ -89,3 +75,15 @@ const statsRol = (data) => {
 };
 
 window.statsRol = statsRol;
+
+const searchChampion = (data, texto) => {
+  const resultChampion = data.filter( (element) => {
+     let name = element.name;
+        if (name.search(texto) > -1  || name.toLowerCase().search(texto) > -1 || name.toUpperCase().search(texto) > -1 ) {
+           return true;
+        }
+       return false;
+  });
+  return resultChampion;
+}
+window.searchChampion = searchChampion;
