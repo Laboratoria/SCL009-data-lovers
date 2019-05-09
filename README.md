@@ -11,7 +11,7 @@
 
 Para éste proyecto se desarrollo una aplicación ocupando la data del juego League of Leyend con el objetivo de aprender a manipular objetos y arreglos. 
 
-Al pensar en el usuario de nuestra app descubrimos que deberian ser jugadores principiantes e intermedios cuyo objetivo principal en relación a nuestro producto es por un lado investigar, visualizar y comparar estadísticas (stats) de los personajes del juego, denominados campeones (Champions), para poder tomar desiciones respecto de personajes a elegir, por otro lado, poder generar estadísticas por equipo con el fin de seleccionar el equipo con mejores posibilidades de ganar.
+Al pensar en el usuario de nuestra app descubrimos que deberían ser jugadores principiantes e intermedios cuyo objetivo principal en relación a nuestro producto es por un lado investigar, visualizar y comparar estadísticas (stats) de los personajes del juego, denominados campeones (Champions), para poder tomar desiciones respecto de personajes a elegir, por otro lado, poder generar estadísticas por equipo con el fin de seleccionar el equipo con mejores posibilidades de ganar.
 
 El foco principal de interfaz esta orientado a la visualización de los campeones y sus estadísticas, el producto se espera que sea utizado en tiempos ocio y juego.
 
