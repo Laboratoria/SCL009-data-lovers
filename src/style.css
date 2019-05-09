@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Artifika|Shadows+Into+Light');
 
-.fondocss{
+/* video de fondo */
+.video-background{
 
     position: fixed;
     top: 20;
@@ -10,6 +11,18 @@
     object-fit: cover;
     z-index: -10;
 }
+
+@media (max-width: 767px) {
+    .video-background{
+        display: none;
+    }
+body {
+        background: url('img/fondo2.png');
+        background-size: cover;
+    }
+}
+
+/*Styles del Header */
 header{
     width: 100%;
     position: relative;
@@ -35,6 +48,17 @@ header{
         position: relative;
        /* background-color: rgba(5, 5, 5, 1.0);*/
     }
+
+    nav > ul img {
+        width: 70%;
+        height: auto;
+        border: 2px solid rgb(75, 66, 20);
+        border-radius: 50%;
+        position: relative;
+    }
+    nav > ul img:hover{
+        filter: sepia(60%);
+    }
     nav > ul li {
         display: table-cell;
     }
@@ -58,29 +82,12 @@ header{
         background-color: rgba(77, 43, 43, 0.959);
         
     }
-#logo-lol {
-    width: 70%;
-    height: auto;
-    border: 2px solid rgb(75, 66, 20);
-    border-radius: 50%;
-}
+    /*Títulos de la página*/
 .headboard{
-  /* background-color: aliceblue; */
   margin-top:40px;   /*  margin, corresponde al margen */
   padding-top: 5px;   /*  padding es como margen pero interior */
   position: relative;
   justify-content: center;
-
-}
-.headboard h1{
-    font-family: 'Volkhov', serif;
-     font-size: 50px; 
-      color: #FCD203;
-      text-shadow: -2px -2px 1px #000, 
-      2px 2px 1px #000, 
-      -2px 2px 1px #000, 
-      2px -2px 1px #000;
-      justify-content: center;   
 
 }
 .headboard p{
@@ -92,16 +99,16 @@ header{
       -2px 2px 1px #000, 
       2px -2px 1px #000;
     justify-content: center;
+    margin-top:80px; 
 }
-#stats-compute{
-    display: none;
-}
+/*Container de las estadísticas*/
 .compute-stats{
     font-family: 'Scada', sans-serif;
     font-size: 20px;
     color: #FCD203;
 }
 
+/*Style de cards bootstrap*/
 .my-card{
     background: rgb(131,109,20);
 background: linear-gradient(90deg, rgba(131,109,20,0.9500175070028011) 0%, rgba(202,213,86,0.8239670868347339) 90%);
@@ -134,6 +141,7 @@ background: linear-gradient(90deg, rgba(131,109,20,0.9500175070028011) 0%, rgba(
   border: 2px solid rgb(75, 66, 20);
 }
 
+/*Container de resultados*/
 #container-result {
     background-color: rgba(12, 3, 0.288, 0);
     justify-content: center;
@@ -146,6 +154,7 @@ background: linear-gradient(90deg, rgba(131,109,20,0.9500175070028011) 0%, rgba(
   
 }
 
+/*Styles del modal bootstrap*/
 .modal-content{
     background-color:rgba(239,197,202,1);
     position: absolute;
@@ -162,4 +171,14 @@ background: linear-gradient(90deg, rgba(131,109,20,0.9500175070028011) 0%, rgba(
   margin-right: auto;
   border: 2px solid rgb(75, 66, 20);
 
+}
+/*Styles div percent*/
+.percent-p{
+    font-family: 'Scada', sans-serif;
+    font-size: 20px;
+    color: #FCD203;
+    text-shadow: -2px -2px 1px #000, 
+      2px 2px 1px #000, 
+      -2px 2px 1px #000, 
+      2px -2px 1px #000;
 }

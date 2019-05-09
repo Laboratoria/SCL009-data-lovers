@@ -17,7 +17,7 @@
 
 <body>
       <div class="container">
-        <video class="fondocss"  autoplay muted loop>
+        <video class="video-background"  poster="img/fondo2.png" autoplay muted loop>
           <source src="videos/poppy.webm" type="video/webm">
           </video>
       <!-- corresponde a la cabecera -->
@@ -25,11 +25,12 @@
       <div id="root">
           <header>
               <div id="header-container" class="row">
+                
                 <nav>
+                  
                   <ul>
-                      <li><img id= "logo-lol" src="img/Presentación1.png" alt=""></li>
-                      <li><a href="#" id="home"><i class="link-header"></i> INICIO </a></li>
-                      <li><a href="#" id="stats-champions"><i class="link-header"></i> ESTADISTICA </a></li>
+                      <li><img id= "logo-lol" src="img/Presentación1.png" alt="" title="Presiona para volver a Inicio"></li>
+                      <li><a href="#" id="stats-champions"><i class="link-header"></i> ESTADÍSTICA </a></li>
                   </ul>
                 </nav>
               </div>
@@ -62,12 +63,10 @@
             <option id="lowDifficult" value="lowDifficult">Menor dificultad</option>
             <option id="highDifficult" value="highDifficult">Mayor dificultad</option>
           </select>
-          <p class="percent">Porcentaje por rol= </p><p id = "percent-rol" class="percents"> </p>
+          <p class="percent"></p><p id = "percent-rol" class="percents"> </p>
         </div> <br>
         <div id="stats-compute" class="compute-stats">
-          <p class="stats-result">Max. HP es = </p><p id = "max-result" class="stats-results"> </p>
-          <p class="stats-result">Min. HP es = </p><p id = "min-result" class="stats-results"> </p>
-          <p class="stats-result">HP Average = </p><p id = "average-result" class="stats-results"></p>
+       
       </div>
   
       </div>

@@ -4,7 +4,7 @@ window.onload = () => {
   
   const containerResult = document.getElementById("container-result"); //div q contiene todos mis resultados
   
-  const resultDiv = (data) => {
+  const resultDiv = (data) => { //funcion de resultados que muestra las cards
     containerResult.innerHTML = "";
     //containerModal.innerHTML = "";
     data.forEach(element => {
@@ -19,12 +19,10 @@ window.onload = () => {
                                     
                                     </div>
                                     `;
-                                   // loadModal(element);
+                              
                                   });
   }
   resultDiv(myData); 
-
-
 
 
  /*funcion del modal*/
@@ -46,12 +44,12 @@ window.onload = () => {
            <div class="card-body">${element.title} 
            <div class="text-info"> ${element.tags} </div>
            <div class="text-blurb"> ${element.blurb} </div>
-           <div class= "stats-info">
- 
-     <p>Ataque</p> <meter min="0" max="10" low="3" high="5" optimum="7" value="${element.info.attack}" ></meter>
-     <p>Defensa </p> <meter min="0" max="10" low="3" high="5" optimum="7" value="${element.info.defense}" ></meter>
-     <p>Magia </p> <meter min="0" max="10" low="3" high="5" optimum="7" value="${element.info.magic}" ></meter>
-     <p>Dificultad </p> <meter min="0" max="10" low="3" high="5" optimum="7" value="${element.info.difficulty}" ></meter>
+           <div class= "stats-info ">
+           <p>Dificultad: ${element.info.difficulty} </p> <meter min="0" max="10" low="3" high="5" optimum="7" value="${element.info.difficulty}" ></meter>
+     <p>Ataque: ${element.info.attack} </p> <meter min="0" max="10" low="3" high="5" optimum="7" value="${element.info.attack}" ></meter>
+     <p>Defensa: ${element.info.defense} </p> <meter min="0" max="10" low="3" high="5" optimum="7" value="${element.info.defense}" ></meter>
+     <p>Magia: ${element.info.magic} </p> <meter min="0" max="10" low="3" high="5" optimum="7" value="${element.info.magic}" ></meter>
+     <p>Salud:${element.stats.hp} </p> <meter min="340" max="700" low="340" high="600" optimum="500" value="${element.stats.hp}" ></meter>
      </div>
        </div>
        <!-- Modal footer -->
@@ -61,7 +59,7 @@ window.onload = () => {
      </div>
    </div>
  </div> <!--  fin  The Modal -->`;
- }
+ } //fin de windowOnload
 
 
 let result = ""; //Var que contiene resultados, vacía.
@@ -72,8 +70,13 @@ let result = ""; //Var que contiene resultados, vacía.
     const selectRol = document.getElementById("rol-lol").value // accedo al valor (el rol que escoge el usuario)
     result = window.filterData(myData, selectRol);
     resultDiv(result);
-    let percentForRol= window.statsRol(result, selectRol);
-    document.getElementById("percent-rol").innerHTML= percentForRol + '%';
+    let percentForRol= window.statsRol(result);
+    document.getElementById("percent-rol").innerHTML= ` <div class= "percent-div">
+ 
+   <meter min="10" max="100" low="20" high="50" value="${percentForRol}" ></meter> <p class="percent-p"> Porcentaje por rol: ${percentForRol} % </p>
+    </div>
+  
+    `
   })
   
   /*Ordenado por nombre a-z, z-a*/
@@ -93,7 +96,7 @@ let result = ""; //Var que contiene resultados, vacía.
   })
   
   /*Enlace que lleva al inicio*/
-  const btnHome= document.getElementById("home");
+  const btnHome= document.getElementById("logo-lol");
   btnHome.addEventListener("click", function(){location.reload()
     });
    
@@ -102,15 +105,26 @@ let result = ""; //Var que contiene resultados, vacía.
   const btnStats = document.getElementById("stats-champions");
   btnStats.addEventListener("click", () => {
     let statistic = window.computeStats(myData);
-    document.getElementById("max-result").innerHTML = statistic[0];
-    document.getElementById("min-result").innerHTML = statistic[1];
-    document.getElementById("average-result").innerHTML = statistic[2];
+    document.getElementById("stats-compute").innerHTML= 
+    
+    `
+    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+  <div class="card-header">Estadísticas de salud de todos los campeones </div>
+  <div class="card-body">
+    
+    <p class="card-text"> El nivel máx de salud es de: ${statistic[0]} </p>
+     <p class="card-text"> El nivel mín de salud es de: ${statistic[1]} </p>
+     <p class="card-text">El promedio de salud es de: ${statistic[2]} </p>
+</div>
+
+     `
+ 
     document.getElementById("stats-compute").style.display = "block";
     document.getElementById("select-rol").style.display="none";
   })
   
  
-  const initapp = () => {
+  const initapp = () => { // función que carga más rápido el modal
     containerModal.innerHTML = '';
     myData.forEach(element => {
     loadModal(element);
