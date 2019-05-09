@@ -1,20 +1,20 @@
 
-# Pokedata
+# Pokédata
 ![](src/img/interfaz.jpg)
 
 
-# ¿Que es pokemon go? 
+# ¿Qué es Pokemon GO? 
 
-Antes de comenzar con la explicación de nuestra pagina es importante señalar en primera instancia el juego en el que nos inspiramos para crearla.
+Antes de comenzar con la explicación de nuestra página es importante señalar en primera instancia el juego en el que nos inspiramos para crearla.
  Pokémon GO es un videojuego de realidad aumentada basado en la localización desarrollado por la empresa Niantic cuyo dueño fue creador de Google maps. Es un juego casual para dispositivos iOS y Android. Es videojuego gratuito, contiene microtransacciones. Pokémon GO está creado en la plataforma de juego del mundo real de Niantic y utiliza ubicaciones reales de GPS para animar a los jugadores a que salgan a explorar para capturar Pokémones.
 
-# Introduccion
+# Introducción
 
- Pokedata es una aplicación web responsiva que fue creada y pensada en aquellos jugadores del juego pokemon go que recien estan adentrandose en el universo pokemon y busquen cierta orientación al momento de elegir sus pokemones. 
+ Pokedata es una aplicación web responsiva que fue creada y pensada en aquellos jugadores del juego Pokemon GO que recién estan adentrandose en el universo pokémon y buscan cierta orientación al momento de elegir sus pokemones. 
 
-# Informacion sobre el proceso
+# Información sobre el proceso
 
-Luego de leer y comentar los requisitos del Proyecto, lo primero que realizamos fue una lista de tareas, ordenadas en base a las prioridades necesarias para cumplir con lo requerido. De acuerdo a nuestra lista de tareas realizada en Trello.
+Luego de leer y comentar los requisitos del proyecto, lo primero que realizamos fue una lista de tareas, ordenadas en base a las prioridades necesarias para cumplir con lo requerido. De acuerdo a nuestra lista de tareas realizada en Trello.
 ## Planificacion
 
 [Click Aqui para ver planificacion](https://trello.com/b/7o0XmKMJ/data-lovers-pokemon) 
@@ -60,8 +60,8 @@ Por otro lado realizamos un prototipo de alta fidelidad en figma que fue nuestra
 
 
 
-Ademas realizamos una encuesta en linea para informarnos de los aspectos que debería considerar nuestra pagina tomando en cuenta que debíamos filtrar ,ordenar y calcular la encuesta reflejo que los usuarios esperan ver que los nombres de cada pokemon tambien cosideran relevante un filtro por tipo de pokemon y quieren informacion de como conseguir huevos . la encuesta no proporciono gran información por lo mismo y basándonos en el aprendizaje que nos dejo la mala formulación de preguntas en dicha encuesta decidimos realizar testeos con la pagina en funcionamiento
-y con la informacion obtenida implementamos mejoras tanto en diseño como en funcionamiento.
+Ademas realizamos una encuesta en linea para informarnos de los aspectos que debería considerar nuestra pagina tomando en cuenta que debíamos filtrar ,ordenar y calcular la encuesta reflejo que los usuarios esperan ver que los nombres de cada pokémon también consideran relevante un filtro por tipo de pokémon y quieren información de como conseguir que eclosionen los huevos . La encuesta no proporcionó  información relevante por lo mismo y basándonos en el aprendizaje que nos dejó la mala formulación de preguntas en dicha encuesta decidimos realizar testeos con la página en funcionamiento
+y con la información obtenida implementamos mejoras tanto en diseño como en funcionamiento.
 
 [Click aqui para ver encuesta](https://docs.google.com/forms/d/1Hx50ndrGJxEoFttq1uDXe0O-Y0F3yDBKP0_1mGCalLY/edit#responses)
 
@@ -75,12 +75,12 @@ YO COMO usuario nuevo del juego QUIERO  poder ver todos los pokemones para visua
 
 ## Historia de usuario 2
 
-YO COMO jugador novato de pokemon go QUIERO poder filtrar mi pokemon por tipo PARA ver sus características.
+YO COMO jugador novato de pokemon go QUIERO poder filtrar mi pokémon por tipo PARA ver sus características.
 
 
 ## Historia de usuario 3
 
-YO COMO usuario nuevo de pokemon go QUIERO poder ordenar los pokemones por numero o alfabeticamente para ubicar el personaje mas rapido.
+YO COMO usuario nuevo de pokemon go QUIERO poder ordenar los pokemones por número o alfabeticamente para ubicar el personaje mas rápido.
 
 
 ## Historia de usuario 4
@@ -89,24 +89,24 @@ YO COMO usuario principiante QUIERO saber cuantos pokemones hay de tipo agua par
 
 ## Historia de usuario 5
 
-YO COMO usuario nuevo QUIERO saber cuantos kilometros caminar para que mi huevo nazca PARA poder tener un nuevo pokemon.
+YO COMO usuario nuevo QUIERO saber cuántos kilómetros caminar para que mi huevo nazca y poder tener un nuevo pokemon.
 
-# Objetivos de la aplicacion
+# Objetivos de la aplicació-n
 
-Entrar a la plataforma directamente sin necesidad de logearse  ingresar datos perzonales .
+- Entrar a la plataforma directamente sin necesidad de loguearse o ingresar datos perzonales .
 
 
-Visualizar Pokémones directamente al entrar en la pagina.
+- Visualizar Pokémones directamente al entrar en la pagina.
 
-Clasificar y filtrar Pokémones según los deseos del usuario para acceder mas facilmente a alguna característica específica como:
+- Clasificar y filtrar pokémones según los deseos del usuario para acceder mas facilmente a alguna característica específica como:
 
-* Filtrar Pokémon por tipo segun desee el usuario.
+  * Filtrar pokémon por tipo según desee el usuario.
 
-* Ordenar pokemon por numero del 1 al 151 y viceversa.
+  * Ordenar pokémon por número del 1 al 151 y viceversa.
 
-* Ordenar pokemon de A a Z  y viceversa.
+  * Ordenar pokemon de A a Z  y viceversa.
 
-* Realizar calculo.
+  * Realizar cálculo.
 
 
 
@@ -119,7 +119,7 @@ Clasificar y filtrar Pokémones según los deseos del usuario para acceder mas f
 
 
 
-### Acontinuacion algunos de los videos de nuestro test de usabilidad. con los cuales comenzamos a realizar los cambios finales.
+### A continuación algunos de los videos de nuestro test de usabilidad con los cuales comenzamos a realizar los cambios finales.
 
 [Click aqui para vervideo 1](https://www.youtube.com/watch?v=jqEzKbV3CJE&t=4s)
 
@@ -132,29 +132,29 @@ Clasificar y filtrar Pokémones según los deseos del usuario para acceder mas f
 
 
 # Resultados de test de usabilidad
-## En bace a nuestros testeos de usabilidad pudimos obtener las siguientes impreciones de los usuarios.
+## En base a los testeos de usabilidad se pudo obtener las siguientes impresiones de los usuarios:
 
-* No queda claro el boton filtar,se debe indicar que es lo que se esta filtrando.
+* No queda claro el boton filtar, se debe indicar que es lo que se esta filtrando.
 
-* los botones deben se mas llamativos.
+* Los botones deben se mas llamativos.
 
-* los colores del header junto con el color del logo no se complementan.
+* Los colores del header junto con el color del logo no se complementan.
 
-* se sugiere armonizar los colores en la página y modificar tamaño de logo.
+* Se sugiere armonizar los colores en la página y modificar tamaño de logo.
 
 * El boton detalle no esta operativo.
 
-* Falta un boton que nos permita volver al principio de la pagina porque no resulta comodo  tener que usar el scroll para ir al principio dada la cantidad de elementos.
+* Falta un botón que nos permita volver al principio de la pagina porque no resulta cómodo  tener que usar el scroll para ir al principio dada la cantidad de elementos.
 
-* No queda claro a que se refiere el orden ascendente y descendente se deberia indicar que se ordena por numero.
+* No queda claro a que se refiere el orden ascendente y descendente se deberia indicar que se ordena por número.
 
-* El boton que permite ordenar los pokemones deberia decir ordenar e indicar que es lo que se ordena o deque manera se realiza el orden.
+* El botón que permite ordenar los pokemones deberia decir ordenar e indicar que es lo que se ordena o deque manera se realiza el orden.
 
-* No se entiende claramente la finalidad de la pagina ya que no posee un titulo o alguna explicacion que nos ayude a entender de que se trata la pagina.
+* No se entiende claramente la finalidad de la página ya que no posee un título o alguna explicación que nos ayude a entender de que se trata la página.
 
-* los elementos del filtro se sugiere sean en español para aquellos usuarios que no hablan ingles.
+* Los elementos del filtro se sugiere sean en español para aquellos usuarios que no hablan inglés.
 
-# Desarrollando iteracion 
+# Desarrollando iteración 
 
 
 
@@ -165,15 +165,15 @@ Clasificar y filtrar Pokémones según los deseos del usuario para acceder mas f
 
 # Cómo el producto soluciona los problemas/necesidades de los usuarios.
 
-Para identificar como el producto soluciona necesidades en los usuarios nos basamos en las historias de los mismos priorizando aquellas necesidades de mayor interés en las que se destacan que se muestren todos los 151 pokemones con sus respectivos nombres, caracteristicas, filtro por tipo ,orden por numero o por alfabeto ,filtar por huevo, conocer estadisticas de porcentaje de pokemones por tipo,distancia que se debe recorrer para que un huevo nazca.
+Para identificar como el producto soluciona necesidades en los usuarios nos basamos en las historias de los mismos priorizando aquellas necesidades de mayor interés en las que se destacan que se muestren todos los 151 pokemones con sus respectivos nombres, características, filtro por tipo ,orden por número o por alfabeto ,filtar por huevo, conocer estadísticas de porcentaje de pokemones por tipo,distancia que se debe recorrer para que un huevo nazca.
 
-Una vez definido el diseño general de la página, se hicieron test de usuarios para ver en que se podía mejorar, estos pudieron ser grabados. Aquí estan los links de algunos de estos test
+Una vez definido el diseño general de la página, se hicieron test de usuarios para determinar que se puede mejorar, estos fueron grabados. Aquí estan los links de algunos de estos test:
 
 # Nuestro Producto 
 
-Posterior a los testeos con usuarios se procedió a integrar colores, imágenes y detalles en cuanto a diseño visual y uso de la pagina .Con el siguiente resultado que esperamos mejorar para una futura iteracion.
+Posterior a los testeos con usuarios se procedió a integrar colores, imágenes y detalles en cuanto a diseño visual y uso de la página. Con el siguiente resultado que esperamos mejorar para una futura iteración.
 
-AQUI PRINT DE PANTALLA DE producto final
+![](src/img/productofinal.jpg)
 
 
 # Pruebas unitarias
@@ -184,17 +184,22 @@ Filtrar Ordenar Calcular
 La lógica del proyecto esta implementada completamente en JavaScript, HTML y CSS.
 
 # Herramientas
-Git
-GitHub
-GitHub Pages
-bootstrap
+- Git
+- GitHub
+- GitHub Pages
+- HTML5 
+- CSS3
+- Vanilla JS
+- Node.js
+- Mocha
+- Bootstrap 4.
 
 # Conclusión
 
 Nuestro último objetivo es seguir generando iteraciones hasta que el producto final sea de total agrado y conveniencia para nuestro usuario de tal manera que nuestro producto sea usable y además genere una gran experiencia de usuario.
 
-
-
+# Demostración
+En el siguiente vinculo puedes acceder a la Pokédata y experimentar el funcionamiento de la aplicación: [Enlace](https://nohestmm.github.io/SCL009-data-lovers/src/index.html)
 
 
 

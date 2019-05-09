@@ -1,5 +1,6 @@
 /* Manejo del DOM */
 
+/*Declarando las variables*/
 const showPokemones = document.getElementById("cards");
 const filterType = document.getElementById("filterType");
 const orderData= document.getElementById("order");
@@ -7,7 +8,9 @@ const filterEgg = document.getElementById("filterEggs");
 const data = window.POKEMON.pokemon;
 const size = document.getElementById("result");
 let condition;
-let i=0, cardPokemon = '', j,k;
+let i;
+let cardPokemon = ''; 
+let j;
 let dataEggs;
 let dataType;
 let sizePokemon = 0;
@@ -21,6 +24,10 @@ let dataSorted;
 
 const showPokemon = (data) =>{
 
+/*For para imprimir las cards de acuerdo a la data recibida
+para mostrar los pokemones en su totalidad,
+por filtro y por orden*/
+
 for ( i=0; i<data.length;i++){
 cardPokemon += 
 `<div class="pokemonCards  col-12 col-sm-4 col-md-3">
@@ -33,24 +40,30 @@ cardPokemon +=
 <h6 class="card-title">${data[i].num} ${data[i].name} </h6>
 
 </div>
-<p class = "card-title"><span class="titlePokemon">Tipo: `
+<div class = "card-title"><span class="titlePokemon">Tipo: `
 
-
+/* mostrar el tipo de pokemon sin comas(,)*/
 for ( j=0; j<data[i].type.length;j++){
 
 cardPokemon += ` ${data[i].type[j]} </span>`
   
 }
 
+/*aqui termina el for y continua mostrando los datos debajo del tipo*/
 cardPokemon += 
-`</p>
+`</div>
+<div>Huevos:
+${data[i].egg}
+</div>
+
 </p><a href="#" class="btn btn-primary btnCard" data-toggle="modal" data-target="#miModal${data[i].id}">Detalle</a>
 </div>
 </div>
 </div>`
 
 
-/*Modal para mostrar pokemones*/
+/*Modal para mostrar pokemones que se enlaza con el data-target psandole el id
+y colocandolo en el id del modal*/
 
 cardPokemon += `
 <div class="modal fade" id="miModal${data[i].id}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -74,7 +87,7 @@ cardPokemon += `
 <div>
 <span>Tipo: `
 
-
+/* mostrar el tipo de pokemon sin comas(,) dentro del modal*/
 for (j=0; j<data[i].type.length;j++){
 
 cardPokemon += `${data[i].type[j]} </span>`
@@ -86,32 +99,42 @@ cardPokemon += `
 <div>  Huevos: ${data[i].egg}</div>
 </div>
 <div>
-<span>Evolucion:`
+Evolución:</div>`
+/* mostrar la evolucion del pokemon dentro del modal*/
+
+//verifico si la propiedad next_evolution existe dentro del pokemon
     if (data[i].hasOwnProperty("next_evolution")){
-        
+ // si existe capturo los objetos que contiene la propiedad       
     let evolucion = Object.values(data[i].next_evolution);
-    if(evolucion.length ===2){
-         cardPokemon += ` Primera --> `  
+    //pregunto  si el tamano del arreglo de objetos es igual a 2
+    //para imprimir la palabra primera  y segunda
+    if(evolucion.length === 2){
+         cardPokemon += ` Primera: `  
     }
+    //si no es de el tamano indicado imprime solo unica
     else {
-        cardPokemon += ` Unica --> `  
+        cardPokemon += ` Única: `  
     }
     
-         
+         //for que imprime la  evolucion despues de ser unica o primera
          for(let j=0; j<evolucion.length;j++){
+            //capturando la evolucion
             cardPokemon += ` ${evolucion[j].name}`
+            //if que imprime la palabra segunda si el pokemon evoluciona dos veces
+            //pregunta si el tamano es de 2 y que j sea menor que 0 
          if(evolucion.length ===2 && j<1){
-            cardPokemon += ` Segunda -->`
+             //imprimendo la segunda evolucion
+            cardPokemon += ` | Segunda: `
     } 
 }
     }
-
+//si no posee la propiedad next_evolution muestra lo siguiente en el modal
 else {
     cardPokemon += ` No evoluciona`
 
 }`
-<span>`
-
+</span>`
+//cerrando los div del modal
 cardPokemon += `
 
 </div>
@@ -120,7 +143,7 @@ cardPokemon += `
 </div>
 </div>`;
 }
-
+//mostrando los pokemones al inicializar la pagina
 showPokemones.innerHTML = cardPokemon;
 
 }
@@ -130,9 +153,12 @@ showPokemon(data);
 
 /*Filtrar pokemones*/
 filterType.addEventListener("change",()=>{
+//colocando los select de filtro por huevo y de ordenar en el primer index
 filterEgg.selectedIndex =0;
 orderData.selectedIndex = 0;
+//vaciando la variable que imprime las cards
 cardPokemon= '';
+//capturando la condicion por la que hara el filtro
 condition = filterType.options[filterType.selectedIndex].value;
 
 
