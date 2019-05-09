@@ -29,45 +29,43 @@ const orderData = (sortBy,allChampionData) =>{
   }else if(sortBy == "difficultyHardestFirst"){
     orderResult = allChampionNames.sort((a, b)=>{
       return  b.info.difficulty-a.info.difficulty;})
-
-  }else if(sortBy == "nameA_Z"){
+ }else if(sortBy == "nameA_Z"){
     orderResult = allChampionNames.sort((a, b)=>{
-      return  a.info.name-b.info.name;})
+      return  a.name-b.name;})
   }else if(sortBy == "nameZ_A"){
-    orderResult = allChampionNames.sort()
-      return  orderResult.reverse()
-  }
+    orderResult = allChampionNames.sort((a,b)=>{
+      return b.name.localeCompare(a.name)
+     
+  })}
   return orderResult;
   };
-  
-
-
-  
-
-
 window.orderData = orderData;
 
-
-const average = (top, jungle, mid, adc, support, data)=>{
-  
-  const attackJungle = data[jungle].stats.attackdamage;
-  const attackTop = data[top].stats.attackdamage;
-  const attackMid = data[mid].stats.attackdamage;
-  const attackAdc = data[adc].stats.attackdamage;
-  const attackSupport = data[support].stats.attackdamage;
-  const allAttacks = [attackTop,attackJungle,attackMid,attackAdc,attackSupport];
- 
-  const suma = allAttacks.reduce((a,b)=>{
-    return a+b
-  })
-  return suma;
- 
-  /* let ataquetotal=( top.stats.attackdamage+ jungle.stats.attackdamage+mid.stats.attackdamage+
-     adc.stats.attackdamage+support.stats.attackdamage)/5;
-  */
-
+const calculateAllAttacks = (top,jungle,mid,adc,support,data)=>{
+  const topAttack = [data[top].stats.attackdamage,data[jungle].stats.attackdamage,data[mid].stats.attackdamage,data[adc].stats.attackdamage,data[support].stats.attackdamage]
+  return topAttack.reduce((a,b)=>{
+     return Math.round(a+b)
+    })
 }
- window.average = average
+ window.calculateAllAttacks = calculateAllAttacks;
+
+ 
+
+
+
+
+
+
+
+
+// const calculateAllAttacks = (top,jungle,mid,adc,support, data)=>{
+// const allAttacks = [data[top].stats.attackdamage,data[jungle].stats.attackdamage,data[mid].stats.attackdamage,data[adc].stats.attackdamage,data[support].stats.attackdamage];
+   
+// return allAttacks.reduce((a,b)=>{
+//     return a+b
+//   })
+// }
+
 
 
 

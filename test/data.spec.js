@@ -8,16 +8,16 @@ const dataTestOrder = {
   version: "6.24.1",
   data: {
   Morgana: {
-   info: {
-   difficulty: 1}
+    name:"Morgana",
+    info: { difficulty: 1}
   },
-    Varus: {
-      info: {
-      difficulty: 2}
+  Varus: {
+      name:"Varus",
+      info: {difficulty: 2}
     },
-       Amumu: {
-        info: {
-        difficulty: 3},
+    Amumu: {
+        name:"Amumu",
+        info: {difficulty: 3},
         }}};
 
         const dataTest = {
@@ -49,10 +49,20 @@ describe('filteringResult',() =>{
   it('deberia ser una funcion',() =>{
 assert.equal(typeof filteringResult, 'function')
   });
-  
   it('deberia retornar 3 al filtrar por fighter',() => { 
     assert.equal(window.filteringResult("Tank",dataTest.data).length,2);
   });
+  it('deberia retornar values de Aatrox y Camille al filtrar por tank',() => { 
+    assert.deepEqual(window.filteringResult("Tank",dataTest.data),[{
+      id: "Aatrox",
+     name: "Aatrox",
+     tags: ["Fighter", "Tank"],
+     },
+    {
+     id: "Camille",
+     name: "Camille",
+     tags: ["Fighter", "Tank"],
+     }]);})
 
 });
 
@@ -63,20 +73,18 @@ assert.equal(typeof orderData, 'function')
   });
   
   it('deberia retornar 3,2,1 al ordenar por difficultyHardestFirst ',() => { 
-    assert.equal(window.orderData("difficultyHardestFirst",dataTestOrder.data),
-    [
-{"info": {
-         "difficulty": 3 }},
-         {"info": {
-          "difficulty": 2 }},
-          {"info": {
-            "difficulty": 1 }} ]
-    
-    
-    
-    
-    
-    );
+    assert.deepEqual(window.orderData("difficultyHardestFirst",dataTestOrder.data),
+    [{name:"Amumu", info: {difficulty:3}},
+         {name:"Varus", info: {difficulty:2}},
+          {name:"Morgana", info: {difficulty:1}}]
+  );
   });
 
+  it('deberia retornar en orden values: Varus, Morgana, Amumu al ordenar por nombre de Z a A',() => { 
+    assert.deepEqual(window.orderData("nameZ_A",dataTestOrder.data),
+    [{name:"Varus", info: {difficulty:2}},
+    {name:"Morgana", info: {difficulty:1}},
+     {name:"Amumu", info: {difficulty:3}}]
+);
+});
 })
