@@ -32,11 +32,11 @@ Se establecieron cuatro historias de usuario como eje principal de la aplicació
 
 Primeras aproximaciones visuales de nuestra app.
 
-![Primer-boceto](https://drive.google.com/drive/u/2/my-drive)
+![Primer-boceto](src/img/bocetos/primerBoceto.jpg)
 
-![Segundo-boceto](https://drive.google.com/drive/u/2/my-drive)
+![Segundo-boceto-seccion-mostrar](src/img/bocetos/segundoBoceto-seccionMostrar.jpg)
  
- ![segundo-boceto-seccion-calcular](https://drive.google.com/drive/u/2/my-drive)
+ ![segundo-boceto-seccion-calcular](src/img/bocetos/segundoBoceto-seccionCalcular.jpg)
 
 <!-- Durante tu trabajo deberás haber hecho e iterado sketches (boceto) de tu
 solución usando papel y lápiz. Te recomendamos tomar fotos de todas las
@@ -45,7 +45,8 @@ iteraciones que realices, y las subas a tu repositorio, y las menciones en tu
  -->
 ### Prototipo de alta fidelidad
 
-![Prototipo](https://www.figma.com/file/RRdDYyEtp87n5HkxMwCcYAMD/LOL-Data-Lovers?node-id=0%3A1)
+[Prototipo](https://www.figma.com/proto/RRdDYyEtp87n5HkxMwCcYAMD/LOL-Data-Lovers?node-id=0%3A1&scaling=min-zoom)
+
 
 
 
