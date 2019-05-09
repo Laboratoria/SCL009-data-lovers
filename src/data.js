@@ -42,12 +42,29 @@ const orderData = (sortBy,allChampionData) =>{
 window.orderData = orderData;
 
 const calculateAllAttacks = (top,jungle,mid,adc,support,data)=>{
-  const topAttack = [data[top].stats.attackdamage,data[jungle].stats.attackdamage,data[mid].stats.attackdamage,data[adc].stats.attackdamage,data[support].stats.attackdamage]
-  return topAttack.reduce((a,b)=>{
+  const allAttack = [data[top].stats.attackdamage,data[jungle].stats.attackdamage,data[mid].stats.attackdamage,data[adc].stats.attackdamage,data[support].stats.attackdamage]
+  return allAttack.reduce((a,b)=>{
      return Math.round(a+b)
     })
 }
  window.calculateAllAttacks = calculateAllAttacks;
+
+ const calculateAllHp = (top,jungle,mid,adc,support,data)=>{
+  const allHp = [data[top].stats.hp,data[jungle].stats.hp,data[mid].stats.hp,data[adc].stats.hp,data[support].stats.hp]
+  return allHp.reduce((a,b)=>{
+     return Math.round(a+b)
+    })
+}
+ window.calculateAllHp = calculateAllHp;
+
+ const calculateAttackRange = (top,jungle,mid,adc,support,data)=>{
+  const allAttackRange = [data[top].stats.attackrange,data[jungle].stats.attackrange,data[mid].stats.attackrange,data[adc].stats.attackrange,data[support].stats.attackrange]
+   let result = allAttackRange.reduce((a,b)=>{
+     return (a+b)
+    })
+    return Math.round(result/5)
+}
+ window.calculateAttackRange = calculateAttackRange;
 
  
 

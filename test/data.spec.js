@@ -45,12 +45,12 @@ const dataTestOrder = {
         data:{
         Kled:{
         stats: {
-          hp: 511.68,
-          movespeed: 335,
-          armor: 19.22,
-          spellblock: 30,
-          attackrange: 575,
-          attackdamage: 50.41,}},
+          hp: 340,
+          movespeed: 345,
+          armor: 26,
+          spellblock: 32.1,
+          attackrange: 125,
+          attackdamage: 55,}},
           Nunu:{
             stats: {
               hp: 598.28,
@@ -140,7 +140,23 @@ describe('calculateAllAttacks',() =>{
 assert.equal(typeof calculateAllAttacks, 'function')
   })
 
-  it('deberia retornar para Kled,Nunu,Ahri,Caitlyn y Bard',() => { 
-    assert.equal(window.calculateAllAttacks("Kled","Nunu","Ahri","Caitlyn","Bard",dataTestCalculate.data),268)
+  it('deberia retornar al calcular el ataque total entre Kled,Nunu,Ahri,Caitlyn y Bard',() => { 
+    assert.equal(window.calculateAllAttacks("Kled","Nunu","Ahri","Caitlyn","Bard",dataTestCalculate.data),273)
 });
+})
+
+describe('calculateAttackRange',()=>{
+it('deberia ser una funcion',()=>{
+  assert.equal(typeof calculateAttackRange, 'function')
+})
+it('deberia retornar 390 al calcular el promedio de la velocidad de movmiento entre Kled,Nunu,Ahri,Caitlyn y Bard',()=>{
+  assert.equal(window.calculateAttackRange("Kled","Nunu","Ahri","Caitlyn","Bard",dataTestCalculate.data),390)
+})
+
+})
+
+describe('calculateAllHp',()=>{
+  it('deberia retornar 2511 al calcular la vida total entre Kled,Nunu,Ahri,Caitlyn y Bard',()=>{
+    assert.equal(window.calculateAllHp("Kled","Nunu","Ahri","Caitlyn","Bard",dataTestCalculate.data),2511)
+  })
 })

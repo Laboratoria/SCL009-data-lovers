@@ -1,5 +1,5 @@
 /* Manejo del DOM */
-const clearInfo = document.getElementById("clearInfoChamp");
+// const clearInfo = document.getElementById("clearInfoChamp");
 const championImgDiv = document.getElementById("championImg");
 const orderChange = document.getElementById("userSelectedOrder");
 const selectChange = document.getElementById("userSelectedTag");

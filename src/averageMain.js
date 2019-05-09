@@ -14,11 +14,21 @@ calculateBtn.addEventListener("click", ()=>{
   let supportTotal=document.getElementById("supportFirstTeam").value;
 
   
-  
-  let calculateAllAttacks= window.calculateAllAttacks(topTotal,jungleTotal,midTotal,adcTotal,supportTotal,window.LOLdata)
-  
+  let calculateAllHp = window.calculateAllHp(topTotal,jungleTotal,midTotal,adcTotal,supportTotal,window.LOLdata);
+  let calculateAllAttacks= window.calculateAllAttacks(topTotal,jungleTotal,midTotal,adcTotal,supportTotal,window.LOLdata);
+  let calculateAttackRange= window.calculateAttackRange(topTotal,jungleTotal,midTotal,adcTotal,supportTotal,window.LOLdata);
   showMyTeamTotal.innerHTML="";
-  showMyTeamTotal.innerHTML+= `<p class="textCalculated">DAÑO TOTAL DEL EQUIPO <br>${calculateAllAttacks}</p>`
+  showMyTeamTotal.innerHTML+= `<div class="col-md-12 average"><p class="textCalculated"> 
+  VIDA TOTAL<br>
+  ${calculateAllHp}
+  </p></div><div class="col-md-12 average"><p class="textCalculated">
+  DAÑO TOTAL<br>
+  ${calculateAllAttacks}</p></div>
+  <div class="col-md-12 average"><p class="textCalculated"> 
+  PROMEDIO RANGO DE ATAQUE<br>
+  ${calculateAttackRange}
+  </p></div>`
+  
   
 });
 

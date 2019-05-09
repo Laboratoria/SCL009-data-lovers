@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>League of Data</title>
+    <link href="https://fonts.googleapis.com/css?family=Scada" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="img/icono.png" type="image/x-icon">
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
@@ -19,10 +20,10 @@
       </div>
     </div> <!-- LOGO -->
 
-    <div class="container fluid"> <!-- SECCION SELECT TOP MID ADC SIPPPORT -->
-    	<div class="row">
+    <div class="container"> <!-- SECCION SELECT TOP MID ADC SIPPPORT -->
+    	<div class="row" id="selectsAv"> 
         <div class="col">
-        <select id="topFirstTeam" class="selectpicker"  data-style= "styleBase:selectClass" data-live-search="true">
+        <select id="topFirstTeam" class="selectpicker"  data-style= "styleBase:selectClassAv" data-live-search="true">
             <option disabled selected>Top</option>
             <option value="Aatrox">Aatrox</option>
             <option value="Akali">Akali</option>
@@ -87,7 +88,7 @@
             
             
         </select> 
-        <select id="jungleFirstTeam" class="selectpicker" data-style= "styleBase:selectClass" data-live-search="true">
+        <select id="jungleFirstTeam" class="selectpicker" data-style= "styleBase:selectClassAv" data-live-search="true">
             <option disabled selected>Jungle</option>
             <option value="Amumu" >Amumu</option>
             <option value="Camille">Camille</option>
@@ -139,7 +140,7 @@
             <option value="Zac">Zac</option>
             
           </select> 
-        <select id="midFirstTeam" class="selectpicker" data-style="styleBase:selectClass" data-live-search="true">
+        <select id="midFirstTeam" class="selectpicker" data-style="styleBase:selectClassAv" data-live-search="true">
             <option disabled selected>MID</option>
           <option value="Ahri" >Ahri</option>
           <option value="Akali">Akali</option>
@@ -199,7 +200,7 @@
           <option value="Zyra">Zyra</option>
 
         </select>
-        <select id="adcFirstTeam" class="selectpicker" data-style= "styleBase:selectClass" data-live-search="true">
+        <select id="adcFirstTeam" class="selectpicker" data-style= "styleBase:selectClassAv" data-live-search="true">
             <option disabled selected>ADC</option>
           <option value="Ashe">Ashe</option>
           <option value="Azir">Azir</option>
@@ -226,7 +227,7 @@
           <option value="Varus">Varus</option>
           <option value="Vayne">Vayne</option>
         </select>
-        <select id="supportFirstTeam" class="selectpicker" data-style= "styleBase:selectClass" data-live-search="true">
+        <select id="supportFirstTeam" class="selectpicker" data-style= "styleBase:selectClassAv" data-live-search="true">
           <option disabled selected>Support</option>
           <option value="Alistar">Alistar</option>
           <option value="Anivia">Anivia</option>
@@ -261,35 +262,37 @@
     	
     </div> <!--FIN CONTAINER SELECTSS-->
    
-    <div class="container fluid"> <!-- BOTON CALCULAR -->
-      <div class="row" id="btncalculate">
-          <button id="btnCalculateAverage" class="likeButton">CALCULAR POR EQUIPO</button>
+    <!-- BOTON CALCULAR -->
+      <div class="row" id="btnCalculate">
+          <button id="btnCalculateAverage" class="likeButton">CALCULAR STATS DE EQUIPO</button>
       </div>
-    </div> <!-- FIN BOTON CALCULAR -->
-    <br><br>
-    <div class="container fluid"> <!-- SECCION MOSTRAR PROMEDIO -->
-      <div class="row" id="showaverage">
-        <div id="championInfo" >
+    <!-- FIN BOTON CALCULAR -->
+    
+    <div class="container"> <!-- SECCION MOSTRAR PROMEDIO -->
+      <div class="row">
+        
 
           <div id="average">
-            <p class="startText">Información por Equipo</p>
+            
+            <p class="textCalculated average"><br><i>
+            -- Selecciona un campeón para cada linea -- </i><br><br></p>
+</div>
 
-
-          </div>
+         
 
         </div>
 
       </div>
       
-    </div> <!-- FIN SECCION MOSTRAR PROMEDIO -->
-    <br><br>
-    <div class="container fluid"> <!-- BOTON VOLVER -->
+     <!-- FIN SECCION MOSTRAR PROMEDIO -->
+    
+    <div class="container"> <!-- BOTON VOLVER -->
       <div  class="row">
-        <div class="col" id="btnComeBack">
+       
          
-          <a style="text-decoration:none"  href="index.html"  role="button"><p class="likeButton">VOLVER</p></a>
+          <a style="text-decoration:none" href="index.html"  role="button"><p id="btnBack" class="likeButton">VOLVER</p></a>
 
-        </div>
+        
       </div>
     </div> <!--FIN BOTON VOLVER -->
 
