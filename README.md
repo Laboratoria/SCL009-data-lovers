@@ -8,10 +8,9 @@
 Antes de comenzar con la explicación de nuestra pagina es importante señalar en primera instancia el juego en el que nos inspiramos para crearla.
  Pokémon GO es un videojuego de realidad aumentada basado en la localización desarrollado por la empresa Niantic cuyo dueño fue creador de Google maps. Es un juego casual para dispositivos iOS y Android. Es videojuego gratuito, contiene microtransacciones. Pokémon GO está creado en la plataforma de juego del mundo real de Niantic y utiliza ubicaciones reales de GPS para animar a los jugadores a que salgan a explorar para capturar Pokémones.
 
-# introduccion
+# Introduccion
 
- Pokedata es una aplicación web responsiva que fue creada y pensada en aquellos jugadores del juego pokemon go que recien estan adentrandose en el universo pokemon y busquen cierta orientación al momento de elegir sus pokemones y a aquellos ya actuales jugadores que buscan recordar informacion sobre cada pokemon. 
- 
+ Pokedata es una aplicación web responsiva que fue creada y pensada en aquellos jugadores del juego pokemon go que recien estan adentrandose en el universo pokemon y busquen cierta orientación al momento de elegir sus pokemones. 
 
 # Informacion sobre el proceso
 
@@ -50,16 +49,47 @@ Seguido de esto un prototipo de baja fidelidad que nació de la imaginación del
 ![prototipo de baja fidelidad pantalla 3](src/img/baja4.4.jpg)
 
 
+
 Por otro lado realizamos un prototipo de alta fidelidad en figma que fue nuestra guia para comenzar con la elavoracion de la pagina.
 # Prototipo de alta fidelidad
 
-[click Aqui para ver prototipo de alta fidelidad](https://www.figma.com/file/WUvV6OsTJVs2rOzWKksQF9jo/datalovers-Colors?node-id=85%3A0)
+[click Aqui para ver prototipo de alta fidelidad en figma](https://www.figma.com/file/WUvV6OsTJVs2rOzWKksQF9jo/datalovers-Colors?node-id=85%3A0)
+
+[click Aqui para ver prototipo de alta fidelidad en zeplin](zpl.io/a7W1dov)
+
+
+
 
 Ademas realizamos una encuesta en linea para informarnos de los aspectos que debería considerar nuestra pagina tomando en cuenta que debíamos filtrar ,ordenar y calcular la encuesta reflejo que los usuarios esperan ver que los nombres de cada pokemon tambien cosideran relevante un filtro por tipo de pokemon y quieren informacion de como conseguir huevos . la encuesta no proporciono gran información por lo mismo y basándonos en el aprendizaje que nos dejo la mala formulación de preguntas en dicha encuesta decidimos realizar testeos con la pagina en funcionamiento
 y con la informacion obtenida implementamos mejoras tanto en diseño como en funcionamiento.
 
 [Click aqui para ver encuesta](https://docs.google.com/forms/d/1Hx50ndrGJxEoFttq1uDXe0O-Y0F3yDBKP0_1mGCalLY/edit#responses)
 
+
+# Historias de usuario
+
+
+## Historia de usuario 1
+
+YO COMO usuario nuevo del juego QUIERO  poder ver todos los pokemones para visualizar la lista de todos los pokemones que existen.
+
+## Historia de usuario 2
+
+YO COMO jugador novato de pokemon go QUIERO poder filtrar mi pokemon por tipo PARA ver sus características.
+
+
+## Historia de usuario 3
+
+YO COMO usuario nuevo de pokemon go QUIERO poder ordenar los pokemones por numero o alfabeticamente para ubicar el personaje mas rapido.
+
+
+## Historia de usuario 4
+
+YO COMO usuario principiante QUIERO saber cuantos pokemones hay de tipo agua para completar nmi coleccion de pokemones de ese tipo.
+
+## Historia de usuario 5
+
+YO COMO usuario nuevo QUIERO saber cuantos kilometros caminar para que mi huevo nazca PARA poder tener un nuevo pokemon.
 
 # Objetivos de la aplicacion
 
@@ -81,30 +111,6 @@ Clasificar y filtrar Pokémones según los deseos del usuario para acceder mas f
 
 
 
-
-# Historias de usuario
-
-
-## Historia de usuario 1
-
-Yo como usuario nuevo del juego quiero poder ver pokemones en la pagina principal para visualizar la lista de todos los pokemones que existen.
-
-## Historia de usuario 2
-
-YO COMO usuario de pokemon go QUIERO poder ordenar los pokemones alfabeticamente para ubicar el personaje mas rapido por su nombre.
-
-## Historia de usuario 3
-YO COMO usuario nuevo del juego QUIERO buscar por el numero al pokemon PARA encontrar al personaje que ocupo y conocer sus caracteristicas.
-
-## Historia de usuario 4
-
-YO COMO usuario QUIERO poder calcular el porcentaje de pokemones de acuerdo a su tipo PARA conocer estadisticamente como se clasifican.
-
-## Historia de usuario 5
-
-YO COMO usuario jugador QUIERO saber cuantos kilometros caminar para que mi huevo nazca PARA poder usarlo o tranferirlo si esta repetido.
-
-
 # Testeos de usabilidad de primer diseño de interfaz
 
 
@@ -113,15 +119,17 @@ YO COMO usuario jugador QUIERO saber cuantos kilometros caminar para que mi huev
 
 
 
-### Acontinuacion algunos de los videos de nuestro test de usabilidad. con el cual terminamos de realizar los cambios finales.
+### Acontinuacion algunos de los videos de nuestro test de usabilidad. con los cuales comenzamos a realizar los cambios finales.
 
-http 1
+[Click aqui para vervideo 1](https://www.youtube.com/watch?v=jqEzKbV3CJE&t=4s)
 
-http2
+[Click aqui para vervideo 2](https://www.youtube.com/watch?v=urbgxaAD7UY)
 
-http3
+[Click aqui para vervideo 3](https://www.youtube.com/watch?v=juWHDOijrNU&t=18s)
 
-http4
+[Click aqui para vervideo 4](https://www.youtube.com/watch?v=0Px_2PRhH8w)
+
+
 
 # Resultados de test de usabilidad
 ## En bace a nuestros testeos de usabilidad pudimos obtener las siguientes impreciones de los usuarios.
@@ -146,7 +154,9 @@ http4
 
 * los elementos del filtro se sugiere sean en español para aquellos usuarios que no hablan ingles.
 
-# Desarrollando iteracion
+# Desarrollando iteracion 
+
+
 
 ![](src/img/modificacion1.jpg)
 
@@ -161,7 +171,7 @@ Una vez definido el diseño general de la página, se hicieron test de usuarios 
 
 # Nuestro Producto 
 
-Posterior a los testeos con usuarios se procedió a integrar colores, imágenes y detalles en cuanto a diseño visual y uso de la pagina .Con el siguiente resultado.
+Posterior a los testeos con usuarios se procedió a integrar colores, imágenes y detalles en cuanto a diseño visual y uso de la pagina .Con el siguiente resultado que esperamos mejorar para una futura iteracion.
 
 AQUI PRINT DE PANTALLA DE producto final
 
