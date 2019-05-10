@@ -75,7 +75,7 @@ initapp();
  /*función de búsqueda por nombre*/
  const txtBuscar = document.getElementById('txtBuscar');
  txtBuscar.addEventListener("keypress", (event) => {
-     if (event.keyCode === 13) {    
+     if (event.keyCode === 13) {    // es Enter
         result = window.searchChampion(myData, txtBuscar.value);
         resultDiv(result);
 
@@ -94,7 +94,8 @@ let result = ""; //Var que contiene resultados, vacía.
     let percentForRol= window.statsRol(result);
     document.getElementById("percent-rol").innerHTML= ` <div class= "percent-div">
  
-   <meter min="10" max="100" low="20" high="50" value="${percentForRol}" ></meter> <p class="percent-p"> Porcentaje de campeones que corresponden a este rol: ${percentForRol} % </p>
+   <meter min="10" max="100" low="20" high="50" value="${percentForRol}" ></meter> 
+   <p class="percent-p"> Porcentaje de campeones que corresponden a este rol: ${percentForRol} % </p>
     </div>
   
     `
@@ -118,7 +119,20 @@ let result = ""; //Var que contiene resultados, vacía.
   
   /*Enlace que lleva al inicio*/
   const btnHome= document.getElementById("home");
-btnHome.addEventListener("click", function(){location.reload()});
+btnHome.addEventListener("click", ()=>{
+   //location.reload();
+   document.getElementById("select-rol").style.display="block";
+
+   document.getElementById("text-head").style.display="block";
+   document.getElementById("text-champion").style.display="block";
+   document.getElementById("stats-compute").innerHTML= "";
+   document.getElementById("percent-rol").innerHTML=  "";
+   document.getElementById("rol-lol").value  = "";
+   document.getElementById("sort-by").value  = "";
+   document.getElementById("sort-dif").value  = "";
+   resultDiv(myData);
+
+});
    
   
   /*Enlace que muestra las estadísticas*/
@@ -126,16 +140,15 @@ btnHome.addEventListener("click", function(){location.reload()});
   btnStats.addEventListener("click", () => {
     let statistic = window.computeStats(myData);
     document.getElementById("stats-compute").innerHTML= 
-    
     `
     <div class="card mb-3" id="card-stats" style="max-width: 18rem;">
-  <div class="card-header">Estadísticas de salud de todos los campeones </div>
-  <div class="card-body">
-    
-    <p class="card-text"> El nivel máx de salud es de: ${statistic[0]} </p>
-     <p class="card-text"> El nivel mín de salud es de: ${statistic[1]} </p>
-     <p class="card-text">El promedio de salud es de: ${statistic[2]} </p>
-</div>
+      <div class="card-header">Estadísticas de salud de todos los campeones </div>
+      <div class="card-body">
+        <p class="card-text"> El nivel máx de salud es de: ${statistic[0]} </p>
+        <p class="card-text"> El nivel mín de salud es de: ${statistic[1]} </p>
+        <p class="card-text">El promedio de salud es de: ${statistic[2]} </p>
+      </div>
+    </div>
      `
  
     document.getElementById("stats-compute").style.display = "block";

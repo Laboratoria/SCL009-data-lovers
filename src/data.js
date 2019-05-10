@@ -11,13 +11,13 @@ const sortData= (data, sortBy, sortOrder) => {
   const dataSort= data;
   if(sortBy==="name" && sortOrder === "a-z" ){
     dataSort.sort((a,b)=>{
-     if(a.nam>b.name){
-        return 1;
-     }
-     if(a.name<b.name){
-       return -1;
-      }
-return 0;
+        if(a.name>b.name){
+          return 1;
+        }
+        if(a.name<b.name){
+          return -1;
+        }
+      return 0;
     });
   }
   if(sortBy==="name" && sortOrder === "z-a" ){
