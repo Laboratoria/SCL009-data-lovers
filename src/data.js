@@ -47,7 +47,7 @@ const sortDifficulty= (data, sortBy, sortOrder) => {
       if(a.info.difficulty<b.info.difficulty){
         return -1;
        }
-
+       return 0;
     });
   }
   if (sortBy === "info.difficulty" && sortOrder === "highDifficult") {
@@ -60,7 +60,7 @@ const sortDifficulty= (data, sortBy, sortOrder) => {
         return -1;
        }
  
-    
+       return 0;
    
     });
   }
