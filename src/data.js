@@ -9,14 +9,27 @@ window.filterData = filterData;
 
 const sortData= (data, sortBy, sortOrder) => {
   const dataSort= data;
-  
-  if(sortBy==="name" && sortOrder === "z-a" ){
-    data.sort((a,b)=>{
-   
-     if(a.name>b.name){
+  if(sortBy==="name" && sortOrder === "a-z" ){
+    dataSort.sort((a,b)=>{
+     if(a.nam>b.name){
+        return 1;
+     }
+     if(a.name<b.name){
        return -1;
       }
-     
+return 0;
+    });
+  }
+  if(sortBy==="name" && sortOrder === "z-a" ){
+    dataSort.sort((a,b)=>{
+   
+     if(a.name<b.name){
+       return 1;
+      }
+     if(a.name>b.name){
+     return -1;
+     }
+ return 0;
     });
   }
   return dataSort;
@@ -28,11 +41,11 @@ const sortDifficulty= (data, sortBy, sortOrder) => {
   if (sortBy === "info.difficulty" && sortOrder === "lowDifficult") {
     difficultySort.sort((a, b) => {
 
-      if (a.info.difficulty < b.info.difficulty) {
-        return -1;
-      }
-      if(a.info.difficulty>b.info.difficulty){
+      if (a.info.difficulty>b.info.difficulty) {
         return 1;
+      }
+      if(a.info.difficulty<b.info.difficulty){
+        return -1;
        }
 
     });
@@ -40,10 +53,15 @@ const sortDifficulty= (data, sortBy, sortOrder) => {
   if (sortBy === "info.difficulty" && sortOrder === "highDifficult") {
     difficultySort.sort((a, b) => {
 
-      if (a.info.difficulty > b.info.difficulty) {
-        return -1;
+      if (a.info.difficulty < b.info.difficulty) {
+        return 1;
       }
-      
+      if(a.info.difficulty>b.info.difficulty){
+        return -1;
+       }
+ 
+    
+   
     });
   }
   return difficultySort;
@@ -77,8 +95,8 @@ window.statsRol = statsRol;
 
 const searchChampion = (data, texto) => {
   const resultChampion = data.filter( (element) => {
-     let name = element.name;
-        if (name.search(texto) > -1  || name.toLowerCase().search(texto) > -1 || name.toUpperCase().search(texto) > -1 ) {
+     let nameChampion = element.name;
+        if (nameChampion.search(texto) > -1  || nameChampion.toLowerCase().search(texto) > -1 || nameChampion.toUpperCase().search(texto) > -1 ) {
            return true;
         }
        return false;
