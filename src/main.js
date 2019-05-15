@@ -16,6 +16,7 @@ const orderData= document.getElementById("order");
 const filterEgg = document.getElementById("filterEggs");
 //const dataPokemon = window.POKEMON.pokemon;
 const size = document.getElementById("result");
+const myChartPokemon = document.getElementById("chartPokemon");
 let condition;
 let i;
 let cardPokemon = ''; 
@@ -79,6 +80,20 @@ if(elementTypePokemon[i].textContent === "Normal")
 { 
 elementTypePokemon[i].innerHTML = '<img src="./img/normal.png" class="icon" alt="normal">';
 }
+if(elementTypePokemon[i].textContent === "Electric")
+{ 
+elementTypePokemon[i].innerHTML = '<img src="./img/electric.png" class="icon" alt="electric">';
+}
+if(elementTypePokemon[i].textContent === "Fighting")
+{ 
+elementTypePokemon[i].innerHTML = '<img src="./img/fighting.png" class="icon" alt="fighting">';
+}
+
+if(elementTypePokemon[i].textContent === "Ghost")
+{ 
+elementTypePokemon[i].innerHTML = '<img src="./img/ghost.png" class="icon" alt="ghost">';
+}
+
 }
 
 }
@@ -247,12 +262,13 @@ const showResult =() =>{
  //y mostrando la cantidad y el porcentaje por su tipo
 if(eventOrder === 1){
     
+    myChartPokemon.innerHTML = `<canvas id="myChart" class="chart"></canvas>`
     size.innerHTML = `<p class = "col- 12 result" >Se muestran ${dataType.length} Pokemones tipo ${condition} que representa el ${sizePokemon}% del total de Pokemones</p>`;
 }
 //comprobando que se esta en el evento del filtrar huevos y 
 // y mostrando la cantidad y el porcentaje por km
 if(eventOrder === 2){
-    
+    myChartPokemon.innerHTML = `<canvas id="myChart" class="chart"></canvas>`
     size.innerHTML = `<p class = "col- 12 result" >Se muestran ${dataEggs.length} Pokemones de ${condition} que representa el ${sizePokemon}% del total de Pokemones </p>`;
 }
 }
@@ -283,6 +299,36 @@ condition = filterType.options[filterType.selectedIndex].text;
 showResult(sizePokemon = window.computeStats(dataType,dataPokemon),condition);
 
 //pasando la data filtrada a la funcion para mostrar los pokemones
+
+
+
+let ctx = document.getElementById('myChart');
+let  myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ['Total Pokemones', 'Porcentaje ' + condition],
+        datasets: [{
+            label: '# of Votes',
+            data: [dataPokemon.length, sizePokemon],
+            backgroundColor: [
+                
+                
+                'rgba(255, 206, 86, 1)',
+                'rgba(153, 102, 255, 1)',
+                
+            ],
+            borderColor: [
+               
+                
+                'rgba(255, 206, 86, 1)',
+                'rgba(153, 102, 255, 1)',
+                
+            ],
+            borderWidth: 1
+        }]
+    },
+    
+});
 
 }
 showPokemon(dataType);
@@ -315,7 +361,38 @@ filterEgg.addEventListener("change",()=>{
     //enviando la data filtrada por huevo y la data que contiene todos los pokemones
     //para hacer el calculo del porcentaje
     showResult(sizePokemon = window.computeStats(dataEggs,dataPokemon),condition);
-    //pasando la data filtrada a la funcion para mostrar los pokemones
+    //pasando la data filtrada a la funcion para mostrar los pokemones\
+
+    let ctx = document.getElementById('myChart');
+    let  myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['Total Pokemones ' , 'Porcentaje ' + condition],
+            datasets: [{
+                label: '# of Votes',
+                data: [dataPokemon.length, dataEggs.length],
+                backgroundColor: [
+                    
+                    
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    
+                ],
+                borderColor: [
+                   
+                    
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    
+                ],
+                borderWidth: 1
+            }]
+        },
+        
+    });
+
+
+
     
     }
     
