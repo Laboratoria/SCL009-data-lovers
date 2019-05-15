@@ -39,11 +39,15 @@ body{
 #divChampionImg{
     overflow: hidden;
 }
+    
+   
 
 .scrollable {
     height: 620px;
     overflow-y: auto;
     margin-bottom: 10px;
+    
+
 }
 
 div::-webkit-scrollbar {
@@ -55,20 +59,16 @@ div::-webkit-scrollbar-thumb {
     border-radius:10px;
     }
 
-    /* @media only screen and (max-width: 600px){
-        #championInfoA, #championInfoB{
-            width: auto;
+ .infoChampClass{
+    font-size: 16px;
+}
 
-      }
-    } */
-
-    @media screen and (max-width: 992px){
-        .scrollable {
-            height: 700px;;
-            overflow-y: auto;
-        }
-    }
+.infoChampNameClass{
+    text-align: center;
+    font-size: 30px;
+}  
     
+      
 
 .selectClass, .bootstrap-select .btn{
    
@@ -87,7 +87,7 @@ div::-webkit-scrollbar-thumb {
     background:  rgba(87, 83, 83, 0.924);
     border: 4px solid;
     border-radius: 2px;
-    font-size: 30px;
+  
     cursor: pointer;
     
 }
@@ -114,17 +114,10 @@ select:hover,select:focus, .bootstrap-select .btn:hover, .bootstrap-select .btn:
     padding: 15px;
     font-size: 20px;
     margin-bottom: -4px;
-    margin-top: 6px;
+   
 }
 
-.infoChampClass{
-    font-size: 16px;
-}
 
-.infoChampNameClass{
-    text-align: center;
-    font-size: 30px;
-}
 .imgInfoChamp{
     width: 20%;
     margin-top: 2px;
@@ -154,24 +147,20 @@ select:hover,select:focus, .bootstrap-select .btn:hover, .bootstrap-select .btn:
     border-image: linear-gradient(to bottom, rgba(95, 223, 255, 1) 0%, rgb(59, 157, 182) 100%) 1
 }
 
-#btnCalculateAverage{
-    font-size: 20px;
-    padding: 20px;
+#btnCalculateAverageA, #btnCalculateAverageB{
+    font-size: 15px;
+    padding: 10px;
 }
 
 #btnBack{
-    padding: 5px;
+    padding: 10px;
     font-size: 15px;
-    width: 20%;
-    margin-top:5px;
 }
 #calculateButton{
     padding: 16px;
     margin-top: 5px;
     font-size: 20px;
-    
 }
-
 #clearInfoChamp{
     width: inherit;
     height: 40px;
@@ -191,14 +180,15 @@ select:hover,select:focus, .bootstrap-select .btn:hover, .bootstrap-select .btn:
     font-size: 20px;
     padding-bottom: 402px;
 }
-#btnCalculate{
+#btnCalculate,#btnCalculateB{
     text-align: center;
     margin-top: 30px;
     margin-bottom: 25px;
     width: inherit;
 }
-#selectsAv{
+#selectsAv,#selectsAvB{
     text-align: center;
+    
 }
 
 .average{
@@ -208,12 +198,14 @@ select:hover,select:focus, .bootstrap-select .btn:hover, .bootstrap-select .btn:
     border: 3px outset transparent;
     border-image: linear-gradient(to bottom, rgb(163, 139, 0) 0%, rgb(82, 63, 0) 100%) 1;
     background:rgba(0, 0, 0, 0.7);
+    margin-bottom: 5px;
+
 }
 
 
 .textCalculated{
     text-align: center;
-    font-size: 30px;
+    font-size: 17px;
     color:white;
     
 }
@@ -223,9 +215,71 @@ select:hover,select:focus, .bootstrap-select .btn:hover, .bootstrap-select .btn:
 }
 
    
+.teamA, .teamB{
+    border: 2px outset transparent;
+    border-image: linear-gradient(to bottom, rgb(163, 139, 0) 0%, rgb(82, 63, 0) 100%) 1;
+    margin-bottom: 10px;
+}
+.teamB{
+    background:rgba(17, 76, 110, 0.7);
+ 
+}
+.teamA{
+    background:rgba(6, 42, 63, 0.8);
+  
+}
+.teamTitle{
+    color: white;
+}
+.piechartClass{
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+    
+    
+}
+@media screen and (max-width: 5000px){
+    .infoBar{
+        margin-top: 0px;
+    }}
+@media screen and (max-width: 1199px){
+    
+    
+    .infoBar{
+        margin-top: 70px;
+    }
+   .scrollable {
+        height: 650px;
+    }#championInfoA, #championInfoB{
+        height:530px; 
+}}
 
+@media screen and (max-width: 991px){
 
-
+.infoChampNameClass{
+    font-size:20px;
+}
+.infoBar{
+    margin-top: 65px;
+}
+.scrollable {
+    height: 845px;
+}#championInfoA, #championInfoB{
+    height:700px; 
+}}
+@media screen and (max-width: 767px){
+.scrollable {
+   height: 250px;
+  
+}
+.infoBar{
+    margin-top: 10px;
+}
+#championInfoA, #championInfoB{
+    height:500px; }
+    .selectClass, .bootstrap-select .btn{
+    font-size: 20px;
+ }}
 
   
 

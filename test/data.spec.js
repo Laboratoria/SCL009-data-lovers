@@ -44,6 +44,12 @@ const dataTestOrder = {
       const dataTestCalculate = {
         data:{
         Kled:{
+          info:{
+        attack: 8,
+        defense: 2,
+        magic: 2,
+        difficulty: 7
+        },
         stats: {
           hp: 340,
           movespeed: 345,
@@ -52,6 +58,12 @@ const dataTestOrder = {
           attackrange: 125,
           attackdamage: 55,}},
           Nunu:{
+            info: {
+              attack: 4,
+              defense: 6,
+              magic: 7,
+              difficulty: 4
+            },
             stats: {
               hp: 598.28,
               movespeed: 350,
@@ -60,6 +72,12 @@ const dataTestOrder = {
               attackrange: 125,
               attackdamage: 59,}},
           Ahri:{
+            info: {
+              attack: 3,
+              defense: 4,
+              magic: 8,
+              difficulty: 5
+            },
                 stats: {
                   hp: 514.4,
                   movespeed: 330,
@@ -68,6 +86,12 @@ const dataTestOrder = {
                   attackrange: 550,
                   attackdamage: 53.04,}},
           Caitlyn:{
+            info: {
+              attack: 8,
+              defense: 2,
+              magic: 2,
+              difficulty: 6
+            },
                   stats: {
                   hp: 524.4,
                   movespeed: 325,
@@ -76,6 +100,12 @@ const dataTestOrder = {
                   attackrange: 650,
                   attackdamage: 53.66,}},
           Bard:{
+            info: {
+              attack: 4,
+              defense: 4,
+              magic: 5,
+              difficulty: 9
+            },
             stats: {
             hp: 535,
             movespeed: 330,
@@ -140,8 +170,8 @@ describe('calculateAllAttacks',() =>{
 assert.equal(typeof calculateAllAttacks, 'function')
   })
 
-  it('deberia retornar al calcular el ataque total entre Kled,Nunu,Ahri,Caitlyn y Bard',() => { 
-    assert.equal(window.calculateAllAttacks("Kled","Nunu","Ahri","Caitlyn","Bard",dataTestCalculate.data),273)
+  it('deberia retornar 5.4 al calcular el ataque promedio entre Kled,Nunu,Ahri,Caitlyn y Bard',() => { 
+    assert.equal(window.calculateAllAttacks("Kled","Nunu","Ahri","Caitlyn","Bard",dataTestCalculate.data),5.4)
 });
 })
 
@@ -155,8 +185,3 @@ it('deberia retornar 390 al calcular el promedio de la velocidad de movmiento en
 
 })
 
-describe('calculateAllHp',()=>{
-  it('deberia retornar 2511 al calcular la vida total entre Kled,Nunu,Ahri,Caitlyn y Bard',()=>{
-    assert.equal(window.calculateAllHp("Kled","Nunu","Ahri","Caitlyn","Bard",dataTestCalculate.data),2511)
-  })
-})

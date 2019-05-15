@@ -1,7 +1,3 @@
-/* Manejo de data */
-// esta es una función de ejemplo
-// puedes ver como agregamos la función a nuestro objeto global window
-
 
   const filteringResult = (selectedTag,allChampionData)=>{
   const allChampionValues = Object.values(allChampionData);
@@ -30,8 +26,7 @@ const orderData = (sortBy,allChampionData) =>{
     orderResult = allChampionNames.sort((a, b)=>{
       return  b.info.difficulty-a.info.difficulty;})
  }else if(sortBy == "nameA_Z"){
-    orderResult = allChampionNames.sort((a, b)=>{
-      return  a.name-b.name;})
+    return  allChampionNames.sort()
   }else if(sortBy == "nameZ_A"){
     orderResult = allChampionNames.sort((a,b)=>{
       return b.name.localeCompare(a.name)
@@ -41,51 +36,22 @@ const orderData = (sortBy,allChampionData) =>{
   };
 window.orderData = orderData;
 
-const calculateAllAttacks = (top,jungle,mid,adc,support,data)=>{
-  const allAttack = [data[top].stats.attackdamage,data[jungle].stats.attackdamage,data[mid].stats.attackdamage,data[adc].stats.attackdamage,data[support].stats.attackdamage]
-  return allAttack.reduce((a,b)=>{
-     return Math.round(a+b)
-    })
+const calculateAllAttacks = (top,jungle,mid,adc,support,data)=>{//CALCULAR PROMEDIO ATAQUE
+  return (data[top].info.attack+data[jungle].info.attack+data[mid].info.attack+data[adc].info.attack+data[support].info.attack)/5
 }
  window.calculateAllAttacks = calculateAllAttacks;
 
- const calculateAllHp = (top,jungle,mid,adc,support,data)=>{
-  const allHp = [data[top].stats.hp,data[jungle].stats.hp,data[mid].stats.hp,data[adc].stats.hp,data[support].stats.hp]
-  return allHp.reduce((a,b)=>{
-     return Math.round(a+b)
-    })
+ const calculateAttackRange = (top,jungle,mid,adc,support,data)=>{//CALCULAR PROMEDIO DE RANGO DE ATAQUE
+  return (data[top].stats.attackrange+data[jungle].stats.attackrange+data[mid].stats.attackrange+data[adc].stats.attackrange+data[support].stats.attackrange)/5
 }
- window.calculateAllHp = calculateAllHp;
+ window.calculateAttackRange = calculateAttackRange;  
 
- const calculateAttackRange = (top,jungle,mid,adc,support,data)=>{
-  const allAttackRange = [data[top].stats.attackrange,data[jungle].stats.attackrange,data[mid].stats.attackrange,data[adc].stats.attackrange,data[support].stats.attackrange]
-   let result = allAttackRange.reduce((a,b)=>{
-     return (a+b)
-    })
-    return Math.round(result/5)
+ const calculateDefense = (top,jungle,mid,adc,support,data)=>{ //CALCULAR PROMEDIO DEFENSA
+  return (data[top].info.defense+data[jungle].info.defense+data[mid].info.defense+data[adc].info.defense+data[support].info.defense)/5
 }
- window.calculateAttackRange = calculateAttackRange;
+window.calculateDefense = calculateDefense;
 
- 
-
-
-
-
-
-
-
-
-// const calculateAllAttacks = (top,jungle,mid,adc,support, data)=>{
-// const allAttacks = [data[top].stats.attackdamage,data[jungle].stats.attackdamage,data[mid].stats.attackdamage,data[adc].stats.attackdamage,data[support].stats.attackdamage];
-   
-// return allAttacks.reduce((a,b)=>{
-//     return a+b
-//   })
-// }
-
-
-
-
- 
-     
-  
+const calculateMagic = (top,jungle,mid,adc,support,data)=>{ //CALCULAR PROMEDIO ATAQUE MAGICO
+  return (data[top].info.magic+data[jungle].info.magic+data[mid].info.magic+data[adc].info.magic+data[support].info.magic)/5
+}
+window.calculateMagic = calculateMagic;
