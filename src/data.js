@@ -17,13 +17,22 @@ return elemento[filterBy].includes(condition);
 
 }
 //si se selecciono por tipo
-else if (filterBy === "type"){
+if (filterBy === "type"){
 
 filterDataBy = data.filter(elemento => {
 
 return elemento[filterBy].includes(condition);
 });
 }
+//si se selecciono por nombre
+if (filterBy === "name"){
+
+    filterDataBy = data.filter(elemento => {
+    
+    return elemento[filterBy].includes(condition);
+    });
+    }
+
 
 //data con el filtro elegido
 return filterDataBy;
@@ -44,21 +53,21 @@ let dataSort;
 
 }
 
-else if (sortOrder === "Z-A"){
+if (sortOrder === "Z-A"){
     dataSort = data.sort((a,b) => {
          return b[sortBy].localeCompare(a[sortBy]);
      });
  
  }
 
- else if (sortOrder === "Ascendente"){
+ if (sortOrder === "Ascendente"){
     dataSort = data.sort((a,b) => {
          return a[sortBy].localeCompare(b[sortBy]);
      });
  
  }
  
- else if (sortOrder === "Descendente"){
+ if (sortOrder === "Descendente"){
     dataSort = data.sort((a,b) => {
          return b[sortBy].localeCompare(a[sortBy]);
      });
