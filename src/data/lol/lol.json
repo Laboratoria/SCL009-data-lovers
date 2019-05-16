@@ -579,7 +579,8 @@
       "key": "53",
       "name": "Blitzcrank",
       "title": "the Great Steam Golem",
-      "img": "https://www.masterypoints.com/assets/img/lol/champion_icons/Blitzcrank.png",
+      "img":
+        "https://www.masterypoints.com/assets/img/lol/champion_icons/Blitzcrank.png",
       "splash": "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Blitzcranck_0.jpg",
       "blurb": "Zaun is a place where both magic and science have gone awry, and the unchecked nature of experimentation has taken its toll. However, Zaun's lenient restrictions allow their researchers and inventors the leeway to push the bounds of science at an ...",
       "info": {
@@ -1302,6 +1303,7 @@
       "key": "28",
       "name": "Evelynn",
       "title": "the Widowmaker",
+      "img": "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Evelynn_0.jpg",
       "splash": "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Evelynn_0.jpg",
       "blurb": "Swift and lethal, Evelynn is one of the most deadly - and expensive - assassins in all of Runeterra. Able to merge with the shadows at will, she patiently stalks her prey, waiting for the right moment to strike. While Evelynn is clearly not entirely ...",
       "info": {
@@ -2392,7 +2394,8 @@
       "key": "222",
       "name": "Jinx",
       "title": "the Loose Cannon",
-      "img": "https://www.masterypoints.com/assets/img/lol/champion_icons/Jinx.png",
+      "img":
+        "https://www.masterypoints.com/assets/img/lol/champion_icons/Jinx.png",
       "splash": "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/jinx_0.jpg",
       "blurb": "Jinx lives to wreak havoc without a thought for the consequences, leaving a trail of mayhem and panic in her wake. A manic and impulsive criminal, she despises nothing more than boredom, and gleefully brings her own volatile brand of pandemonium to ...",
       "info": {
@@ -3013,6 +3016,7 @@
       "name": "LeBlanc",
       "title": "the Deceiver",
       "name:": "https://www.masterypoints.com/assets/img/lol/champion_icons/Leblanc.png",
+      "img": "https://www.masterypoints.com/assets/img/lol/champion_icons/Leblanc.png",
       "splash": "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Leblanc_0.jpg",
       "blurb": "Every city has its dark side, even one whose reputation is already of a questionable hue. Noxus - though its name is already invoked with a mixture of reverence and revulsion - is no exception to this simple truth. Deep within the winding dungeons ...",
       "info": {
@@ -3219,7 +3223,8 @@
       "key": "236",
       "name": "Lucian",
       "title": "the Purifier",
-      "img": "https://www.masterypoints.com/assets/img/lol/champion_icons/Lucian.png",
+      "img":
+      "https://www.masterypoints.com/assets/img/lol/champion_icons/Lucian.png",
       "splash": "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lucia_0.jpg",
       "blurb": "Lucian wields relic weapons imbued with ancient power and stands a stalwart guardian against the undead. His cold conviction never wavers, even in the face of the maddening horrors he destroys beneath his hail of purifying fire. Lucian walks alone on ...",
       "info": {
@@ -4152,7 +4157,8 @@
       "key": "61",
       "name": "Orianna",
       "title": "the Lady of Clockwork",
-      "img": "https://www.masterypoints.com/assets/img/lol/champion_icons/Orianna.png",
+      "img":
+        "https://www.masterypoints.com/assets/img/lol/champion_icons/Orianna.png",
       "splash": "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Oriana_0.jpg",
       "blurb": "There once was a Piltovian man named Corin Reveck who had a daughter named Orianna, whom he loved more than anything else in the world. Though Orianna had incredible talent for dancing, she was deeply fascinated by the champions of the League of ...",
       "info": {
@@ -4776,7 +4782,7 @@
       "name": "Shaco",
       "title": "the Demon Jester",
       "img": "https://www.masterypoints.com/assets/img/lol/champion_icons/Shaco.png",
-      "splash": "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Shack_0.jpg",
+      "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Shaco_0.jpg",
       "blurb": "Most would say that death isn't funny. It isn't, unless you're Shaco - then it's hysterical. He is Valoran's first fully functioning homicidal comic; he jests until someone dies, and then he laughs. The figure that has come to be known as the Demon ...",
       "info": {
         "attack": 8,

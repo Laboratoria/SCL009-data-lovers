@@ -8,10 +8,10 @@ const filterData = (data, rol) => {
 window.filterData = filterData;
 
 const sortData= (data, sortBy, sortOrder) => {
-//const dataSort= data;
+const dataSort= data;
   if(sortBy==="name" && sortOrder === "a-z" ){
-    return data;
-   /* dataSort.sort((a,b)=>{
+   
+ dataSort.sort((a,b)=>{
         if(a.name>b.name){
           return 1;
         }
@@ -19,11 +19,11 @@ const sortData= (data, sortBy, sortOrder) => {
           return -1;
        }
       //return 0;
-    });*/
+    });
   }
   if(sortBy==="name" && sortOrder === "z-a" ){
-    return data.reverse();
-    /*dataSort.sort((a,b)=>{
+    //return data.reverse();
+    dataSort.sort((a,b)=>{
    
      if(a.name<b.name){
        return 1;
@@ -32,9 +32,9 @@ const sortData= (data, sortBy, sortOrder) => {
      return -1;
      }
 // return 0;
-    });*/
- // } return dataSort;
-} }
+    });
+ } return dataSort;
+} 
 window.sortData = sortData;
 
 const sortDifficulty= (data, sortBy, sortOrder) => {
