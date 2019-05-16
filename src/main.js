@@ -50,7 +50,7 @@ cardPokemon +=
 `<div class="pokemonCards  col-12 col-sm-4 col-md-3">
 <div class="cardsAll">
 <div class="imgPokemon">
-<img src=  alt="${element.name}" class="imgpokemonlist">
+<img src=${element.img}  alt="${element.name}" class="imgpokemonlist">
 </div>
 <div class="card-body">
 <div class="">
@@ -92,19 +92,20 @@ cardPokemon += `
 <div class="modal fade" id="miModal${element.id}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 <div class="modal-dialog modal-sm" role="document">
 <div class="modal-content">
-
 <div class="modal-body">
+
 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 <span aria-hidden="true">&times;</span>
 </button>	
 <div>
-<img src="./img/blue-degrade-vector.jpg" class="">
-</div>
-<div>
-<img src="" alt="" class="imgModal">
 
 </div>
+
 <div>
+<img src="${element.img}" alt="${element.img}" class="imgModal">
+</div>
+
+
 <div>
 <h4 class="modal-title" id="myModalLabel">${element.num} ${element.name}</h4>
 			
@@ -112,7 +113,7 @@ cardPokemon += `
 <span>Peso:${element.weight}  </span>
 
 <span>  Alto:${element.height}</span>
-</div>
+
 <div>
 <span class="titlePokemon">`
 
@@ -131,14 +132,14 @@ if(element.type.length === 2 && j<1){
 cardPokemon += `
 </div>
 <div>
-<span><img src="./img/candy.png" class= "icon">${element.candy} </span>
+<img src="./img/candy.png" class= "icon">${element.candy}
 <div><img src="./img/egg.png" class= "icon">${element.egg}</div>
 </div>
 
 
 
 <div>
-Evolución:</div>`
+Evolución:</div><div class = "evolution">`
 /* mostrar la evolucion del pokemon dentro del modal*/
 
 //verifico si la propiedad next_evolution existe dentro del pokemon
@@ -150,26 +151,26 @@ if (element.hasOwnProperty("next_evolution")){
     
        
             //for que imprime la  evolucion despues de ser unica o primera
-        evolution.forEach(element =>{
-                let name = element.name;
+            for(let j=0; j<evolution.length;j++){
+                let name = evolution[j].name;
                 dataEvolution = window.filterData(dataPokemon,name,"name");
                //capturando la evolucion
-               cardPokemon += `<img src ="${dataEvolution[0].img}">
-               <p>${dataEvolution[0].name}</p>`
+               cardPokemon += `<div class = "divEvolution" ><img src ="${dataEvolution[0].img}" class = "sizeImgEvolution">
+               <p>${dataEvolution[0].name}</p></div>`
                //if que imprime la palabra segunda si el pokemon evoluciona dos veces
                //pregunta si el tamano es de 2 y que j sea menor que 0 
             if(evolution.length ===2 && j<1){
                 //imprimendo la segunda evolucion
-               cardPokemon += `<img src ="./img/arrow.png"> `
-       } 
-   });
+               cardPokemon += `<div><img src ="./img/arrow.png" class = "arrow"></div>`
        }
+       }
+    }
 //si no posee la propiedad next_evolution muestra lo siguiente en el modal
 else {
     cardPokemon += ` No evoluciona`
 
 }`
-</span>`
+</div>`
 //cerrando los div del modal
 cardPokemon += `
 
@@ -272,17 +273,22 @@ elementTypePokemon[i].innerHTML = '<img src="./img/ice.png" class="icon" alt="ic
 showPokemon(dataPokemon);
 /*Evento Buscar pokemones*/ 
 search.addEventListener("click", () =>{
-eventOrder = 3;
+
+if(document.getElementById("inputSearching").value !==''){
 dataSorted = '';
 myChartPokemon.innerHTML = '';
 filterType.selectedIndex = 0;
 filterEgg.selectedIndex = 0;
 orderData.selectedIndex =0;
 cardPokemon ='';
+eventOrder = 3;
 size.innerHTML= '';
 let name = document.getElementById("inputSearching").value;
 searchPokemon = window.filterData(dataPokemon,name,"name");
+
+
 showPokemon(searchPokemon);
+}
 });
 
 /*Funcion Calcular pokemones*/ 
