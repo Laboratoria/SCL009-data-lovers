@@ -50,7 +50,7 @@ cardPokemon +=
 `<div class="pokemonCards  col-12 col-sm-4 col-md-3">
 <div class="cardsAll">
 <div class="imgPokemon">
-<img src=${element.img}  alt="${element.name}" class="imgpokemonlist">
+<img src=  alt="${element.name}" class="imgpokemonlist">
 </div>
 <div class="card-body">
 <div class="">
@@ -101,7 +101,7 @@ cardPokemon += `
 <img src="./img/blue-degrade-vector.jpg" class="">
 </div>
 <div>
-<img src="${element.img}" alt="${element.img}" class="imgModal">
+<img src="" alt="" class="imgModal">
 
 </div>
 <div>
