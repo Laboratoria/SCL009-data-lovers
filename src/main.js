@@ -1,7 +1,6 @@
 /* Manejo del DOM */
 
 
-
   fetch('https://raw.githubusercontent.com/nohestmm/SCL009-data-lovers/master/src/data/pokemon/pokemon.json')
   .then(response =>{return response.json()})
   
@@ -32,7 +31,87 @@ let searchPokemon;
 
 
 
+/*funcion que coloca la imagen del tipo de pokemon*/
 
+const imgTypePokemon =() =>{
+elementTypePokemon = document.getElementsByClassName("titlePokemon");
+
+for(i=0;i<elementTypePokemon.length; i++){
+if(elementTypePokemon[i].textContent === "Water")
+{ 
+elementTypePokemon[i].innerHTML = '<img src="./img/water.png" class="icon" alt="water" target= "water">';
+}
+
+if(elementTypePokemon[i].textContent === "Rock")
+{ 
+elementTypePokemon[i].innerHTML = '<img src="./img/rock.png" class="icon" alt="rock">';
+}
+
+if(elementTypePokemon[i].textContent === "Grass")
+{ 
+elementTypePokemon[i].innerHTML = '<img src="./img/grass.png" class="icon" alt="grass">';
+}
+
+if(elementTypePokemon[i].textContent === "Poison")
+{ 
+elementTypePokemon[i].innerHTML = '<img src="./img/poison.png" class="icon" alt="poison">';
+}
+if(elementTypePokemon[i].textContent === "Fire")
+{ 
+elementTypePokemon[i].innerHTML = '<img src="./img/fire.png" class="icon" alt="fire">';
+}
+
+if(elementTypePokemon[i].textContent === "Dragon")
+{ 
+elementTypePokemon[i].innerHTML = '<img src="./img/dragon.png" class="icon" alt="dragon">';
+}
+
+if(elementTypePokemon[i].textContent === "Bug")
+{ 
+elementTypePokemon[i].innerHTML = '<img src="./img/bug.png" class="icon" alt="bug">';
+}
+
+if(elementTypePokemon[i].textContent === "Flying")
+{ 
+elementTypePokemon[i].innerHTML = '<img src="./img/flying.png" class="icon" alt="flying">';
+}
+
+if(elementTypePokemon[i].textContent === "Normal")
+{ 
+elementTypePokemon[i].innerHTML = '<img src="./img/normal.png" class="icon" alt="normal">';
+}
+if(elementTypePokemon[i].textContent === "Electric")
+{ 
+elementTypePokemon[i].innerHTML = '<img src="./img/electric.png" class="icon" alt="electric">';
+}
+if(elementTypePokemon[i].textContent === "Fighting")
+{ 
+elementTypePokemon[i].innerHTML = '<img src="./img/fighting.png" class="icon" alt="fighting">';
+}
+
+if(elementTypePokemon[i].textContent === "Ghost")
+{ 
+elementTypePokemon[i].innerHTML = '<img src="./img/ghost.png" class="icon" alt="ghost">';
+}
+
+if(elementTypePokemon[i].textContent === "Psychic")
+{ 
+elementTypePokemon[i].innerHTML = '<img src="./img/psychic.png" class="icon" alt="psychic">';
+}
+
+if(elementTypePokemon[i].textContent === "Ground")
+{ 
+elementTypePokemon[i].innerHTML = '<img src="./img/ground.png" class="icon" alt="gorund">';
+}
+
+if(elementTypePokemon[i].textContent === "Ice")
+{ 
+elementTypePokemon[i].innerHTML = '<img src="./img/ice.png" class="icon" alt="ice">';
+}
+
+}
+
+}
 
 
 /*Funcion que muestra pokemones*/
@@ -155,19 +234,19 @@ if (element.hasOwnProperty("next_evolution")){
                 let name = evolution[j].name;
                 dataEvolution = window.filterData(dataPokemon,name,"name");
                //capturando la evolucion
-               cardPokemon += `<div class = "divEvolution" ><img src ="${dataEvolution[0].img}" class = "sizeImgEvolution">
+               cardPokemon += `<div class="divEvolution"><img src ="${dataEvolution[0].img}" class = "sizeImgEvolution">
                <p>${dataEvolution[0].name}</p></div>`
                //if que imprime la palabra segunda si el pokemon evoluciona dos veces
                //pregunta si el tamano es de 2 y que j sea menor que 0 
             if(evolution.length ===2 && j<1){
                 //imprimendo la segunda evolucion
-               cardPokemon += `<div><img src ="./img/arrow.png" class = "arrow"></div>`
+               cardPokemon += `<div><img src="./img/arrow.png" class="arrow"></div>`
        }
        }
     }
 //si no posee la propiedad next_evolution muestra lo siguiente en el modal
 else {
-    cardPokemon += ` No evoluciona`
+    cardPokemon += ` <p>No evoluciona</p>`
 
 }`
 </div>`
@@ -186,113 +265,15 @@ cardPokemon += `
 showPokemones.innerHTML = cardPokemon;
 imgTypePokemon();
 }
-/*funcion que coloca la imagen del tipo de pokemon*/
 
-const imgTypePokemon =() =>{
-elementTypePokemon = document.getElementsByClassName("titlePokemon");
-
-for(i=0;i<elementTypePokemon.length; i++){
-if(elementTypePokemon[i].textContent === "Water")
-{ 
-elementTypePokemon[i].innerHTML = '<img src="./img/water.png" class="icon" alt="water" target= "water">';
-}
-
-if(elementTypePokemon[i].textContent === "Rock")
-{ 
-elementTypePokemon[i].innerHTML = '<img src="./img/rock.png" class="icon" alt="rock">';
-}
-
-if(elementTypePokemon[i].textContent === "Grass")
-{ 
-elementTypePokemon[i].innerHTML = '<img src="./img/grass.png" class="icon" alt="grass">';
-}
-
-if(elementTypePokemon[i].textContent === "Poison")
-{ 
-elementTypePokemon[i].innerHTML = '<img src="./img/poison.png" class="icon" alt="poison">';
-}
-if(elementTypePokemon[i].textContent === "Fire")
-{ 
-elementTypePokemon[i].innerHTML = '<img src="./img/fire.png" class="icon" alt="fire">';
-}
-
-if(elementTypePokemon[i].textContent === "Dragon")
-{ 
-elementTypePokemon[i].innerHTML = '<img src="./img/dragon.png" class="icon" alt="dragon">';
-}
-
-if(elementTypePokemon[i].textContent === "Bug")
-{ 
-elementTypePokemon[i].innerHTML = '<img src="./img/bug.png" class="icon" alt="bug">';
-}
-
-if(elementTypePokemon[i].textContent === "Flying")
-{ 
-elementTypePokemon[i].innerHTML = '<img src="./img/flying.png" class="icon" alt="flying">';
-}
-
-if(elementTypePokemon[i].textContent === "Normal")
-{ 
-elementTypePokemon[i].innerHTML = '<img src="./img/normal.png" class="icon" alt="normal">';
-}
-if(elementTypePokemon[i].textContent === "Electric")
-{ 
-elementTypePokemon[i].innerHTML = '<img src="./img/electric.png" class="icon" alt="electric">';
-}
-if(elementTypePokemon[i].textContent === "Fighting")
-{ 
-elementTypePokemon[i].innerHTML = '<img src="./img/fighting.png" class="icon" alt="fighting">';
-}
-
-if(elementTypePokemon[i].textContent === "Ghost")
-{ 
-elementTypePokemon[i].innerHTML = '<img src="./img/ghost.png" class="icon" alt="ghost">';
-}
-
-if(elementTypePokemon[i].textContent === "Psychic")
-{ 
-elementTypePokemon[i].innerHTML = '<img src="./img/psychic.png" class="icon" alt="psychic">';
-}
-
-if(elementTypePokemon[i].textContent === "Ground")
-{ 
-elementTypePokemon[i].innerHTML = '<img src="./img/ground.png" class="icon" alt="gorund">';
-}
-
-if(elementTypePokemon[i].textContent === "Ice")
-{ 
-elementTypePokemon[i].innerHTML = '<img src="./img/ice.png" class="icon" alt="ice">';
-}
-
-}
-
-}
 
 /*llamar a la funcion mostrar pokemones al inicio de la pagina*/
 
 showPokemon(dataPokemon);
 /*Evento Buscar pokemones*/ 
-search.addEventListener("click", () =>{
-
-if(document.getElementById("inputSearching").value !==''){
-dataSorted = '';
-myChartPokemon.innerHTML = '';
-filterType.selectedIndex = 0;
-filterEgg.selectedIndex = 0;
-orderData.selectedIndex =0;
-cardPokemon ='';
-eventOrder = 3;
-size.innerHTML= '';
-let name = document.getElementById("inputSearching").value;
-searchPokemon = window.filterData(dataPokemon,name,"name");
-
-
-showPokemon(searchPokemon);
-}
-});
 
 /*Funcion Calcular pokemones*/ 
-const showResult =() =>{
+const showResult =(sizePokemon,condition) =>{
 
  //comprobando que se esta en el evento del filtrar por tipo
  //y mostrando la cantidad y el porcentaje por su tipo
@@ -337,26 +318,19 @@ showResult(sizePokemon = window.computeStats(dataType,dataPokemon),condition);
 
 //pasando la data filtrada a la funcion para mostrar los pokemones
 
-
-
-let ctx = document.getElementById('myChart');
-let myChart = new Chart(ctx, {
+let ctx = document.getElementById('myChart').getContext("2d");
+new Chart (ctx, {
     type: 'pie',
     data: {
         labels: ['Total Pokemones', 'Porcentaje ' + condition],
         datasets: [{
-            label: '# of Votes',
             data: [dataPokemon.length, sizePokemon],
             backgroundColor: [
-                
-                
                 'rgba(255, 206, 86, 1)',
                 'rgba(153, 102, 255, 1)',
                 
             ],
             borderColor: [
-               
-                
                 'rgba(255, 206, 86, 1)',
                 'rgba(153, 102, 255, 1)',
                 
@@ -400,12 +374,11 @@ filterEgg.addEventListener("change",()=>{
 
    
     let ctx = document.getElementById('myChart');
-    let myChart = new Chart(ctx, {
+    new Chart(ctx, {
         type: 'pie',
         data: {
             labels: ['Total Pokemones ' , 'Porcentaje ' + condition],
             datasets: [{
-                label: '# of Votes',
                 data: [dataPokemon.length, dataEggs.length],
                 backgroundColor: [
                     'rgba(255, 206, 86, 1)',
@@ -425,9 +398,8 @@ filterEgg.addEventListener("change",()=>{
 
 
 
-    
     }
-    
+  
     showPokemon(dataEggs);
     });
 
@@ -485,6 +457,32 @@ if (sortOrderSelect=== "Descendente"){
 }
 //mostrando la data ordenada
 showPokemon(dataSorted);
+});
+
+
+search.addEventListener("click", () =>{
+
+if(document.getElementById("inputSearching").value !== ''){
+let name = document.getElementById("inputSearching").value;
+
+
+searchPokemon = window.filterData(dataPokemon,name,"name");
+cardPokemon ='';
+dataSorted = '';
+myChartPokemon.innerHTML = '';
+filterType.selectedIndex = 0;
+filterEgg.selectedIndex = 0;
+orderData.selectedIndex =0;
+dataType = '';
+eventOrder = 3;
+size.innerHTML= '';
+
+
+
+showPokemon(searchPokemon);
+
+}
+
 });
 
 
