@@ -4,24 +4,26 @@ const filterData = (data, rol) => {
     return element.tags.includes(rol);
   });
   return nowFilter;
-};
+}
 window.filterData = filterData;
 
 const sortData= (data, sortBy, sortOrder) => {
-  const dataSort= data;
+//const dataSort= data;
   if(sortBy==="name" && sortOrder === "a-z" ){
-    dataSort.sort((a,b)=>{
+    return data;
+   /* dataSort.sort((a,b)=>{
         if(a.name>b.name){
           return 1;
         }
         if(a.name<b.name){
           return -1;
-        }
-      return 0;
-    });
+       }
+      //return 0;
+    });*/
   }
   if(sortBy==="name" && sortOrder === "z-a" ){
-    dataSort.sort((a,b)=>{
+    return data.reverse();
+    /*dataSort.sort((a,b)=>{
    
      if(a.name<b.name){
        return 1;
@@ -29,11 +31,10 @@ const sortData= (data, sortBy, sortOrder) => {
      if(a.name>b.name){
      return -1;
      }
- return 0;
-    });
-  }
-  return dataSort;
-}
+// return 0;
+    });*/
+ // } return dataSort;
+} }
 window.sortData = sortData;
 
 const sortDifficulty= (data, sortBy, sortOrder) => {
@@ -47,20 +48,20 @@ const sortDifficulty= (data, sortBy, sortOrder) => {
       if(a.info.difficulty<b.info.difficulty){
         return -1;
        }
-       return 0;
+       //return 0;
     });
   }
   if (sortBy === "info.difficulty" && sortOrder === "highDifficult") {
     difficultySort.sort((a, b) => {
 
-      if (a.info.difficulty < b.info.difficulty) {
+      /*if (a.info.difficulty < b.info.difficulty) {
         return 1;
-      }
+      }*/
       if(a.info.difficulty>b.info.difficulty){
         return -1;
        }
  
-       return 0;
+       //return 0;
    
     });
   }
@@ -99,7 +100,7 @@ const searchChampion = (data, texto) => {
         if (nameChampion.search(texto) > -1  || nameChampion.toLowerCase().search(texto) > -1 || nameChampion.toUpperCase().search(texto) > -1 ) {
            return true;
         }
-       return false;
+      // return false;
   });
   return resultChampion;
 }

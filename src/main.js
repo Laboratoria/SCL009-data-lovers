@@ -1,7 +1,13 @@
-const myData = Object.values(window.LOL.data); // OB arr q contiene los valores de las prop de obj
-  
-  
+fetch('https://raw.githubusercontent.com/betanyeli/SCL009-data-lovers/master/src/data/lol/lol.json')
+.then((response)=> {
+return response.json();
+ })
+.then((data)=>{
+
+const myData = Object.values(data.data); // OB arr q contiene los valores de las prop de obj
+
   const containerResult = document.getElementById("container-result"); //div q contiene todos mis resultados
+  
   
   const resultDiv = (data) => { //funcion de resultados que muestra las cards
     containerResult.innerHTML = "";
@@ -99,6 +105,33 @@ let result = ""; //Var que contiene resultados, vacía.
     </div>
   
     `
+    /*let densityData = {
+      label: 'Campeones por rol',
+      data: Object.values(myData.tags)
+    };
+    
+new  window.Chart(document.getElementById("bar-chart").getContext("2d"),{
+    type: "bar",
+    data: {
+        labels: ["Fighter", "Marksman", "Tank", "Support", "Assassin", "Mage"],
+       
+        datasets: [{
+            label: densityData,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.5)',
+                'rgba(54, 162,git  235, 0.5)',
+                'rgba(255, 206, 86, 0.5)',
+                'rgba(75, 192, 192, 0.5)',
+                'rgba(153, 102, 255, 0.5)',
+                'rgba(255, 159, 64, 0.5)',
+               
+            ],
+            borderColor: 'black(255, 99, 132)',
+            hoverBackgroundColor: 'blue(234,123,45)',
+            data: result,
+        }]
+    },  
+})*/
   })
   
   /*Ordenado por nombre a-z, z-a*/
@@ -107,6 +140,7 @@ let result = ""; //Var que contiene resultados, vacía.
     const selectSort = document.getElementById("sort-by").value
     result = window.sortData(result, "name", selectSort);
     resultDiv(result);
+
   })
   
   /*Ordenado por dificultad ascendente y descendente*/
@@ -157,3 +191,5 @@ btnHome.addEventListener("click", ()=>{
     document.getElementById("text-head").style.display="none";
     document.getElementById("text-champion").style.display="none";
   })
+})
+

@@ -16,27 +16,31 @@
 </head>
 
 <body>
-      <div class="container">
-        <video class="video-background" poster="img/poster.jpg" autoplay muted loop>
-          <source src="videos/poppy.webm" type="video/webm">
-          </video>
+      <div id="father" class="container">
+        
       <!-- corresponde a la cabecera -->
-      
-      <div id="root">
-          <header>
-            <div id="header-container" class="row">   
-                
-              <nav >
+      <div class="container">
+      <div class="row">
+          <div id="header-container" class="col">   
+          <header class="header">
+            
+             <video class="video-background" poster="img/poster.jpg" autoplay muted loop>
+                <source src="videos/poppy.webm" type="video/webm">
+                </video> 
+              <nav class="navbar" >
                 <ul>
-                    <li><img class="img-lol" id= "logo-lol" src="img/Presentación1.png" alt=""></li>
+                    <li><a href="#"><img class="img-lol" id= "logo-lol" src="img/Presentación1.png" alt=""></a> </li>
                     <li><a href="#" id="home"><i class="link-header"></i> INICIO </a></li>
                     <li><a href="#" id="stats-champions"><i class="link-header"></i> ESTADÍSTICA </a></li>
                     <li><a href="https://las.leagueoflegends.com/es/" id="play-lol"><i class="link-header"></i> JUEGA LOL </a></li>
                     <li><input type="text" id="txtBuscar" placeholder="Buscar"></li>
                 </ul>
               </nav>
-            </div> <!-- fin header container -->
+            <!-- fin header container -->
             </header> 
+          </div>
+        </div>
+    
          
             <div class="headboard">
              
@@ -70,13 +74,15 @@
         </div> <br>
         <p id="text-champion">ELIGE TU CAMPEÓN</p>
         <div id="stats-compute" class="compute-stats">
-       
+            
       </div>
   
-      </div>
+     </div>
       <!-- mantengo todos los resultados -->
       <div id="container-result" class="row"> </div>
       <div id="container-modal"> </div>
+     <!-- <canvas id="bar-chart"></canvas>-->
+      
      
       <footer>
           <div class="container-footer"> 
@@ -88,6 +94,7 @@
           </div>
         </footer>
         </div>
+
         
     
 
@@ -98,14 +105,14 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
     crossorigin="anonymous"></script>
-
-
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-  <script src="./data/lol/lol.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+  <script src="./data/lol/lol.json"></script>
   <script src="data.js"></script>
   <script src="main.js"></script>
+
 
 
 </body>
