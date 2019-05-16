@@ -17,6 +17,7 @@ const filterEgg = document.getElementById("filterEggs");
 //const dataPokemon = window.POKEMON.pokemon;
 const size = document.getElementById("result");
 const myChartPokemon = document.getElementById("chartPokemon");
+const search = document.getElementById("buttonSearching");
 let condition;
 let i;
 let cardPokemon = ''; 
@@ -26,20 +27,173 @@ let dataType;
 let eventOrder = 0;
 let dataSorted;
 let dataEvolution;
-let evolucion;
+let evolution;
+let searchPokemon;
 
 
 
+
+
+
+/*Funcion que muestra pokemones*/
+
+const showPokemon = (data) =>{
+
+/*For para imprimir las cards de acuerdo a la data recibida
+para mostrar los pokemones en su totalidad,
+por filtro y por orden*/
+
+data.forEach(element => {
+    
+
+cardPokemon += 
+`<div class="pokemonCards  col-12 col-sm-4 col-md-3">
+<div class="cardsAll">
+<div class="imgPokemon">
+<img src=${element.img}  alt="${element.name}" class="imgpokemonlist">
+</div>
+<div class="card-body">
+<div class="">
+<h6 class="card-title">${element.num} ${element.name} </h6>
+
+</div>
+<div class = "card-title"><span class="titlePokemon">`
+
+/* mostrar el tipo de pokemon sin comas(,)*/
+
+
+for ( j=0; j<element.type.length;j++){
+
+cardPokemon += `${element.type[j]}</span>`
+if(element.type.length === 2 && j<1){
+    //imprimendo la segunda evolucion
+   cardPokemon += `<span class="titlePokemon">`
+} 
+
+}
+
+/*aqui termina el for y continua mostrando los datos debajo del tipo*/
+cardPokemon += 
+`</div>
+<div class = "card-title"><img src="./img/egg.png" class= "icon">
+${element.egg}
+</div>
+
+</p><a href="#" class="btn btn-primary btnCard" data-toggle="modal" data-target="#miModal${element.id}">Ver mas</a>
+</div>
+</div>
+</div>`
+
+
+/*Modal para mostrar pokemones que se enlaza con el data-target psandole el id
+y colocandolo en el id del modal*/
+
+cardPokemon += `
+<div class="modal fade" id="miModal${element.id}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-sm" role="document">
+<div class="modal-content">
+
+<div class="modal-body">
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>	
+<div>
+<img src="./img/blue-degrade-vector.jpg" class="">
+</div>
+<div>
+<img src="${element.img}" alt="${element.img}" class="imgModal">
+
+</div>
+<div>
+<div>
+<h4 class="modal-title" id="myModalLabel">${element.num} ${element.name}</h4>
+			
+</div>
+<span>Peso:${element.weight}  </span>
+
+<span>  Alto:${element.height}</span>
+</div>
+<div>
+<span class="titlePokemon">`
+
+/* mostrar el tipo de pokemon sin comas(,)*/
+
+
+for ( j=0; j<element.type.length;j++){
+
+cardPokemon += `${element.type[j]}</span>`
+if(element.type.length === 2 && j<1){
+    //imprimendo la segunda evolucion
+   cardPokemon += `<span class="titlePokemon">`
+} 
+  
+}
+cardPokemon += `
+</div>
+<div>
+<span><img src="./img/candy.png" class= "icon">${element.candy} </span>
+<div><img src="./img/egg.png" class= "icon">${element.egg}</div>
+</div>
+
+
+
+<div>
+Evolución:</div>`
+/* mostrar la evolucion del pokemon dentro del modal*/
+
+//verifico si la propiedad next_evolution existe dentro del pokemon
+if (element.hasOwnProperty("next_evolution")){
+    // si existe capturo los objetos que contiene la propiedad       
+       evolution = Object.values(element.next_evolution);
+       //pregunto  si el tamano del arreglo de objetos es igual a 2
+       //para imprimir la palabra primera  y segunda
+    
+       
+            //for que imprime la  evolucion despues de ser unica o primera
+        evolution.forEach(element =>{
+                let name = element.name;
+                dataEvolution = window.filterData(dataPokemon,name,"name");
+               //capturando la evolucion
+               cardPokemon += `<img src ="${dataEvolution[0].img}">
+               <p>${dataEvolution[0].name}</p>`
+               //if que imprime la palabra segunda si el pokemon evoluciona dos veces
+               //pregunta si el tamano es de 2 y que j sea menor que 0 
+            if(evolution.length ===2 && j<1){
+                //imprimendo la segunda evolucion
+               cardPokemon += `<img src ="./img/arrow.png"> `
+       } 
+   });
+       }
+//si no posee la propiedad next_evolution muestra lo siguiente en el modal
+else {
+    cardPokemon += ` No evoluciona`
+
+}`
+</span>`
+//cerrando los div del modal
+cardPokemon += `
+
+</div>
+</div>
+</div>
+</div>
+</div>`
+
+});
+
+//mostrando los pokemones al inicializar la pagina
+showPokemones.innerHTML = cardPokemon;
+imgTypePokemon();
+}
+/*funcion que coloca la imagen del tipo de pokemon*/
 
 const imgTypePokemon =() =>{
 elementTypePokemon = document.getElementsByClassName("titlePokemon");
 
 for(i=0;i<elementTypePokemon.length; i++){
-  
-
 if(elementTypePokemon[i].textContent === "Water")
 { 
-    elementTypePokemon[i].innerHTML = '<img src="./img/water.png" class="icon" alt="water" target= "water">';
+elementTypePokemon[i].innerHTML = '<img src="./img/water.png" class="icon" alt="water" target= "water">';
 }
 
 if(elementTypePokemon[i].textContent === "Rock")
@@ -94,166 +248,42 @@ if(elementTypePokemon[i].textContent === "Ghost")
 elementTypePokemon[i].innerHTML = '<img src="./img/ghost.png" class="icon" alt="ghost">';
 }
 
+if(elementTypePokemon[i].textContent === "Psychic")
+{ 
+elementTypePokemon[i].innerHTML = '<img src="./img/psychic.png" class="icon" alt="psychic">';
+}
+
+if(elementTypePokemon[i].textContent === "Ground")
+{ 
+elementTypePokemon[i].innerHTML = '<img src="./img/ground.png" class="icon" alt="gorund">';
+}
+
+if(elementTypePokemon[i].textContent === "Ice")
+{ 
+elementTypePokemon[i].innerHTML = '<img src="./img/ice.png" class="icon" alt="ice">';
 }
 
 }
 
-
-/*Funcion que muestra pokemones*/
-
-const showPokemon = (data) =>{
-
-/*For para imprimir las cards de acuerdo a la data recibida
-para mostrar los pokemones en su totalidad,
-por filtro y por orden*/
-
-for ( i=0; i<data.length;i++){
-cardPokemon += 
-`<div class="pokemonCards  col-12 col-sm-4 col-md-3">
-<div class="cardsAll">
-<div class="imgPokemon">
-<img src=${data[i].img}  alt="${data[i].name}" class="imgpokemonlist">
-</div>
-<div class="card-body">
-<div class="">
-<h6 class="card-title">${data[i].num} ${data[i].name} </h6>
-
-</div>
-<div class = "card-title"><span class="titlePokemon">`
-
-/* mostrar el tipo de pokemon sin comas(,)*/
-
-
-for ( j=0; j<data[i].type.length;j++){
-
-cardPokemon += `${data[i].type[j]}</span>`
-if(data[i].type.length === 2 && j<1){
-    //imprimendo la segunda evolucion
-   cardPokemon += `<span class="titlePokemon">`
-} 
-  
 }
-
-/*aqui termina el for y continua mostrando los datos debajo del tipo*/
-cardPokemon += 
-`</div>
-<div class = "card-title">Huevos:
-${data[i].egg}
-</div>
-
-</p><a href="#" class="btn btn-primary btnCard" data-toggle="modal" data-target="#miModal${data[i].id}">Ver mas</a>
-</div>
-</div>
-</div>`
-
-
-/*Modal para mostrar pokemones que se enlaza con el data-target psandole el id
-y colocandolo en el id del modal*/
-
-cardPokemon += `
-<div class="modal fade" id="miModal${data[i].id}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-<div class="modal-dialog modal-sm" role="document">
-<div class="modal-content">
-
-<div class="modal-body">
-<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-<span aria-hidden="true">&times;</span>
-</button>	
-<div>
-<img src="./img/blue-degrade-vector.jpg" class="">
-</div>
-<div>
-<img src="${data[i].img}" alt="${data[i].img}" class="imgModal">
-
-</div>
-<div>
-<div>
-<h4 class="modal-title" id="myModalLabel">${data[i].num} ${data[i].name}</h4>
-			
-</div>
-<span>Peso:${data[i].weight}  </span>
-
-<span>  Alto:${data[i].height}</span>
-</div>
-<div>
-<span class="titlePokemon">`
-
-/* mostrar el tipo de pokemon sin comas(,)*/
-
-
-for ( j=0; j<data[i].type.length;j++){
-
-cardPokemon += `${data[i].type[j]}</span>`
-if(data[i].type.length === 2 && j<1){
-    //imprimendo la segunda evolucion
-   cardPokemon += `<span class="titlePokemon">`
-} 
-  
-}
-cardPokemon += `
-</div>
-<div>
-<span>Caramelos: ${data[i].candy} </span>
-<div>  Huevos: ${data[i].egg}</div>
-</div>
-
-
-
-<div>
-Evolución:</div>`
-/* mostrar la evolucion del pokemon dentro del modal*/
-
-//verifico si la propiedad next_evolution existe dentro del pokemon
-if (data[i].hasOwnProperty("next_evolution")){
-    // si existe capturo los objetos que contiene la propiedad       
-       evolucion = Object.values(data[i].next_evolution);
-       //pregunto  si el tamano del arreglo de objetos es igual a 2
-       //para imprimir la palabra primera  y segunda
-    
-       
-            //for que imprime la  evolucion despues de ser unica o primera
-            for(let j=0; j<evolucion.length;j++){
-                let name = evolucion[j].name;
-                dataEvolution = window.filterData(dataPokemon,name,"name");
-               //capturando la evolucion
-               cardPokemon += `<img src ="${dataEvolution[0].img}">
-               <p>${dataEvolution[0].name}</p>`
-               //if que imprime la palabra segunda si el pokemon evoluciona dos veces
-               //pregunta si el tamano es de 2 y que j sea menor que 0 
-            if(evolucion.length ===2 && j<1){
-                //imprimendo la segunda evolucion
-               cardPokemon += `<img src ="./img/arrow.png"> `
-       } 
-   }
-       }
-//si no posee la propiedad next_evolution muestra lo siguiente en el modal
-else {
-    cardPokemon += ` No evoluciona`
-
-}`
-</span>`
-//cerrando los div del modal
-cardPokemon += `
-
-</div>
-</div>
-</div>
-</div>
-</div>`
-
-}
-
-//mostrando los pokemones al inicializar la pagina
-showPokemones.innerHTML = cardPokemon;
-imgTypePokemon();
-}
-/*funcion que coloca la imagen del tipo de pokemon*/
-
-
 
 /*llamar a la funcion mostrar pokemones al inicio de la pagina*/
 
 showPokemon(dataPokemon);
+/*Evento Buscar pokemones*/ 
+search.addEventListener("click", () =>{
+eventOrder = 3;
+dataSorted = '';
+myChartPokemon.innerHTML = '';
+filterType.selectedIndex = 0;
+filterEgg.selectedIndex = 0;
+orderData.selectedIndex =0;
+cardPokemon ='';
+size.innerHTML= '';
+let name = document.getElementById("inputSearching").value;
+searchPokemon = window.filterData(dataPokemon,name,"name");
+showPokemon(searchPokemon);
+});
 
 /*Funcion Calcular pokemones*/ 
 const showResult =() =>{
@@ -276,6 +306,7 @@ if(eventOrder === 2){
 /* Funcion filtrar pokemones por tipo*/
 filterType.addEventListener("change",()=>{
 //colocando los select de filtro por huevo y de ordenar en el primer index
+
 filterEgg.selectedIndex =0;
 orderData.selectedIndex = 0;
 //vaciando la variable que imprime las cards
@@ -303,7 +334,7 @@ showResult(sizePokemon = window.computeStats(dataType,dataPokemon),condition);
 
 
 let ctx = document.getElementById('myChart');
-let  myChart = new Chart(ctx, {
+let myChart = new Chart(ctx, {
     type: 'pie',
     data: {
         labels: ['Total Pokemones', 'Porcentaje ' + condition],
@@ -345,8 +376,6 @@ filterEgg.addEventListener("change",()=>{
     cardPokemon= '';
     //capturando la condicion por la que se hara el filtro
     condition = filterEgg.options[filterEgg.selectedIndex].value;
-   
-
     //condicionando que no tome el primer valor del select
     if (condition !== "Filtrar por huevos") {
      //capturando evento de select para mantener el filtro y poder ordenar de acuerdo al filtro
@@ -363,8 +392,9 @@ filterEgg.addEventListener("change",()=>{
     showResult(sizePokemon = window.computeStats(dataEggs,dataPokemon),condition);
     //pasando la data filtrada a la funcion para mostrar los pokemones\
 
+   
     let ctx = document.getElementById('myChart');
-    let  myChart = new Chart(ctx, {
+    let myChart = new Chart(ctx, {
         type: 'pie',
         data: {
             labels: ['Total Pokemones ' , 'Porcentaje ' + condition],
@@ -372,15 +402,11 @@ filterEgg.addEventListener("change",()=>{
                 label: '# of Votes',
                 data: [dataPokemon.length, dataEggs.length],
                 backgroundColor: [
-                    
-                    
                     'rgba(255, 206, 86, 1)',
                     'rgba(153, 102, 255, 1)',
                     
                 ],
                 borderColor: [
-                   
-                    
                     'rgba(255, 206, 86, 1)',
                     'rgba(153, 102, 255, 1)',
                     
@@ -430,6 +456,11 @@ if (eventOrder === 2){
 
     dataSorted = dataEggs;
 } 
+
+if (eventOrder === 3){
+
+    dataSorted = searchPokemon;
+}
 //de acuerdo al evento accionado se envia la data correspondiente
 //y se ordena de acuerdo al nombre o numero de pokemon
 if (sortOrderSelect === "A-Z"){
