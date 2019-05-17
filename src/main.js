@@ -1,10 +1,10 @@
 /* Manejo del DOM */
 
 
-  fetch('https://raw.githubusercontent.com/nohestmm/SCL009-data-lovers/master/src/data/pokemon/pokemon.json')
-  .then(response =>{return response.json()})
+fetch('https://raw.githubusercontent.com/nohestmm/SCL009-data-lovers/master/src/data/pokemon/pokemon.json')
+.then(response =>{return response.json()})
   
-  .then(myJson => {
+.then(myJson => {
  const dataPokemon = myJson.pokemon;
 /*Declarando las variables*/
 let sizePokemon = 0;
@@ -36,18 +36,25 @@ let searchPokemon;
 const imgTypePokemon =() =>{
 elementTypePokemon = document.getElementsByClassName("titlePokemon");
 
+
 for(i=0;i<elementTypePokemon.length; i++){
 if(elementTypePokemon[i].textContent === "Water")
 { 
 elementTypePokemon[i].innerHTML = '<img src="./img/water.png" class="icon" alt="water" target= "water">';
 }
 
+if(elementTypePokemon[i].textContent === "Grass")
+{ 
+elementTypePokemon[i].innerHTML = '<img src="./img/grass.png" class="icon" alt="grass" target= "grass">';
+}
+
+
 if(elementTypePokemon[i].textContent === "Rock")
 { 
 elementTypePokemon[i].innerHTML = '<img src="./img/rock.png" class="icon" alt="rock">';
 }
 
-if(elementTypePokemon[i].textContent === "Grass")
+if(elementTypePokemon[i].textContent === "                                                                          ")
 { 
 elementTypePokemon[i].innerHTML = '<img src="./img/grass.png" class="icon" alt="grass">';
 }
@@ -240,7 +247,7 @@ if (element.hasOwnProperty("next_evolution")){
                //pregunta si el tamano es de 2 y que j sea menor que 0 
             if(evolution.length ===2 && j<1){
                 //imprimendo la segunda evolucion
-               cardPokemon += `<div><img src="./img/arrow.png" class="arrow"></div>`
+               cardPokemon += `<div class="arrow"><img src="./img/arrow.png" ></div>`
        }
        }
     }

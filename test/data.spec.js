@@ -3,6 +3,7 @@ global.assert = require('chai').assert;
 require('../src/data');
 require('./data.spec.js');
 
+
   const data = [
     {"num": "037",
     "name": "Vulpix",
