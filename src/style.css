@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css?family=Artifika|Shadows+Into+Light');
+
+/* video de fondo */
+.video-background{
+
+    position: fixed;
+    top: 20;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -10;
+}
+
+
+/*Styles del Header */
+header{
+    width: 100%;
+    position: relative;
+}
+
+#header-container{
+        width: 100%;
+        overflow: hidden;
+    }
+
+    nav{
+       top: 0%;
+        width: 90%;
+        max-width: 1000px;
+        justify-content: center;
+        margin-bottom: 0%;
+    }
+   
+    nav > ul {
+        display:table;
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+      
+    }
+
+    nav > ul img {
+        width: 150px;
+        height: auto;
+        border: 2px solid rgb(75, 66, 20);
+        border-radius: 50%;
+        position: relative;
+    }
+    nav > ul img:hover{
+        filter: sepia(60%);
+    }
+    nav > ul li {
+        display: table-cell;
+    }
+    nav > ul li a{
+        color: rgb(179, 154, 12);
+        display: block;
+        line-height: 20px;
+        padding: 10px;
+        position: relative;
+        text-align: center;
+        font-family: 'Volkhov', serif;
+        font-size: 20px; 
+         color: #FCD203;
+        -webkit-transition: all 500ms ease;
+        -o-transition: all 500ms ease;
+        transition: all 500ms ease;
+        border-radius:50px;
+    }
+    nav > ul li a:hover{
+        color: rgb(250, 249, 249);
+        background-color: rgba(77, 43, 43, 0.959);
+        
+    }
+    /*Títulos de la página*/
+.headboard{
+  margin-top:40px;   /*  margin, corresponde al margen */
+  padding-top: 5px;   /*  padding es como margen pero interior */
+  position: relative;
+  justify-content: center;
+
+}
+.headboard p{
+    font-family: 'Scada', sans-serif;
+    font-size: 20px;
+    color: #FCD203;
+    text-shadow: -2px -2px 1px #000, 
+      2px 2px 1px #000, 
+      -2px 2px 1px #000, 
+      2px -2px 1px #000;
+    justify-content: center;
+    margin-top:80px; 
+}
+/*Container de las estadísticas*/
+.compute-stats{
+    font-family: 'Scada', sans-serif;
+    font-size: 20px;
+    color: #FCD203;
+}
+
+/*Style de cards bootstrap*/
+.my-card{
+    background: black;
+
+   padding: 0.5em;
+    text-justify:  center;
+    margin: 0.5em;
+    position: relative;
+    border: 2px solid rgb(185, 102, 102);
+    overflow: hidden;
+    font-family: 'Scada', sans-serif;
+    font-size: 20px;
+    color: #FCD203;
+  
+}
+
+.btn-style {
+    color: white;
+    text-shadow: 0 -1px  rgba(218, 208, 208, 0.25);
+    background-color: rgba(129, 54, 107, 0.274);
+    font-family: 'Artifika', serif;
+  }
+
+
+#img-card {
+    width: 80px;
+    height: auto;
+    border-radius: 50%;
+    margin-left: auto;
+  margin-right: auto;
+  border: 2px solid rgb(185, 102, 102);
+}
+
+#card-stats {
+    background-color:rgb(8, 8, 8);
+ 
+}
+
+/*Container de resultados*/
+#container-result {
+    background-color: rgba(12, 3, 0.288, 0);
+    border: 2px solid rgb(185, 102, 102);
+    justify-content: center;
+     position: relative;
+     padding: 0.5em;
+     margin-left: 0.5em;
+     margin-right: 0.5em;
+     margin-top: 0.5em;
+     margin-bottom: 0.5em;
+    
+ }
+ 
+/*container del select*/
+.container-fluid{
+  
+    justify-content: center;
+     position: relative;
+     padding: 0.5em;
+     margin-left: 0.5em;
+     margin-right: 0.5em;
+     margin-top: 0.5em;
+     margin-bottom: 0.5em;
+
+  
+}
+
+/*Styles del modal bootstrap*/
+.modal-content{
+    background-color:rgba(239,197,202,1);
+    position: absolute;
+}
+.modal-title{
+    font-family: 'Scada', sans-serif;
+    font-size: 20px;
+    color: rgb(252, 3, 65);
+    vertical-align: middle;
+}
+#img-modal{
+    border-radius: 10%;
+    margin-left: auto;
+  margin-right: auto;
+  border: 2px solid rgb(75, 66, 20);
+
+}
+/*Styles div percent*/
+.percent-p{
+    font-family: 'Scada', sans-serif;
+    font-size: 20px;
+    color: #FCD203;
+    text-shadow: -2px -2px 1px #000, 
+      2px 2px 1px #000, 
+      -2px 2px 1px #000, 
+      2px -2px 1px #000;
+}
+/*footer */
+footer{
+    width: 100%;
+    font-family: 'Scada', sans-serif;
+    font-size: 20px;
+    color: rgb(10, 10, 10);
+    line-height: 10px;
+    position: relative;
+    bottom: 0;
+    text-justify: center;
+}
+#text-champion{
+    font-family: 'Scada', sans-serif;
+    font-size: 30px;
+    color: #FCD203;
+    text-shadow: -2px -2px 1px #000, 
+      2px 2px 1px #000, 
+      -2px 2px 1px #000, 
+      2px -2px 1px #000;
+    justify-content: center;
+  
+}
