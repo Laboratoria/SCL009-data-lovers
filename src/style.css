@@ -1,0 +1,41 @@
+body {
+  background-repeat: no-repeat;
+  text-align: left;
+  background-attachment: fixed;
+  background-size: 70% 100%;
+  background-position: center;
+  font-family: "Gill Sans Extrabold", Helvetica, sans-serif;
+  background-color: rgb(209, 210, 226);
+}
+
+.selecc {
+  display: inline-block;
+  padding-right: 10px;
+
+}
+
+.card-img-top {
+  padding: 20px;
+}
+
+header {
+  background: #C4C4C4;
+  width: 1285px;
+}
+
+.imagen {
+  width: 250px;
+  height: 67px;
+}
+
+nav {
+  background: #7F82D8;
+  border: 1px solid #000000;
+  border-radius: 6px;
+  color: white;
+  
+}
+
+.carta-poke {
+  text-align: center;
+}
